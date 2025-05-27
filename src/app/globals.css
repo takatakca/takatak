@@ -32,7 +32,42 @@ a{
   flex-direction: column;
   justify-content: space-between;
 }
+.space{
+  padding: 5px 0px 5px 20px;
+}
+.sidbar{
+  padding: 5px 0px 5px 20px;
+}
+.pag{
+  padding: 30px 20px;
+}
+.lin{
+  padding: 20px 0px;
+}
+.inp{
+  padding: 5px 20px;
+}
+.access{
+  padding: 3px 35px;
+  border-radius: 5px;
+  background-color: #1976D2;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
+.access.animate-bounce {
+  animation: bounce 0.6s ease-in-out;
+}
+
+.cardspc{
+  padding: 20px 0px;
+  color: #b7afaf;
+}
 @keyframes slideInLeft {
   0% {
     opacity: 0;
@@ -83,7 +118,7 @@ a{
   line-height: 30px;
 }
 .sublink{
-  
   line-height: 30px;
 }
+
 }
