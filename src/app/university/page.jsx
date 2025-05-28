@@ -5,15 +5,15 @@ import {
   FaCalendarAlt, FaTrophy, FaUserShield, FaUserCircle,
   FaHourglassHalf, FaHeart, FaFileAlt, FaFileInvoiceDollar
 } from "react-icons/fa";
-import Activities from '../component/Activities';
-import Calendar from '../component/Calendar';
-import Summary from '../component/summary';
-import Waitlist from '../component/Waitlist';
-import Wishlist from '../component/Wishlist';
-import Documents from '../component/Documents';
-import Transactions from '../component/Transactions';
-import Profile from '../component/Profile';
-import AccountSecurity from '../component/AccountSecurity';
+import Activities from '../components/Activities';
+import Calendar from '../components/Calendar';
+import Summary from '../components/Summary';
+import Waitlist from '../components/Waitlist';
+import Wishlist from '../components/Wishlist';
+import Documents from '../components/Documents';
+import Transactions from '../components/Transactions';
+import Profile from '../components/Profile';
+import AccountSecurity from '../components/AccountSecurity';
 
 
 
