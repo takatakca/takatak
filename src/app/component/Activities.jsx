@@ -76,10 +76,10 @@ const Activities = ({ card }) => {
 
   return (
     <div className='w-full shadow pag'>
-          <div className="flex flex-col gap-[30px]">
+          <div className="flex flex-col gap-[15px] lg:gap-[30px]">
             {/* Search Bar */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4 p-4 shadow border rounded-md">
-              <input type="text" placeholder="Search an activity" className="w-full md:w-auto flex-1 rounded-md inp" />
+            <div className="flex justify-between items-center shadow border rounded-md">
+              <input type="text" placeholder="Search an activity" className="inp w-full lg:flex-1 rounded-md outline-0" />
               <MdSearch className="text-2xl text-gray-600" />
             </div>
 
@@ -94,7 +94,7 @@ const Activities = ({ card }) => {
                       .map(([key, value]) => (
                         <span
                           key={key}
-                          className="bg-white hover:bg-black hover:text-white text-blue-500 shadow text-[13px] font-bold w-[11vw] rounded-full h-[40px] flex items-center justify-center"
+                          className="cspac bg-white hover:bg-black hover:text-white text-blue-500 shadow text-[13px] font-bold rounded-full text-center"
                         >
                           {value}
                         </span>
@@ -120,26 +120,24 @@ const Activities = ({ card }) => {
               // Extract numeric percentage from the "level" string
               const percent = parseInt(card.level) || 0; // "50 % completed" => 50
               return (
-                <div key={card.id} className='flex flex-col'>
-                  <div className="flex flex-col md:flex-row items-start gap-4 p-4 justify-between">
-                    <div className='flex gap-[20px]'>
+                <div key={card.id} className='flex flex-col shadow lg:shadow-none  w-full'>
+                  <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 p-4 justify-center lg:justify-between w-full">
+                    <div className='flex flex-col lg:flex-row gap-[20px]'>
                       <Image src={card.img} width={300} height={400} alt='' />
                       <div>
                         <h3 className="font-bold text-base w-[35vw]">{card.title}</h3>
                         <div className="text-sm text-gray-500">Completed on : {card.date}</div>
-                        <div className="text-sm text-gray-500">{card.level}</div>
-                        <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
-                          <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${percent}%` }} />
+                        <div className='flex whitespace-nowrap items-center gap-[15px]'>
+                          <div className="text-sm text-gray-500">{card.level}</div>
+                          <div className="w-full bg-gray-200 h-2 rounded-full mt-1">
+                            <div className="bg-blue-600 h-2 rounded-full" style={{ width: `${percent}%` }} />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className='flex gap-[20px] items-center'>
-                      {/* <Link href={`/university/${card.slug}`} passHref> */}
-                      <button
-                    onClick={() => handleClick(card.slug, card.id)}
-                    className={`access ${bouncingCardId === card.id ? "animate-bounce" : ""}`}
-                  >Access</button>
-      {/* </Link> */}
+                    <div className='flex gap-[20px] items-center justify-center w-full lg:w-[13vw]'>
+                      <button onClick={() => handleClick(card.slug, card.id)}
+                      className={`access ${bouncingCardId === card.id ? "animate-bounce" : ""}`} >Access</button>
                       <IoIosArchive />
                     </div>
                   </div>

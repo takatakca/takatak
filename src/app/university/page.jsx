@@ -59,13 +59,13 @@ export default function University() {
     <div className="flex flex-col gap-[15px] lg:flex-row min-h-screen bg-gray-100 text-black">
       {/* Sidebar */}
       <aside className="w-full lg:w-[20vw] bg-white shadow">
-        <h2 className="space text-[30px] font-light ">My Space</h2>
+        <h2 className="space text-[40px] lg:text-[30px] font-light ">My Space</h2>
         <hr />
-        <nav className="space-y-2 flex flex-col gap-[15px] sidbar">
+        <nav className="sidbar space-y-2 flex lg:flex-col flex-row gap-[15px] overflow-x-auto whitespace-nowrap">
           {navItems.map(({ label, icon }) => (
             <div
               key={label}
-              className={`flex items-center gap-2 cursor-pointer text-[16px] font-normal text-[#5c5757] hover:text-blue-600 hover:font-bold ${activeTab === label ? "text-blue-600 font-semibold text-[18px]" : "text-[#5c5757]"}`}
+              className={`lyne flex items-center gap-2 cursor-pointer text-[20px] lg:text-[16px]  font-normal text-[#5c5757] lg:hover:text-blue-600 lg:hover:font-bold ${activeTab === label ? "text-blue-600 font-semibold text-[18px]" : "text-[#5c5757]"} border-r border-gray-300 lg:border-none`}
               onClick={() => setActiveTab(label)}
             >
               {icon}

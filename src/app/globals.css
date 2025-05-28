@@ -47,6 +47,9 @@ a{
 .inp{
   padding: 5px 20px;
 }
+.cspac{
+  padding: 10px;
+}
 .access{
   padding: 3px 35px;
   border-radius: 5px;
@@ -54,6 +57,7 @@ a{
   color: white;
   text-align: center;
   cursor: pointer;
+
 }
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
@@ -106,6 +110,10 @@ a{
   }
 }
 
+
+
+
+
 @media screen and (max-width:950px) {
   .nav{
   padding: 0px 20px;
@@ -113,12 +121,22 @@ a{
 .close{
   padding: 10px 15px 0px 0px;
 }
-.sidebar{
-  padding-left: 30px;
-  line-height: 30px;
+.sidbar{
+  padding: 10px;
+}
+.lyne{
+  padding-right: 10px;
 }
 .sublink{
   line-height: 30px;
 }
-
+.inp{
+  padding: 5px 10px;
+}
+.cspac{
+  padding: 10px;
+}
+.access{
+  width: 70%;
+}
 }
