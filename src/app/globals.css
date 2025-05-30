@@ -59,6 +59,25 @@ a{
   cursor: pointer;
 
 }
+
+.back{
+  border: 1px solid black;
+  padding: 11px 10px;
+  cursor: pointer;
+}
+.dat{
+  border: 1px solid black;
+  padding: 5px 40px;
+}
+.front{
+  border: 1px solid black;
+  padding: 11px 10px;
+  cursor: pointer;
+}
+
+
+
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -138,5 +157,8 @@ a{
 }
 .access{
   width: 70%;
+}
+.navcont{
+  padding-left: 30px;
 }
 }

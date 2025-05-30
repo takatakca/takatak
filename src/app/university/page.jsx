@@ -65,7 +65,7 @@ export default function University() {
           {navItems.map(({ label, icon }) => (
             <div
               key={label}
-              className={`lyne flex items-center gap-2 cursor-pointer text-[20px] lg:text-[16px]  font-normal text-[#5c5757] lg:hover:text-blue-600 lg:hover:font-bold ${activeTab === label ? "text-blue-600 font-semibold text-[18px]" : "text-[#5c5757]"} border-r border-gray-300 lg:border-none`}
+              className={`lyne flex items-center gap-2 cursor-pointer text-[16px]  font-normal text-[#5c5757] lg:hover:text-blue-600 lg:hover:font-bold ${activeTab === label ? "text-blue-600 font-semibold text-[18px]" : "text-[#5c5757]"} border-r border-gray-300 lg:border-none`}
               onClick={() => setActiveTab(label)}
             >
               {icon}

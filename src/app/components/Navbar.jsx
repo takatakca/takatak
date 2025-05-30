@@ -99,7 +99,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Sidebar content */}
-                    <nav className="space-y-4 text-[18px]">
+                    <nav className="space-y-4 text-[18px] navcont">
                         {links.map(link => (
                             <div key={link.id}>
                                 {link.url ? (
