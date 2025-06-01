@@ -61,20 +61,34 @@ a{
 }
 
 .back{
-  border: 1px solid black;
+  border: 0.5px solid black;
   padding: 11px 10px;
   cursor: pointer;
+  border-radius: 3px 0px 0px 3px;
 }
 .dat{
-  border: 1px solid black;
+  border: 0.5px solid black;
   padding: 5px 40px;
 }
 .front{
-  border: 1px solid black;
+  border: 0.5px solid black;
   padding: 11px 10px;
   cursor: pointer;
+  border-radius: 0px 3px 3px 0px;
 }
 
+.wek{
+  padding: 1px 13px;
+}
+.mon{
+  padding: 1px 13px;
+}
+.callen{
+  padding: 10px;
+}
+.topcal{
+  margin-bottom: 10px;
+}
 
 
 
@@ -160,5 +174,25 @@ a{
 }
 .navcont{
   padding-left: 30px;
+}
+.back{
+  padding: 6px 10px;
+}
+.dat{
+  padding: 0px 40px;
+}
+.front{
+  padding: 6px 10px;
+}
+.topcal{
+  padding: 0px 20px;
+}
+.mnu{
+  padding: 8px;
+}
+
+.btt{
+  padding: 8px 8px;
+  margin-bottom: 3px;
 }
 }
