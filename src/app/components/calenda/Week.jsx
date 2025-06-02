@@ -7,7 +7,7 @@ const timeSlots = Array.from({ length: 18 }, (_, i) => `${i + 5}:00 PM`)
 const Week = () => {
   return (
     <div className="overflow-y-scroll flex-1 "> 
-          {/* Week Days Header fxlg-grid-grid-cols-8*/}
+          {/* Week Days Header */}
            <div className="grid grid-cols-8 sticky top-0 bg-white z-10 border-b"> 
              <div className="border-r px-2 py-2"></div> 
            {weekDays.map((day, i) => ( 
@@ -20,7 +20,7 @@ const Week = () => {
             ))} 
            </div> 
 
-          {/* Time Grid fxlg-grid-cols-8-border-b*/}
+          {/* Time Grid */}
            {timeSlots.map((time, i) => ( 
              <div key={i} className="grid grid-cols-8 border-b h-16"> 
               <div className="text-right pr-2 text-xs pt-2 border-r">{time}</div> 
