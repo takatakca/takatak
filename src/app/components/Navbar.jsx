@@ -4,10 +4,13 @@ import React, { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-    { id: 1, title: "Home", url: "/" },
+    { id: 1, title: "AI Automation"},
+    { id: 2, title: "Marketing" },
+    { id: 3, title: "CRM Integration" },
+    { id: 4, title: "University", url: "/university" },
     {
-        id: 2,
-        title: "Services",
+        id: 5,
+        title: "More",
         subLinks: [
             { id: 's1', title: "Website Design", url: "/services/web-design" },
             { id: 's2', title: "Branding & Design", url: "/services/Branding & Design" },
@@ -23,11 +26,8 @@ const links = [
             { id: 's12', title: "Email Hosting & Automation", url: "/services/Email Hosting & Automation" },
         ]
     },
-    { id: 3, title: "University", url: "/university" },
-    { id: 7, title: "Contact" },
-    { id: 8, title: "About Us" },
-    { id: 9, title: "signup", url: "/signup" },
-    { id: 10, title: "login", url: "/login" }
+    { id: 6, title: "signup", url: "/signup" },
+    { id: 7, title: "login", url: "/login" }
 ]
 
 const Navbar = () => {
@@ -35,10 +35,10 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <div className='bg-[#1976D2] text-white'>
+        <div className='bg-gradient-to-r from-blue-700 to-[#4ca8ea] text-white rounded-t-[20px]'>
             {/* Top navbar */}
             <div className='flex justify-between items-center h-[50px] px-4 lg:px-8 nav'>
-                <Link href="/" className="font-bold text-lg">LOGO</Link>
+                <Link href="/" className="font-bold text-lg">takatak.ca</Link>
 
                 {/* Mobile menu toggle button */}
                 <button
@@ -54,14 +54,14 @@ const Navbar = () => {
                     {links.map(pgs => (
                         <div
                             key={pgs.id}
-                            className='relative'
+                            className='relative '
                             onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
                             onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
                         >
                             {pgs.url ? (
                                 <Link href={pgs.url}>{pgs.title}</Link>
                             ) : (
-                                <span className='cursor-pointer'>{pgs.title}</span>
+                                <span className='cursor-pointer hover:underline underline-offset-4'>{pgs.title}</span>
                             )}
 
                             {pgs.subLinks && showDropdown && (
