@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link'
 import React, { useState } from 'react'
+import styles from "./page.module.css";
 import { Menu, X } from 'lucide-react'
 
 const links = [
@@ -35,10 +36,10 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <div className='bg-gradient-to-r from-blue-700 to-[#4ca8ea] text-white rounded-t-[20px]'>
+        <div className={`${styles.gradient} text-white rounded-t-[20px]`}>
             {/* Top navbar */}
-            <div className='flex justify-between items-center h-[50px] px-4 lg:px-8 nav'>
-                <Link href="/" className="font-bold text-lg">takatak.ca</Link>
+            <div className={`flex justify-between items-center h-[50px] px-4 lg:px-8 ${styles.nav}`}>
+                <Link href="/" className="font-semibold text-[20px] tracking-[1px]">takatak.ca</Link>
 
                 {/* Mobile menu toggle button */}
                 <button
@@ -54,7 +55,7 @@ const Navbar = () => {
                     {links.map(pgs => (
                         <div
                             key={pgs.id}
-                            className='relative '
+                            className={`relative flex items-center ${ pgs.title.toLowerCase() === "login" ? styles.login : pgs.title.toLowerCase() === "signup"  ? styles.signup  : "" }`}
                             onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
                             onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
                         >

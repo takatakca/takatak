@@ -1,0 +1,34 @@
+.gradient{
+    padding-left: 50px;
+    background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
+}
+.butn{
+    padding: 6px 30px;
+    border-radius: 5px;
+}
+.butn:hover{
+    background-color: #4ca8ea;
+}
+.servic{
+    padding: 0px 50px 0px 0px;
+}
+.img{
+    margin-bottom: -10px;
+}
+.pag{
+}
+
+.serv{
+    padding: 10px 0px 5px 20px;
+    width: 17vw;
+}
+.detail{
+    padding: 10px 0px 5px 20px;
+    width: 16vw;
+}
+.aaa{
+    /* padding-left: 50px; */
+}
+.market{
+    padding: 10px;
+}

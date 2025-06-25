@@ -1,0 +1,6 @@
+
+.gradient {
+    padding: 20px;
+  background: 
+    linear-gradient(to top, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
+}
