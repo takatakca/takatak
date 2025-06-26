@@ -205,10 +205,10 @@ const freelancers = [
           {/* Scrollable Freelancers */}
           <div className={`relative w-full max-w-[660px] overflow-x-auto ${styles.scrollhide}`}>
             {/* <div className="overflow-x-auto max-w-full pr-6"> */}
-              <div className="flex gap-[25px] w-max px-1">
+              <div className="flex gap-[18px] w-max px-1">
                 {freelancers.map((user, idx) => (
-                  <div key={idx} className="text-center flex flex-col items-center shrink-0 w-[100px]">
-                    <div className="relative w-[90px] h-[90px] bg-white rounded-full mx-auto flex items-center">
+                  <div key={idx} className="text-center flex flex-col items-center shrink-0 w-[130px]">
+                    <div className=" relative w-[90px] h-[90px] bg-white rounded-full mx-auto flex items-center">
                       <div className="absolute inset-0 rounded-full bg-white blur-md opacity-30"></div>
                       <img
                         src={user.img}
@@ -216,7 +216,7 @@ const freelancers = [
                         className="w-[80px] h-[80px] object-cover rounded-full mx-auto relative z-10 shadow-[0_0_12px_4px_rgba(255,255,255,0.3)]"
                       />
                     </div>
-                    <p className="mt-2 font-semibold">{user.name}</p>
+                    <p className="mt-2 font-semibold text-[15px] w-[12vw]">{user.name}</p>
                     <p className="text-yellow-400">{'★'.repeat(user.rating)}</p>
                   </div>
                 ))}
