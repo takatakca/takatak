@@ -1,10 +1,11 @@
 .gradient{
-    padding-left: 50px;
+    padding: 0px 0px 50px 50px;
     background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
 }
 .butn{
     padding: 6px 30px;
     border-radius: 5px;
+    cursor: pointer;
 }
 .butn:hover{
     background-color: #4ca8ea;
@@ -15,20 +16,48 @@
 .img{
     margin-bottom: -10px;
 }
-.pag{
-}
-
 .serv{
     padding: 10px 0px 5px 20px;
     width: 17vw;
 }
 .detail{
-    padding: 10px 0px 5px 20px;
+    padding: 20px 0px 20px 20px;
     width: 16vw;
 }
-.aaa{
-    /* padding-left: 50px; */
+.dscm{
+    padding: 40px 0px;
 }
 .market{
-    padding: 10px;
+    padding: 20px 20px;
 }
+.inp{
+    padding: 10px 7px;
+}
+.butto{
+    padding: 8px;
+}
+.freel{
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+.hirefst{
+    padding: 6px 30px;
+}
+.nextfrel{
+    padding: 20px 30px;
+}
+.fmarketplc{
+    padding: 20px 30px;
+}
+.Fmark{
+    padding: 50px 0px 50px 80px;
+}
+
+.scrollhide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollhide {
+    -ms-overflow-style: none;  /* IE/Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
