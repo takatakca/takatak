@@ -94,11 +94,11 @@ const freelancers = [
         </div>
       </section>
       
-      <section className={`bg-[#e0ecf7] flex gap-[100px] justify-center ${styles.dscm}`}>
+      <section className={`bg-[#e0ecf7] flex gap-[70px] justify-center ${styles.dscm}`}>
         <div>
           <div className='flex flex-col gap-[20px]'>
               <h1 className='text-blue-900 font-bold text-[28px]'>Details Service & Campaigns</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-[100px] gap-y-[30px] px-12 py-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-[70px] gap-y-[30px] px-12 py-10'>
               {services.map((item, idx) => (
                 <div key={idx} className={`bg-white text-blue-800 flex flex-col gap-[10px]  rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
                   <div className='flex items-center'>
@@ -122,18 +122,20 @@ const freelancers = [
         <div className="flex flex-col gap-[20px]">
           <h1 className="text-blue-900 font-bold text-[28px]">Marketplace</h1>
           <div className='flex flex-col gap-[40px] '>
-            <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800 w-full max-w-lg flex flex-col gap-[20px]  ${styles.market}`}>
-              <h1 className='text-center'>Marketplace</h1>
-              <div className='flex flex-col gap-[30px] border'>
+            <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800  flex flex-col  gap-[20px]  ${styles.market}`}>
+              <h1 className='text-start'>Marketplace</h1>
+              <div className='flex flex-col items-center'>
+                  <div className='flex flex-col gap-[30px] w-[13vw]'>
                 
-                <input
-                type="text"
-                placeholder="Search marketplace..."
-                className={`flex-grow border border-blue-300 rounded-md outline-none focus:ring-2 focus:ring-blue-500 ${styles.inp}`}
-                />
-                <button className={`bg-blue-600 text-white rounded-md hover:bg-blue-700 transition ${styles.butto}`}  onClick={handleSearch}>
-                  Search
-                </button>
+                    <input
+                    type="text"
+                    placeholder="Search marketplace..."
+                    className={`flex-grow border border-blue-300 rounded-md outline-none focus:ring-0 ${styles.inp}`}
+                    />
+                    <button className={`bg-[#01A2D9] text-white rounded-md hover:bg-blue-700 transition ${styles.butto}`}  onClick={handleSearch}>
+                      Search marketplace
+                    </button>
+                  </div>
               </div>
             </div>
 
@@ -165,7 +167,7 @@ const freelancers = [
               <hr className='text-[#efeaea]'/>
               <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
-            <button className={`bg-blue-600 text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
+            <button className={`bg-[#01A2D9] text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
           </div>
 
           {/* Duplicate Category box */}
@@ -181,21 +183,21 @@ const freelancers = [
               <hr className='text-[#efeaea]'/>
               <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
-            <button className={`bg-blue-600 text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
+            <button className={`bg-[#01A2D9] text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
           </div>
         </div>
       </section>
 
-      <section className={`relative flex gap-[100px] bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
+      <section className={`relative flex gap-[30px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
-        <div className="relative">
+        <div className="relative flex flex-col gap-[45px]">
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
 
-          <div>
-            <input className="p-2 w-full rounded text-black mb-4" placeholder="Search marketplace..." />
-            <div className="flex gap-4 mb-6">
+          <div className='flex flex-col gap-[30px]'>
+            <input className={`p-2 w-full rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
+            <div className="flex gap-[25px] ">
               {['Development', 'Design', 'Writing', 'Video'].map((tag) => (
-                <button key={tag} className="bg-white text-blue-800 px-4 py-1 rounded-full">
+                <button key={tag} className={`bg-transparent rounded-full cursor-pointer border-[1.5px] border-[#b9b8b8] ${styles.tags} `}>
                   {tag}
                 </button>
               ))}
@@ -204,7 +206,6 @@ const freelancers = [
 
           {/* Scrollable Freelancers */}
           <div className={`relative w-full max-w-[660px] overflow-x-auto ${styles.scrollhide}`}>
-            {/* <div className="overflow-x-auto max-w-full pr-6"> */}
               <div className="flex gap-[18px] w-max px-1">
                 {freelancers.map((user, idx) => (
                   <div key={idx} className="text-center flex flex-col items-center shrink-0 w-[130px]">
@@ -220,12 +221,11 @@ const freelancers = [
                     <p className="text-yellow-400">{'★'.repeat(user.rating)}</p>
                   </div>
                 ))}
-              {/* </div> */}
             </div>
 
           </div>
             {/* Right edge blur to hint scrollable */}
-            <div className=" pointer-events-none absolute top-[60px] right-0 h-[11vw] w-10 bg-gradient-to-l from-blue-800 to-transparent z-10" />
+            <div className="pointer-events-none absolute top-[200px] right-0 h-[15vw] w-10 bg-gradient-to-l from-blue-800 to-transparent z-10" />
         </div>
 
         {/* Right Column */}
@@ -246,7 +246,7 @@ const freelancers = [
                 </React.Fragment>
               ))}
             </div>
-            <button className={`bg-blue-600 text-white rounded ${styles.hirefst}`}>
+            <button className={`bg-[#01A2D9] text-white rounded ${styles.hirefst}`}>
               Hire a Freelancer
             </button>
           </div>
