@@ -188,7 +188,7 @@ const freelancers = [
         </div>
       </section>
 
-      <section className={`relative flex gap-[30px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
+      <section className={`relative flex xl:gap-[150px] lg:gap-[30px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
         <div className="relative flex flex-col gap-[45px]">
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
