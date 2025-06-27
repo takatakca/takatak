@@ -98,7 +98,7 @@ const freelancers = [
         <div>
           <div className='flex flex-col gap-[20px]'>
               <h1 className='text-blue-900 font-bold text-[28px]'>Details Service & Campaigns</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-[150px] gap-y-[30px] px-12 py-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-[100px] gap-y-[30px] px-12 py-10'>
               {services.map((item, idx) => (
                 <div key={idx} className={`bg-white text-blue-800 flex flex-col gap-[10px]  rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
                   <div className='flex items-center'>
