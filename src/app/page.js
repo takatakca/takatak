@@ -94,7 +94,7 @@ const freelancers = [
         </div>
       </section>
       
-      <section className={`bg-[#e0ecf7] flex gap-[150px] justify-center ${styles.dscm}`}>
+      <section className={`bg-[#e0ecf7] flex gap-[100px] justify-center ${styles.dscm}`}>
         <div>
           <div className='flex flex-col gap-[20px]'>
               <h1 className='text-blue-900 font-bold text-[28px]'>Details Service & Campaigns</h1>
@@ -155,15 +155,15 @@ const freelancers = [
           {/* Categories */}
           <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] space-y-2 flex flex-col gap-[50px] ${styles.freel}`}>
             <div className='flex flex-col gap-[15px]'>
-              <h4 className="font-bold">Graphics & Design</h4>
+              <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Digital Marketing</h4>
+              <h4 className="font-bold text-[15px]">Digital Marketing</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Programming & Tech</h4>
+              <h4 className="font-bold text-[15px]">Programming & Tech</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Video & Animation</h4>
+              <h4 className="font-bold text-[15px]">Video & Animation</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Writing & Translation</h4>
+              <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
             <button className={`bg-blue-600 text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
           </div>
@@ -171,22 +171,22 @@ const freelancers = [
           {/* Duplicate Category box */}
           <div className={`absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-10 ${styles.nextfrel}`}>
             <div className='flex flex-col gap-[15px]'>
-              <h4 className="font-bold">Graphics & Design</h4>
+              <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Digital Marketing</h4>
+              <h4 className="font-bold text-[15px]">Digital Marketing</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Programming & Tech</h4>
+              <h4 className="font-bold text-[15px]">Programming & Tech</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Video & Animation</h4>
+              <h4 className="font-bold text-[15px]">Video & Animation</h4>
               <hr className='text-[#efeaea]'/>
-              <h4 className="font-bold">Writing & Translation</h4>
+              <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
             <button className={`bg-blue-600 text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
           </div>
         </div>
       </section>
 
-      <section className={`relative flex gap-[200px] bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
+      <section className={`relative flex gap-[100px] bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
         <div className="relative">
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
@@ -241,7 +241,7 @@ const freelancers = [
                 "Writing & Translation"
               ].map((category) => (
                 <React.Fragment key={category}>
-                  <h4 className="font-bold">{category}</h4>
+                  <h4 className="font-bold text-[15px]">{category}</h4>
                   <hr className="text-[#efeaea]" />
                 </React.Fragment>
               ))}
