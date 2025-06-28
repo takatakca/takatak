@@ -1,60 +1,89 @@
 "use client"
 import React, { useState } from 'react';
+import styles from "./page.module.css"
+import 'react-phone-input-2/lib/style.css'; // required for flags
+import PhoneInput from 'react-phone-input-2';
+
+
 export default function Signup() {
+  const handleChange = (value, data, event, formattedValue) => {
+    console.log('Phone:', value); // full number with code
+    console.log('Country:', data); // flag and country info
+  };
+
+
+
   return (
     <main className='flex flex-col items-center justify-center'>
       <div className='flex items-center'>
-        <h2 className="text-white text-2xl font-semibold text-center w-[10vw]">
+        <h2 className="text-white text-[30px] font-semibold text-start w-[9vw]">
           Here’s your first step with us!
         </h2>
         <img
             src="/img/signup.svg"
             alt="People illustration"
-            className="w-48 h-32 object-contain"
+            className="w-[200px] h-[200px] object-contain"
           />
       </div>
       <div>
          {/* Form */}
-          <form className="bg-white">
+          <form className={`bg-white flex flex-col gap-[20px] ${styles.form}`}>
             <input
               type="text"
               placeholder="First name"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className={` text-blue-800 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none  ${styles.fistname}`}
             />
             <input
               type="text"
               placeholder="Last name"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none  "
             />
             <input
               type="text"
               placeholder="Username"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none "
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+              className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none "
             />
             
-            <div className="">
-              <span className=" text-gray-500">+1</span>
+
+            {/* <div className={`${styles.phncountr}`}> */}
+      <PhoneInput
+        country={'us'}
+        enableSearch
+        enableAreaCodes
+        onChange={handleChange}
+        inputClass={styles.inpclass}
+        buttonClass={styles.flagDropdown}
+        containerClass={styles.phncountr}
+        inputProps={{
+          name: 'phone',
+          required: true,
+          autoFocus: false,
+        }}
+      />
+    {/* </div> */}
+            {/* <div className="flex">
+              <input type='tel' value='+'/>
               <input
                 type="tel"
                 placeholder="Phone number"
-                className="w-full border border-gray-300 rounded-lg px-10 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                className="w-full border border-gray-300 rounded-lg px-10 py-2 focus:outline-none "
               />
-            </div>
+            </div> */}
 
             <button
               type="submit"
-              className="w-full bg-teal-500 text-white font-semibold py-2 rounded-full hover:bg-teal-600 transition"
+              className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-teal-600 transition ${styles.btn}`}
             >
               Register
             </button>
           </form>
 
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className={`text-center text-sm text-[white] `}>
             Already have an account?
           </p>
       </div>

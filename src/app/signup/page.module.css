@@ -1,0 +1,20 @@
+.form{
+    padding: 20px;
+    border-radius: 10px;
+}
+.form input{
+    padding: 10px 10px;
+    border-width: 0 0 1px;
+    color: #193cb8;
+    width: 25vw;
+}
+.btn{
+    padding: 10px;
+}
+.inpclass {
+    width: 100% !important;
+    padding: 10px 14px 10px 50px !important; /* room for flag */
+    border: 1px solid #d1d5db !important; /* gray-300 */
+    border-radius: 0.5rem !important; /* rounded-lg */
+    font-size: 1rem;
+}

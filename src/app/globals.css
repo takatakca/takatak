@@ -15,6 +15,8 @@ body{
   color: #bbb;
 }
 
+
+
 .Smenu{
   padding: 10px 30px;
 }
@@ -147,6 +149,33 @@ a{
     transform: translateX(-40px);
   }
 }
+
+
+/* {country dropdown in sign up page } */
+.country-list {
+  border: 1px solid #d1d5db;
+  border-radius: 10px !important;
+  
+  
+}
+.country-list input{
+  width: 13vw !important;
+  padding: 8px 10px !important;
+}
+.country {
+  padding: 9px 20px !important;
+  font-size: 16px;
+  cursor: pointer;
+  /* padding-left: 20px !important; */
+  
+}
+
+.country:hover,
+.country.highlight {
+  background-color: #193cb8 !important;
+  color: white !important;
+}
+
 
 
 
