@@ -159,12 +159,12 @@ a{
   
 }
 .country-list input{
-  width: 13vw !important;
+  width: 17vw !important;
   padding: 8px 10px !important;
 }
 .country {
   padding: 9px 20px !important;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   /* padding-left: 20px !important; */
   
@@ -172,7 +172,7 @@ a{
 
 .country:hover,
 .country.highlight {
-  background-color: #193cb8 !important;
+  background-color: #1d4ed8 !important;
   color: white !important;
 }
 

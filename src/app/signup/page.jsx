@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
 import styles from "./page.module.css"
 import 'react-phone-input-2/lib/style.css'; // required for flags
 import PhoneInput from 'react-phone-input-2';
@@ -14,9 +15,9 @@ export default function Signup() {
 
 
   return (
-    <main className='flex flex-col items-center justify-center'>
+    <main className={`flex flex-col items-center justify-center min-h-screen ${styles.main}`}>
       <div className='flex items-center'>
-        <h2 className="text-white text-[30px] font-semibold text-start w-[9vw]">
+        <h2 className="text-white text-[30px] font-semibold text-start w-[10vw]">
           Here’s your first step with us!
         </h2>
         <img
@@ -25,7 +26,7 @@ export default function Signup() {
             className="w-[200px] h-[200px] object-contain"
           />
       </div>
-      <div>
+      <div className='flex flex-col gap-[30px] items-center'>
          {/* Form */}
           <form className={`bg-white flex flex-col gap-[20px] ${styles.form}`}>
             <input
@@ -50,42 +51,34 @@ export default function Signup() {
             />
             
 
-            {/* <div className={`${styles.phncountr}`}> */}
-      <PhoneInput
-        country={'us'}
-        enableSearch
-        enableAreaCodes
-        onChange={handleChange}
-        inputClass={styles.inpclass}
-        buttonClass={styles.flagDropdown}
-        containerClass={styles.phncountr}
-        inputProps={{
-          name: 'phone',
-          required: true,
-          autoFocus: false,
-        }}
-      />
-    {/* </div> */}
-            {/* <div className="flex">
-              <input type='tel' value='+'/>
-              <input
-                type="tel"
-                placeholder="Phone number"
-                className="w-full border border-gray-300 rounded-lg px-10 py-2 focus:outline-none "
-              />
-            </div> */}
+            <PhoneInput
+              country={'us'}
+              enableSearch
+              enableAreaCodes
+              onChange={handleChange}
+              inputClass={styles.inpclass}
+              buttonClass={styles.flagDropdown}
+              containerClass={styles.phncountr}
+              inputProps={{
+                name: 'phone',
+                required: true,
+                autoFocus: false,
+              }}
+            />
 
             <button
               type="submit"
-              className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-teal-600 transition ${styles.btn}`}
+              className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}
             >
               Register
             </button>
           </form>
 
-          <p className={`text-center text-sm text-[white] `}>
-            Already have an account?
-          </p>
+          <div className='flex items-center gap-[10px] w-full justify-center'>
+            <hr className='w-[5vw]'/>
+            <p className={`text-center text-sm `}> Already have an account? <Link href="/login"> <span className='text-[white]'>Login</span></Link></p>
+            <hr className='w-[5vw]'/>
+          </div>
       </div>
     </main>
   );
