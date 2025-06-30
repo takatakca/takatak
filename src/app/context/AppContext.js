@@ -23,9 +23,22 @@ export const AppProvider = ({ children }) => {
         }
     };
 
+    const login = async (loginData) => {
+    setLoading(true);
+    try {
+      const res = await axios.post('https://tak-q7r0.onrender.com/login', loginData);
+      setUser(res.data.user);
+      return res.data;
+    } catch (err) {
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
 
     return (
-    <AppContext.Provider value={{ user, loading, signup, }}>
+    <AppContext.Provider value={{ user, loading, signup, login}}>
       {children}
     </AppContext.Provider>
   );

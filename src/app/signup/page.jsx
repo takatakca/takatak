@@ -15,8 +15,8 @@ export default function Signup() {
 
   const {signup, loading} = useContext(AppContext);
   const [form, setForm] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     username: "",
     email: "",
     phone: ""
@@ -25,39 +25,29 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("buttn pressed");
     
 
-    if (!form.firstname || !form.lastname || !form.username || !form.email || !form.phone) {
+    if (!form.firstName || !form.lastName || !form.username || !form.email || !form.phone) {
       console.log("All fields are required");
       
     toast.error("All fields are required", { position: "top-center" });
     return;
   }
-  console.log("Form before submit:", form);
     try {
       const res = await signup(form);
+      console.log(res.response?.data?.message);
       toast.success("Signed up successfully!", { position: "top-center" });
-      console.log(res);
-      router.push('/login');
+      router.push('/otp');
     } catch (err) {
-       let errorMsg = "Something went wrong";
-
-        // Check if it's an Axios-style error
-        if (err?.response?.data) {
-          errorMsg = err.response.data.error || err.response.data.message || errorMsg;
-        } else if (err?.message) {
-          errorMsg = err.message;
-        }
-
-        console.error("Signup error:", errorMsg);
-        toast.error(errorMsg, { position: "top-center" });
+       console.log(err)
+       toast.error(err, { position: "top-center" });
     }
   };
 
 
   return (
     <main className={`flex flex-col items-center justify-center min-h-screen ${styles.main}`}>
+       <ToastContainer />
       <div className='flex items-center'>
         <h2 className="text-white text-[30px] font-semibold text-start w-[10vw]">
           Here’s your first step with us!
@@ -72,15 +62,15 @@ export default function Signup() {
          {/* Form */}
           <form className={`bg-[white] flex flex-col gap-[20px] ${styles.form}`} onSubmit={handleSubmit}>
             <input
-              value={form.firstname}
-              onChange={e => setForm({ ...form, firstname: e.target.value })}
+              value={form.firstName}
+              onChange={e => setForm({ ...form, firstName: e.target.value })}
               type="text"
               placeholder="First name"
               className={` text-blue-800 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none  ${styles.fistname}`}
             />
             <input
-              value={form.lastname}
-              onChange={e => setForm({ ...form, lastname: e.target.value })}
+              value={form.lastName}
+              onChange={e => setForm({ ...form, lastName: e.target.value })}
               type="text"
               placeholder="Last name"
               className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none  "
