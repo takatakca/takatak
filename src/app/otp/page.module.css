@@ -5,3 +5,21 @@
 .log{
     padding: 30px;
 }
+.btn{
+    padding: 10px;
+}
+.whts{
+    padding: 6px;
+    background-color: rgb(22, 180, 22);
+    border-radius: 50px;
+}
+.einput{
+    padding: 10px 10px;
+    border-width: 0 0 1px;
+    border-color: black;
+    color: #193cb8;
+    width: 25vw;
+}
+.bt{
+    padding: 10px;
+}

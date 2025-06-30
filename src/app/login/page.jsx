@@ -50,7 +50,7 @@ export default function Login() {
             <Link href="/otp">
             <button
             type="submit"
-            className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}>
+            className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}>
               Login
             </button>
             </Link>

@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import { AppProvider } from "./context/AppContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
       <body
         className={`bg-gradient-to-b from-blue-900 to-blue-700 min-h-screen text-white hicontainer ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <AppProvider>
         <div className="container">
           <div>
             <Navbar />
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
           </div>
           <Footer />
         </div>
+        </AppProvider>
       </body>
     </html>
   );

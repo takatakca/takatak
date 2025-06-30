@@ -9,8 +9,12 @@
 .form input{
     padding: 10px 10px;
     border-width: 0 0 1px;
+    border-color: black;
     color: #193cb8;
     width: 25vw;
+}
+.btn{
+    padding: 10px;
 }
 
 .inpclass {
