@@ -12,8 +12,11 @@ import { AppContext } from '../context/AppContext';
 
 export default function Signup() {
   const router = useRouter();
+  
 
   const {signup, loading} = useContext(AppContext);
+  const [load, setLoad] = useState(false);
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -32,15 +35,21 @@ export default function Signup() {
       
     toast.error("All fields are required", { position: "top-center" });
     return;
+    
   }
+  setLoad(true)
     try {
+      setLoad(false)
       const res = await signup(form);
       console.log(res.response?.data?.message);
-      toast.success("Signed up successfully!", { position: "top-center" });
+      toast.success("Otp sent to your number!", { position: "top-center" });
       router.push('/otp');
     } catch (err) {
+      setLoad(false)
        console.log(err)
-       toast.error(err, { position: "top-center" });
+       const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
+       console.log(errorMessage);
+       toast.error(errorMessage, { position: "top-center" });
     }
   };
 
@@ -111,9 +120,9 @@ export default function Signup() {
             <button
               type="submit"
               disabled={loading}
-              className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}
+              className={`w-full bg-[#01A2D9] text-white font-semibold py-2 rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}  ${loading ? 'bg-blue-500 animate-pulse' : 'bg-[#01A2D9]'}`}
             >
-              Register
+              {loading? "sending code...":"Register"}
             </button>
           </form>
 

@@ -15,27 +15,30 @@ import { AppContext } from '../context/AppContext';
 export default function Login() {
   const router = useRouter();
   const {login, loading} = useContext(AppContext);
+  const [load, setLoad] = useState(false);
   const [loguser, setLoguser] = useState({ phone: "" });
 
   const handleSubmit = async () => {
     if ( !loguser.phone) {
-        console.log("All fields are required");  
-      toast.error("All fields are required", { position: "top-center" });
+      toast.error("Number fields is required", { position: "top-center" });
       return;
     }
+    setLoad(true)
       try {
+        setLoad(false);
         const res = await login(loguser)
         console.log(res.response?.data?.message);
         
-        toast.success("logged in successfully!", { position: "top-center" });
+        toast.success("Otp sent to your number!", { position: "top-center" });
+        sessionStorage.setItem("verifyPhone", loguser.phone);
         router.push('/otp');
       } catch (err) {
-        //  console.error("Full error response:", err.response?.data); 
-
-        const actualError =
-          err.response?.data?.error || "An unknown error occurred";
-
-        toast.error(actualError, { position: "top-center" });
+        setLoad(false)
+          console.log(err)
+          console.error("Full error response:", err.response?.data); 
+          const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
+          console.log(errorMessage);
+          toast.error(errorMessage, { position: "top-center" });
       }
   }
 
@@ -77,8 +80,8 @@ export default function Login() {
             <button
             onClick={handleSubmit}
             disabled={loading}
-            className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}>
-              Login
+            className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full hover:bg-[#1d4ed8] transition ${styles.btn} ${loading ? 'bg-blue-500 animate-pulse' : 'bg-[#01A2D9]'}`}>
+              {loading? "sending code...":"Login"}
             </button>
 
             <div className='flex items-center w-full justify-center gap-[10px]'>

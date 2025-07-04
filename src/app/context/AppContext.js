@@ -36,9 +36,22 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  const verifyotp = async (verifyotpData)=>{
+    setLoading(true);
+    try {
+      const res = await axios.post('https://tak-q7r0.onrender.com/verify-otp', verifyotpData);
+      setUser(res.data.user);
+      return res.data;
+    } catch (err) {
+      throw err;
+    }finally{
+      setLoading(false);
+    }
+  }
+
 
     return (
-    <AppContext.Provider value={{ user, loading, signup, login}}>
+    <AppContext.Provider value={{ user, loading, signup, login, verifyotp}}>
       {children}
     </AppContext.Provider>
   );

@@ -1,16 +1,38 @@
 "use client"
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import Link from 'next/link';
 import styles from "./page.module.css"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FaWhatsapp } from "react-icons/fa";
+import { AppContext } from '../context/AppContext';
+import { useRouter } from 'next/navigation';
 
 
 export default function Otp() {
-
+  const router = useRouter();
   const inputRefs = useRef([]);
   const [otp, setOtp] = useState(new Array(6).fill(""));
   const [step, setStep] = useState("otp-phone");
   const [email, setEmail] = useState("");
+  
+    const {verifyotp, loading} = useContext(AppContext);
+    const [load, setLoad] = useState(false);
+    const [loguser, setLoguser] = useState({ 
+      otp: "",
+      phone: "",
+      email: ""
+    });
+
+    useEffect(() => {
+      const phone = sessionStorage.getItem("verifyPhone");
+      const email = sessionStorage.getItem("verifyEmail");
+      setLoguser(prev => ({
+        ...prev,
+        phone: phone || "",
+        email: email || "",
+      }));
+    }, []);
 
 
 
@@ -45,8 +67,36 @@ export default function Otp() {
   };
 
 
+  const handleSubmit = async(e)=>{
+    e.preventDefault();
+    if(!otp.join("")){
+      toast.error("Enter code that was sent", { position: "top-center" });
+          return;
+    }
+    setLoad(true)
+    
+    try {
+      setLoad(false)
+      const res = await verifyotp({ ...loguser, otp: otp.join('') })
+      toast.success("User Active", { position: "top-center" });
+      sessionStorage.removeItem("verifyPhone");
+      sessionStorage.removeItem("verifyEmail");
+      router.push('/dashboard');
+      
+
+    } 
+    catch (err) {
+      const errorMessage = err?.response?.data?.error ||  err?.response?.data?.message ||  "An unexpected error occurred";
+
+      console.log("Full error:", err.response?.data);
+      toast.error(errorMessage, { position: "top-center" });
+    }finally {
+      setLoad(false);
+    }
+  };
     return (
         <main className={` flex flex-col items-center justify-center min-h-screen ${styles.main}`}>
+          <ToastContainer />
           <div className={`bg-[white] rounded-[10px] ${styles.log}`}>
             {step === "otp-phone" && (
               <div>
@@ -66,7 +116,7 @@ export default function Otp() {
                   <div className="flex items-center gap-2">
                     <p className={`${styles.whts}`}><FaWhatsapp className='text-[white]'/></p>
                     {/* <img src="/whatsapp.png" alt="WhatsApp" className="w-6 h-6" /> */}
-                    <span className="text-lg text-[black] font-semibold">+1 234 567 8900</span>
+                    <span className="text-lg text-[black] font-semibold">{loguser.phone || "+1 234 567 8900"}</span>
                   </div>
 
                   {/* OTP input boxes */}
@@ -86,14 +136,15 @@ export default function Otp() {
                     ))}
                   </form>
 
-                  <Link href="/mailotp">
+                  {/* <Link href="/mailotp"> */}
                   <button
-                    type="submit"
-                    className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full hover:bg-[#1d4ed8] transition ${styles.btn}`}
+                    onClick={handleSubmit}
+                    type="button"
+                    className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full hover:bg-[#1d4ed8] transition ${styles.btn} ${loading ? 'animate-pulse' : ''}`}
                   >
-                    Verify
+                    {loading || load ? "Verifying..." : "Verify"}
                   </button>
-                  </Link>
+                  {/* </Link> */}
 
                   <div className='flex flex-col items-center gap-[25px]'>
                     <p className="text-[18px] text-gray-700 font-bold cursor-pointer hover:underline">Resend one-time password</p>
@@ -152,8 +203,11 @@ export default function Otp() {
                   </form>
 
                   <Link href="/mailotp">
-                    <button className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full py-2 hover:bg-[#1d4ed8] transition  ${styles.bt}`}>
-                      Verify
+                    <button 
+                     type="submit"
+                     disabled={loading}
+                    className={`w-full bg-[#01A2D9] text-white font-semibold rounded-full py-2 hover:bg-[#1d4ed8] transition  ${styles.bt}  ${loading ? 'bg-blue-500 animate-pulse' : 'bg-[#01A2D9]'}`}>
+                      {loading? "Verifying...":"Verify"}
                     </button>
                   </Link>
 
