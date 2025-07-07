@@ -27,7 +27,9 @@ export default function Login() {
       try {
         setLoad(false);
         const res = await login(loguser)
-        console.log(res.response?.data?.message);
+        console.log(res);
+        
+        // console.log(res.response?.data?.message);
         
         toast.success("Otp sent to your number!", { position: "top-center" });
         sessionStorage.setItem("verifyPhone", loguser.phone);

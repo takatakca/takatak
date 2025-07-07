@@ -28,6 +28,7 @@ export const AppProvider = ({ children }) => {
     try {
       const res = await axios.post('https://tak-q7r0.onrender.com/login', loginData);
       setUser(res.data.user);
+      console.log("Login success:", res.data);
       return res.data;
     } catch (err) {
       throw err;
@@ -49,9 +50,23 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  const resendcode = async(data)=>{
+    try {
+      const res = await axios.post('https://tak-q7r0.onrender.com/resend-code', data);
+      if (res.data.user) 
+        setUser(res.data.user);
+      console.log("Resend success:", res.data);
+      return res.data;
+    } catch (err) {
+      throw err;
+    }finally{
+      setLoading(false);
+    }
+  }
+
 
     return (
-    <AppContext.Provider value={{ user, loading, signup, login, verifyotp}}>
+    <AppContext.Provider value={{ user, loading, signup, login, verifyotp, resendcode}}>
       {children}
     </AppContext.Provider>
   );

@@ -41,7 +41,9 @@ export default function Signup() {
     try {
       setLoad(false)
       const res = await signup(form);
-      console.log(res.response?.data?.message);
+      console.log(res);
+      
+      // console.log(res.response?.data?.message);
       toast.success("Otp sent to your number!", { position: "top-center" });
       router.push('/otp');
     } catch (err) {
