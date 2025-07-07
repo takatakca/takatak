@@ -108,23 +108,25 @@ export default function Otp() {
       toast.error("Too many attempts. Try again later.");
       return;
     }
-  
-    const joinedOtp = otp.join("");
-  
-    if (joinedOtp.length !== 6) {
+
+    if (otp.some(digit => digit === "")) {
       toast.error("Please enter all 6 digits", { position: "top-center" });
       return;
     }
-  
+
+    const joinedOtp = otp.join("");
     const finalData = { ...loguser, otp: joinedOtp };
-    console.log("✅ Final payload to backend:", finalData);
+    // console.log("Final payload to backend:", finalData);
+    
   
     setLoad(true);
     setAttempts(prev => prev + 1);
   
     try {
-      const res = await verifyotp(finalData);  // ✅ Use the `finalData` here
-      console.log("✅ OTP verified:", res);
+      const res = await verifyotp(finalData);
+      // console.log(" OTP verified:", res);
+      // console.log(" Final payload to backend:", res.message);
+      // console.log(" Final payload to backend:", res.token);
   
       toast.success("User Currently Active", { position: "top-center" });
       sessionStorage.removeItem("verifyPhone");
@@ -133,7 +135,7 @@ export default function Otp() {
   
       router.push('/dashboard');
     } catch (err) {
-      console.log("❌ Full error:", err?.response?.data);
+      console.log("Full error:", err?.response?.data);
       const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "An unexpected error occurred";
       toast.error(errorMessage, { position: "top-center" });
     } finally {
@@ -151,17 +153,18 @@ export default function Otp() {
     const updatedOtp = [...otp];
     updatedOtp[idx] = val;
     setOtp(updatedOtp);
-
     if (val && idx < 5) {
       inputRefs.current[idx + 1].focus();
-    }
-
-    if (updatedOtp.every(d => d !== "")) {
-      handleSubmit(new Event('submit'));
     }
     
     
   };
+  useEffect(() => {
+  if (otp.every(d => d !== "") && otp.length === 6) {
+    handleSubmit(new Event('submit'));
+  }
+}, [otp]);
+
 
   const handleMailSubmit = async(e)=>{
     e.preventDefault();
