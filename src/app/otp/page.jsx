@@ -5,6 +5,7 @@ import styles from "./page.module.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { AppContext } from '../context/AppContext';
 import { useRouter } from 'next/navigation';
 
@@ -135,7 +136,7 @@ export default function Otp() {
   
       router.push('/dashboard');
     } catch (err) {
-      console.log("Full error:", err?.response?.data);
+      // console.log("Full error:", err?.response?.data);
       const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "An unexpected error occurred";
       toast.error(errorMessage, { position: "top-center" });
     } finally {
@@ -176,8 +177,8 @@ export default function Otp() {
     setAttempts(0);
     try {
       const res = await login(loguser)
-      console.log(res);
-      console.log("Resend success:", res.message); 
+      // console.log(res);
+      // console.log("Resend success:", res.message); 
       // console.log(res.response?.data?.message);
       toast.success("Otp sent to your email!", { position: "top-center" });
       sessionStorage.setItem("verifyEmail", loguser.email);
@@ -185,9 +186,9 @@ export default function Otp() {
       setStep("otp-email");
     } catch (err) {
       // console.log(err)
-      console.error("Full error response:", err); 
+      // console.error("Full error response:", err); 
       const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
-      console.log(errorMessage);
+      // console.log(errorMessage);
       toast.error(errorMessage, { position: "top-center" });
     }finally{
         setLoad(false);
@@ -199,28 +200,24 @@ export default function Otp() {
     if (!canResend) return;
 
     if(!loguser.email && !loguser.phone){
-      toast.error("Enter email or phone number", { position: "top-center" });
+      toast.error("email or phone number is not found", { position: "top-center" });
       return;
     }
-    // send code logic
-    setCanResend(false);
-    setTimeout(() => setCanResend(true), 60000); // 1 minute
-    // toast.success("OTP has been resent!", { position: "top-center" });
     
     try {
+      setCanResend(false); // disable right away
+      setCountdown(60); // start timer
       const res = await resendcode(loguser);
-      console.log(res);
-      console.log("Resend success:", res.message); 
-      // console.log(res.response?.data?.message);
       toast.success(res.message || "OTP has been resent!", { position: "top-center" });
     } catch (err) {
-      console.log("full error", err);
       
       const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "Something went wrong.";
-toast.error(errorMessage, { position: "top-center" });
+      toast.error(errorMessage, { position: "top-center" });
 
-    }
+    }finally {
+    setTimeout(() => setCanResend(true), 60000); // re-enable after 60s
   }
+  };
   
   // Styling for input box based on whether it has a digit
   const getOtpInputClass = (val) => 
@@ -244,14 +241,24 @@ toast.error(errorMessage, { position: "top-center" });
                         className="w-[200px] h-[200px] object-contain"
                     />
                 </div>
-
-                
                   <div className='flex flex-col gap-[25px]'>
-                  <div className="flex items-center gap-2">
+                  {loguser?.phone ?(
+                    <div className="flex items-center gap-2">
                     <p className={`${styles.whts}`}><FaWhatsapp className='text-[white]'/></p>
-                    {/* <img src="/whatsapp.png" alt="WhatsApp" className="w-6 h-6" /> */}
-                    <span className="text-lg text-[black] font-semibold">{ loguser.phone || "Your Number"}</span>
+                    <span className="text-lg text-[black] font-semibold">{ loguser.phone}</span>
                   </div>
+                  ) : loguser?.email ? (
+                    <div className="flex items-center gap-2">
+                      <MdEmail className="text-blue-500 text-xl" />
+                      <span className="text-lg text-black font-semibold">
+                        {loguser.email}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-lg text-red-600 font-semibold">
+                      No Contact Info Found. Please Return to Login Page.
+                    </span>
+                  )}
 
                   {/* OTP input boxes */}
                   <form 
@@ -295,7 +302,7 @@ toast.error(errorMessage, { position: "top-center" });
                     <button 
                     onClick={resendotp}
                     className="text-[18px] text-gray-700 font-bold cursor-pointer hover:underline" 
-                    >{canResend ? 'Resend one-time password' : 'Please wait...'}</button>
+                    >{canResend ? 'Resend one-time password' : `Please wait... ${countdown}s`}</button>
                     <button className="text-[18px] text-gray-700 font-bold cursor-pointer hover:underline"  onClick={() =>{ setAttempts(0); setStep("enter-email")}}>Receive code with mail</button>
                   </div>
                 </div>
@@ -374,7 +381,6 @@ toast.error(errorMessage, { position: "top-center" });
                   disabled={!canResend}
                     className="text-sm text-gray-700 font-medium text-center mt-4 cursor-pointer hover:underline"
                     onClick={() => {
-                      // if (!canResend) return;
                       resendotp();
                     }}
                   >

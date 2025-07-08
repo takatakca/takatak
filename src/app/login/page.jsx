@@ -33,6 +33,7 @@ export default function Login() {
         
         toast.success("Otp sent to your number!", { position: "top-center" });
         sessionStorage.setItem("verifyPhone", loguser.phone);
+        console.log(sessionStorage.setItem("verifyPhone", loguser.phone))
         router.push('/otp');
       } catch (err) {
         setLoad(false)
