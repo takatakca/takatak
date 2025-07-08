@@ -339,9 +339,26 @@ export default function Otp() {
               )}
               {step === "otp-email" && (
                 <div className='flex flex-col gap-[30px]'>
-                  <h2 className="text-black text-[22px] font-semibold mb-4">
-                    Enter the code sent to <br /> <span className="text-blue-600">{ loguser.email || "Your Email"}</span>
-                  </h2>
+
+                  {loguser?.email ? (
+                    <div className="flex flex-col items-center gap-2">
+                      <h2 className="text-black text-[22px] font-semibold mb-4">
+                        Enter the code sent to
+                      </h2>
+                      <div className='flex gap-[10px]'>
+                        <MdEmail className="text-blue-500 text-xl" />
+                        <span className="text-lg text-black font-semibold">
+                          {loguser.email}
+                        </span>
+
+                      </div>
+                    </div>
+                  ):(
+                    <span className="text-lg text-red-600 font-semibold">
+                      No Contact Info Found. Please Return to Login Page.
+                    </span>
+                  )}
+                  
 
                   <form 
                   onSubmit={handleSubmit}
