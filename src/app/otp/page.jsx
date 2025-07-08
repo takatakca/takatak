@@ -203,7 +203,7 @@ export default function Otp() {
       toast.error("email or phone number is not found", { position: "top-center" });
       return;
     }
-    
+    setLoad(true);
     try {
       setCanResend(false); // disable right away
       setCountdown(60); // start timer
@@ -216,6 +216,7 @@ export default function Otp() {
 
     }finally {
     setTimeout(() => setCanResend(true), 60000); // re-enable after 60s
+    setLoad(false)
   }
   };
   
@@ -384,7 +385,7 @@ export default function Otp() {
                       resendotp();
                     }}
                   >
-                    {canResend ? "Resend code to email" : `Resend in ${countdown}s`}
+                    {load ? "Sending..." : (canResend ? "Resend code to email" : `Resend in ${countdown}s`)}
                   </p>
                 </div>
               )}
