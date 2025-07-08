@@ -42,6 +42,7 @@ export default function Signup() {
       setLoad(false)
       const res = await signup(form);
       console.log(res);
+      sessionStorage.setItem("verifyPhone", form.phone);
       
       // console.log(res.response?.data?.message);
       toast.success("Otp sent to your number!", { position: "top-center" });
