@@ -67,3 +67,25 @@
     scrollbar-width: none;     /* Firefox */
   }
   
+
+  @media screen and (max-width:950px){
+    .gradient{
+        padding: 20px 15px 50px 15px;
+    }
+    .serv{
+        width: 100%;
+    }
+    .servic{
+        padding: 0px;
+        gap: 30px;
+    }
+    .dscm{
+        padding: 40px 20px;
+    }
+    .detail{
+        width: 100%;
+    }
+    .market{
+        width: 100%;
+    }
+  }

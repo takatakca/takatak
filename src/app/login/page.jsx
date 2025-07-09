@@ -47,17 +47,19 @@ export default function Login() {
 
 
   return (
-   <main className={` flex flex-col items-center justify-center min-h-screen ${styles.main}`}>
+   <main className={` flex flex-col w-full items-center justify-center min-h-screen ${styles.main}`}>
     <ToastContainer />
       <div className={`bg-[white] rounded-[10px] ${styles.log}`}>
-        <div className='flex items-center'>
-          <h2 className="text-black text-[30px] font-semibold text-start w-[10vw]">
+        <div className={`flex  items-center justify-between ${styles.spc}`}>
+          <Link href='/otp'>
+          <h2 className="text-black lg:text-[30px] text-[20px] font-semibold text-start lg:w-[10vw]">
             Already have an Account?
           </h2>
+          </Link>
           <img
               src="/img/signup.svg"
               alt="People illustration"
-              className="w-[200px] h-[200px] object-contain"
+              className="lg:w-[200px] lg:h-[200px] w-[150px] h-[150px] object-contain"
             />
         </div>
       

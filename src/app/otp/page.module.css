@@ -23,3 +23,9 @@
 .bt{
     padding: 10px;
 }
+
+@media screen and (max-width:950px) {
+    .einput{
+        width: 100%;
+    }
+}

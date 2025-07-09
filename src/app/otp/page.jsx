@@ -232,14 +232,14 @@ export default function Otp() {
           <div className={`bg-[white] rounded-[10px] ${styles.log}`}>
             {step === "otp-phone" && (
               <div>
-                <div className='flex items-center'>
-                    <h2 className="text-black text-[25px] font-semibold text-start w-[13vw]">
+                <div className={`flex  items-center justify-between`}>
+                    <h2 className="text-black lg:text-[25px] text-[20px] font-semibold text-start lg:w-[13vw]">
                         Please enter the one-time password
                     </h2>
                     <img
                         src="/img/signup.svg"
                         alt="People illustration"
-                        className="w-[200px] h-[200px] object-contain"
+                        className="lg:w-[200px] lg:h-[200px] w-[150px] h-[150px] object-contain"
                     />
                 </div>
                   <div className='flex flex-col gap-[25px]'>

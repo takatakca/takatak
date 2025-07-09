@@ -15,12 +15,31 @@
     background-color: #4ca8ea;
 }
 .signup{
-    display: flex;
-    align-items: center;
     border: 1.5px solid white;
     padding: 3px 20px;
     border-radius: 5px;
 }
 .signup:hover{
     background-color: #01A2D9;
+}
+
+@media screen and (max-width:950px) {
+    .login{
+        background-color: #01A2D9;
+        padding: 3px 20px;
+        border-radius: 5px;
+        text-align: center;
+        border: 1.5px solid white;
+    }
+    .signup{
+        background-color: #01A2D9;
+        text-align: center;
+        border: 1.5px solid white;
+        padding: 3px 20px;
+        border-radius: 5px;
+        margin: 20px 0px;
+    }
+    .more{
+        margin-left: 15px;
+    }
 }

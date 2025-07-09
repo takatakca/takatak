@@ -102,7 +102,11 @@ const Navbar = () => {
                     {/* Sidebar content */}
                     <nav className="space-y-4 text-[18px] navcont">
                         {links.map(link => (
-                            <div key={link.id}>
+                            
+                            <div 
+                            key={link.id}
+                            className={`${ link.title.toLowerCase() === "login" ? styles.login : link.title.toLowerCase() === "signup"  ? styles.signup  : link.title.toLowerCase() === "more" ? styles.more : "" }`}
+                            >
                                 {link.url ? (
                                     <Link
                                         href={link.url}
