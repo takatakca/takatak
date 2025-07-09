@@ -229,4 +229,7 @@ a{
 .country-list input{
   width: 55vw !important;
 }
+.country-list {
+  width: 70vw !important;
+}
 }

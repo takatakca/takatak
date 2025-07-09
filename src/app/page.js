@@ -174,7 +174,7 @@ const freelancers = [
           </div>
 
           {/* Duplicate Category box */}
-          <div className={`absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-10 ${styles.nextfrel}`}>
+          <div className={`lg:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-10 ${styles.nextfrel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -191,14 +191,14 @@ const freelancers = [
         </div>
       </section>
 
-      <section className={`relative flex  gap-[50px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
+      <section className={`lg:relative flex lg:flex-row flex-col gap-[50px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
         <div className="relative flex flex-col gap-[45px]">
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
 
           <div className='flex flex-col gap-[30px]'>
             <input className={`p-2 w-full rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
-            <div className="flex gap-[25px] ">
+            <div className="flex flex-wrap gap-[25px] ">
               {['Development', 'Design', 'Writing', 'Video'].map((tag) => (
                 <button key={tag} className={`bg-transparent rounded-full cursor-pointer border-[1.5px] border-[#b9b8b8] ${styles.tags} `}>
                   {tag}
@@ -220,7 +220,7 @@ const freelancers = [
                         className="w-[80px] h-[80px] object-cover rounded-full mx-auto relative z-10 shadow-[0_0_12px_4px_rgba(255,255,255,0.3)]"
                       />
                     </div>
-                    <p className="mt-2 font-semibold text-[15px] w-[12vw]">{user.name}</p>
+                    <p className="mt-2 font-semibold text-[15px] lg:w-[12vw]">{user.name}</p>
                     <p className="text-yellow-400">{'★'.repeat(user.rating)}</p>
                   </div>
                 ))}
@@ -228,11 +228,11 @@ const freelancers = [
 
           </div>
             {/* Right edge blur to hint scrollable */}
-            <div className="pointer-events-none absolute top-[200px] right-0 h-[15vw] w-10 bg-gradient-to-l from-blue-800 to-transparent z-10" />
+            <div className="lg:pointer-events-none lg:absolute lg:top-[200px] lg:right-0 lg:h-[15vw] lg:w-10 lg:bg-gradient-to-l from-blue-800 to-transparent z-10" />
         </div>
 
         {/* Right Column */}
-        <div>
+        <div className=''>
           <h1>FMarketplace</h1>
           <div className={`bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] space-y-2 flex flex-col gap-[40px] ${styles.fmarketplc}`}>
             <div className="flex flex-col gap-[10px]">

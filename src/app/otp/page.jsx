@@ -345,7 +345,7 @@ export default function Otp() {
                       <h2 className="text-black text-[22px] font-semibold mb-4">
                         Enter the code sent to
                       </h2>
-                      <div className='flex gap-[10px]'>
+                      <div className='flex gap-[10px] items-center'>
                         <MdEmail className="text-blue-500 text-xl" />
                         <span className="text-lg text-black font-semibold">
                           {loguser.email}
