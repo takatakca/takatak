@@ -31,7 +31,6 @@ export default function Signup() {
     
 
     if (!form.firstName || !form.lastName || !form.username || !form.email || !form.phone) {
-      console.log("All fields are required");
       
     toast.error("All fields are required", { position: "top-center" });
     return;
@@ -40,18 +39,20 @@ export default function Signup() {
   setLoad(true)
     try {
       setLoad(false)
-      const res = await signup(form);
-      console.log(res);
+      await signup(form);
       sessionStorage.setItem("verifyPhone", form.phone);
       
-      // console.log(res.response?.data?.message);
       toast.success("Otp sent to your number!", { position: "top-center" });
       router.push('/otp');
     } catch (err) {
       setLoad(false)
-       console.log(err)
-       const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
-       console.log(errorMessage);
+      //  const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
+      const errorMessage =
+        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
+        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
+        err?.message === 'Network Error'  // Axios network error
+          ? 'Network error. Please check your internet connection.'
+          : 'An unexpected error occurred';
        toast.error(errorMessage, { position: "top-center" });
     }
   };

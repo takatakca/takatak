@@ -117,7 +117,6 @@ export default function Otp() {
 
     const joinedOtp = otp.join("");
     const finalData = { ...loguser, otp: joinedOtp };
-    // console.log("Final payload to backend:", finalData);
     
   
     setLoad(true);
@@ -125,9 +124,7 @@ export default function Otp() {
   
     try {
       const res = await verifyotp(finalData);
-      // console.log(" OTP verified:", res);
-      // console.log(" Final payload to backend:", res.message);
-      // console.log(" Final payload to backend:", res.token);
+      sessionStorage.setItem("authToken", res.token)
   
       toast.success("User Currently Active", { position: "top-center" });
       sessionStorage.removeItem("verifyPhone");
@@ -136,8 +133,13 @@ export default function Otp() {
   
       router.push('/dashboard');
     } catch (err) {
-      // console.log("Full error:", err?.response?.data);
-      const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "An unexpected error occurred";
+      // const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "An unexpected error occurred";
+      const errorMessage =
+        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
+        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
+        err?.message === 'Network Error'  // Axios network error
+          ? 'Network error. Please check your internet connection.'
+          : 'An unexpected error occurred';
       toast.error(errorMessage, { position: "top-center" });
     } finally {
       setLoad(false);
@@ -176,19 +178,19 @@ export default function Otp() {
     setLoad(true)
     setAttempts(0);
     try {
-      const res = await login(loguser)
-      // console.log(res);
-      // console.log("Resend success:", res.message); 
-      // console.log(res.response?.data?.message);
+      await login(loguser)
       toast.success("Otp sent to your email!", { position: "top-center" });
       sessionStorage.setItem("verifyEmail", loguser.email);
       // router.push('/otp');
       setStep("otp-email");
     } catch (err) {
-      // console.log(err)
-      // console.error("Full error response:", err); 
-      const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
-      // console.log(errorMessage);
+      // const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
+      const errorMessage =
+        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
+        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
+        err?.message === 'Network Error'  // Axios network error
+          ? 'Network error. Please check your internet connection.'
+          : 'An unexpected error occurred';
       toast.error(errorMessage, { position: "top-center" });
     }finally{
         setLoad(false);
@@ -211,7 +213,13 @@ export default function Otp() {
       toast.success(res.message || "OTP has been resent!", { position: "top-center" });
     } catch (err) {
       
-      const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "Something went wrong.";
+      // const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "Something went wrong.";
+      const errorMessage =
+        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
+        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
+        err?.message === 'Network Error'  // Axios network error
+          ? 'Network error. Please check your internet connection.'
+          : 'An unexpected error occurred';
       toast.error(errorMessage, { position: "top-center" });
 
     }finally {

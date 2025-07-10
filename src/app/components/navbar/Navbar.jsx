@@ -1,6 +1,6 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./page.module.css";
 import { Menu, X } from 'lucide-react'
 
@@ -34,6 +34,29 @@ const links = [
 const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(()=>{
+        const token = sessionStorage.getItem("authToken");
+        setIsLoggedIn(!!token); // true if token exists
+
+        const handleStorageChange = () => {
+            const token = sessionStorage.getItem("authToken");
+            setIsLoggedIn(!!token);
+        }
+        
+        // Listen to changes (optional for real-time sync across tabs)
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
+    }, []);
+
+    const filteredLinks = links.filter(link => {
+        if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
+          return false; // remove login/signup if user is logged in
+        }
+        return true;
+      });
+      
 
     return (
         <div className={`${styles.gradient} text-white rounded-t-[20px]`}>
@@ -52,7 +75,7 @@ const Navbar = () => {
 
                 {/* Desktop menu */}
                 <div className='hidden lg:flex gap-6 relative'>
-                    {links.map(pgs => (
+                    {filteredLinks.map(pgs => (
                         <div
                             key={pgs.id}
                             className={`relative flex items-center ${ pgs.title.toLowerCase() === "login" ? styles.login : pgs.title.toLowerCase() === "signup"  ? styles.signup  : "" }`}
@@ -101,7 +124,7 @@ const Navbar = () => {
 
                     {/* Sidebar content */}
                     <nav className="space-y-4 text-[18px] navcont">
-                        {links.map(link => (
+                        {filteredLinks.map(link => (
                             
                             <div 
                             key={link.id}
