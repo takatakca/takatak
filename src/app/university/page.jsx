@@ -5,6 +5,7 @@ import {
   FaCalendarAlt, FaTrophy, FaUserShield, FaUserCircle,
   FaHourglassHalf, FaHeart, FaFileAlt, FaFileInvoiceDollar
 } from "react-icons/fa";
+import ProtectedRoute from "../components/ProtectedRoute";
 import Activities from '../components/Activities';
 import Calendar from '../components/Calendar';
 import Summary from '../components/Summary';
@@ -56,6 +57,7 @@ export default function University() {
   };
 
   return (
+    <ProtectedRoute>
     <div className="flex flex-col gap-[15px] lg:flex-row min-h-screen bg-gray-100 text-black">
       {/* Sidebar */}
       <aside className="w-full lg:w-[20vw] bg-white shadow">
@@ -80,6 +82,7 @@ export default function University() {
         {renderContent()}
       </main>
     </div>
+    </ProtectedRoute>
   );
 }
 

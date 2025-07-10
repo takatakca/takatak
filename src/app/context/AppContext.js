@@ -64,9 +64,23 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  const dashboard = async(data)=>{
+    try {
+      const res = await axios.get('https://tak-q7r0.onrender.com/dashboard', data); 
+      if (res.data.user) 
+        setUser(res.data.user);
+      return res.data;
+    } catch (err) {
+      throw err;
+    } finally {
+      setLoading(false);
+      
+    }
+  }
+
 
     return (
-    <AppContext.Provider value={{ user, loading, signup, login, verifyotp, resendcode}}>
+    <AppContext.Provider value={{ user, loading, signup, login, verifyotp, resendcode, dashboard}}>
       {children}
     </AppContext.Provider>
   );
