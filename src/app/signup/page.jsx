@@ -36,6 +36,11 @@ export default function Signup() {
     return;
     
   }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(form.email)) {
+    toast.error("Please enter a valid email address", { position: "top-center" });
+    return;
+  }
   setLoad(true)
     try {
       setLoad(false)
@@ -46,13 +51,12 @@ export default function Signup() {
       router.push('/otp');
     } catch (err) {
       setLoad(false)
-      //  const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
       const errorMessage =
-        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
-        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
-        err?.message === 'Network Error'  // Axios network error
+        err?.response?.data?.error ||
+        err?.response?.data?.message ||
+        (err?.message === 'Network Error'
           ? 'Network error. Please check your internet connection.'
-          : 'An unexpected error occurred';
+          : 'An unexpected error occurred');
        toast.error(errorMessage, { position: "top-center" });
     }
   };
@@ -73,7 +77,7 @@ export default function Signup() {
       </div>
       <div className={`flex flex-col gap-[30px] items-center   ${styles.formdv}`}>
          {/* Form */}
-          <form className={`bg-[white] flex flex-col gap-[20px] ${styles.form}`} onSubmit={handleSubmit}>
+          <form className={`bg-[white] flex flex-col gap-[20px] ${styles.form}`} onSubmit={handleSubmit} >
             <input
               value={form.firstName}
               onChange={e => setForm({ ...form, firstName: e.target.value })}

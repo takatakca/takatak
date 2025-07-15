@@ -35,11 +35,11 @@ export default function Login() {
       } catch (err) {
         setLoad(false)
         const errorMessage =
-        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
-        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
-        err?.message === 'Network Error'  // Axios network error
-          ? 'Network error. Please check your internet connection.'
-          : 'An unexpected error occurred';
+          err?.response?.data?.error ||
+          err?.response?.data?.message ||
+          (err?.message === 'Network Error'
+            ? 'Network error. Please check your internet connection.'
+            : 'An unexpected error occurred');
           toast.error(errorMessage, { position: "top-center" });
       }
   }
