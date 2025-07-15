@@ -133,13 +133,12 @@ export default function Otp() {
   
       router.push('/dashboard');
     } catch (err) {
-      // const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "An unexpected error occurred";
       const errorMessage =
-        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
-        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
-        err?.message === 'Network Error'  // Axios network error
+        err?.response?.data?.error ||
+        err?.response?.data?.message ||
+        (err?.message === 'Network Error'
           ? 'Network error. Please check your internet connection.'
-          : 'An unexpected error occurred';
+          : 'An unexpected error occurred');
       toast.error(errorMessage, { position: "top-center" });
     } finally {
       setLoad(false);
@@ -184,13 +183,12 @@ export default function Otp() {
       // router.push('/otp');
       setStep("otp-email");
     } catch (err) {
-      // const errorMessage = err?.response?.data?.error || "An unexpected error occurred";
       const errorMessage =
-        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
-        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
-        err?.message === 'Network Error'  // Axios network error
+        err?.response?.data?.error ||
+        err?.response?.data?.message ||
+        (err?.message === 'Network Error'
           ? 'Network error. Please check your internet connection.'
-          : 'An unexpected error occurred';
+          : 'An unexpected error occurred');
       toast.error(errorMessage, { position: "top-center" });
     }finally{
         setLoad(false);
@@ -213,13 +211,12 @@ export default function Otp() {
       toast.success(res.message || "OTP has been resent!", { position: "top-center" });
     } catch (err) {
       
-      // const errorMessage = err?.response?.data?.error || err?.response?.data?.message || "Something went wrong.";
       const errorMessage =
-        err?.response?.data?.error ||     // API error (e.g., 400, 401, etc.)
-        err?.response?.data?.message ||   // Some APIs use `message` instead of `error`
-        err?.message === 'Network Error'  // Axios network error
+        err?.response?.data?.error ||
+        err?.response?.data?.message ||
+        (err?.message === 'Network Error'
           ? 'Network error. Please check your internet connection.'
-          : 'An unexpected error occurred';
+          : 'An unexpected error occurred');
       toast.error(errorMessage, { position: "top-center" });
 
     }finally {

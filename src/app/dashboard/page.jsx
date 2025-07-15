@@ -37,12 +37,12 @@ export default function Dashboard() {
     if (loading) return <div className='flex justify-center'><p className={`${styles.load}`}>Loading dashboard...</p></div>;
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-4">
+        <div className="flex flex-col items-center justify-center min-h-screen p-4 text-white">
             <h1 className="text-2xl font-bold mb-4">Home Page Dashboard</h1>
             {user ? (
-                <p className="text-lg">Hi {user.username}, welcome to Takatak Dashboard!</p>
+                <p className="text-lg text-white">Hi {user.username}, welcome to Takatak Dashboard!</p>
             ) : (
-                <p className="text-lg">Welcome to Takatak Dashboard</p>
+                <p className="text-lg text-white">Welcome to Takatak Dashboard</p>
             )}
         </div>
 
