@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 import { Menu, X } from 'lucide-react'
 
 const links = [
-    { id: 1, title: "AI Automation"},
+    { id: 1, title: "AI Automation", url:"/dashboard"},
     { id: 2, title: "Marketing" },
     { id: 3, title: "CRM Integration" },
     { id: 4, title: "University", url: "/university" },
