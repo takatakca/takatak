@@ -8,7 +8,8 @@ const links = [
     { id: 1, title: "AI Automation", },
     { id: 2, title: "Marketing" },
     { id: 8, title: "Domain", url:"/domain"},
-    { id: 3, title: "CRM Integration", url:"/dashboard" },
+    { id: 3, title: "CRM Integration" },
+    // { id: 3, title: "CRM Integration", url:"/dashboard" },
     // { id: 4, title: "University", url: "/university" },
     // {
     //     id: 5,
@@ -28,8 +29,8 @@ const links = [
     //         { id: 's12', title: "Email Hosting & Automation", url: "/services/Email Hosting & Automation" },
     //     ]
     // },
-    { id: 6, title: "signup", url: "/signup" },
-    { id: 7, title: "login", url: "/login" }
+    // { id: 6, title: "signup", url: "/signup" },
+    // { id: 7, title: "login", url: "/login" }
 ]
 
 const Navbar = () => {

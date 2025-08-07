@@ -68,7 +68,7 @@ const freelancers = [
             <h2 className="lg:text-[48px] lg:w-[40vw] lg:leading-[60px] font-bold">Powering Your Business to the Next Level</h2>
             <p className="lg:text-[20px] lg:w-[42vw]">Seamless solutions to drive growth, streamline operations, and enhance customer relationships.</p>
             <Link href='/signup'>
-              <button className={`bg-[#01A2D9] text-white-700 font-semibold lg:w-[13vw] ${styles.butn}`}>Get Started</button>
+              {/* <button className={`bg-[#01A2D9] text-white-700 font-semibold lg:w-[13vw] ${styles.butn}`}>Get Started</button> */}
             </Link>
           </div>
           <div className="relative z-10 mt-10 lg:mt-0">
