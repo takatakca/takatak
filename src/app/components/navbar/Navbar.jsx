@@ -1,32 +1,33 @@
 "use client"
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import styles from "./page.module.css";
+import styles from "../navbar/page.module.css";
 import { Menu, X } from 'lucide-react'
 
 const links = [
-    { id: 1, title: "AI Automation", url:"/dashboard"},
+    { id: 1, title: "AI Automation", },
     { id: 2, title: "Marketing" },
-    { id: 3, title: "CRM Integration" },
-    { id: 4, title: "University", url: "/university" },
-    {
-        id: 5,
-        title: "More",
-        subLinks: [
-            { id: 's1', title: "Website Design", url: "/services/web-design" },
-            { id: 's2', title: "Branding & Design", url: "/services/Branding & Design" },
-            { id: 's3', title: "SEO Services", url: "/services/SEO Services" },
-            { id: 's4', title: "Hosting Services", url: "/services/Hosting Services" },
-            { id: 's5', title: "E-Commerce", url: "/services/E-Commerce" },
-            { id: 's6', title: "Digital Advertising", url: "/services/Digital Advertising" },
-            { id: 's7', title: "CRM & ERP Solutions", url: "/services/CRM & ERP Solutions" },
-            { id: 's8', title: "Software & Applications", url: "/services/Software & Applications" },
-            { id: 's9', title: "Social Media Management (SMO)", url: "/services/Social Media Management (SMO)" },
-            { id: 's10', title: "PPC & Paid Advertising", url: "/services/PPC & Paid Advertising" },
-            { id: 's11', title: "Google & Bing Ads", url: "/services/Google & Bing Ads" },
-            { id: 's12', title: "Email Hosting & Automation", url: "/services/Email Hosting & Automation" },
-        ]
-    },
+    { id: 8, title: "Domain", url:"/domain"},
+    { id: 3, title: "CRM Integration", url:"/dashboard" },
+    // { id: 4, title: "University", url: "/university" },
+    // {
+    //     id: 5,
+    //     title: "More",
+    //     subLinks: [
+    //         { id: 's1', title: "Website Design", url: "/services/web-design" },
+    //         { id: 's2', title: "Branding & Design", url: "/services/Branding & Design" },
+    //         { id: 's3', title: "SEO Services", url: "/services/SEO Services" },
+    //         { id: 's4', title: "Hosting Services", url: "/services/Hosting Services" },
+    //         { id: 's5', title: "E-Commerce", url: "/services/E-Commerce" },
+    //         { id: 's6', title: "Digital Advertising", url: "/services/Digital Advertising" },
+    //         { id: 's7', title: "CRM & ERP Solutions", url: "/services/CRM & ERP Solutions" },
+    //         { id: 's8', title: "Software & Applications", url: "/services/Software & Applications" },
+    //         { id: 's9', title: "Social Media Management (SMO)", url: "/services/Social Media Management (SMO)" },
+    //         { id: 's10', title: "PPC & Paid Advertising", url: "/services/PPC & Paid Advertising" },
+    //         { id: 's11', title: "Google & Bing Ads", url: "/services/Google & Bing Ads" },
+    //         { id: 's12', title: "Email Hosting & Automation", url: "/services/Email Hosting & Automation" },
+    //     ]
+    // },
     { id: 6, title: "signup", url: "/signup" },
     { id: 7, title: "login", url: "/login" }
 ]
