@@ -1,3 +1,18 @@
+import Script from 'next/script';
+
+export default function DomainPage() {
+  return (
+    <div>
+      <div id="upmind-domain-checker"></div>
+
+      <Script
+        src="https://cdn.upmind.com/domain-widget.js"
+        strategy="afterInteractive"
+        data-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
+      />
+    </div>
+  );
+}
 
 // 'use client';
 // import { useState, useEffect } from 'react';
@@ -99,26 +114,26 @@
 //   );
 // }
 
-'use client';
-import { useEffect } from 'react';
+// 'use client';
+// import { useEffect } from 'react';
 
-export default function DomainSearch() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://widgets.upmind.app/dac/upm-dac.min.js';
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+// export default function DomainSearch() {
+//   useEffect(() => {
+//     const script = document.createElement('script');
+//     script.src = 'https://widgets.upmind.app/dac/upm-dac.min.js';
+//     script.async = true;
+//     document.body.appendChild(script);
+//     return () => {
+//       document.body.removeChild(script);
+//     };
+//   }, []);
 
-  return (
-    <div className="domain-search-container">
-      <upm-dac
-        order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
-        currency-code="USD"
-      ></upm-dac>
-    </div>
-  );
-}
+//   return (
+//     <div className="domain-search-container">
+//       <upm-dac
+//         order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
+//         currency-code="USD"
+//       ></upm-dac>
+//     </div>
+//   );
+// }
