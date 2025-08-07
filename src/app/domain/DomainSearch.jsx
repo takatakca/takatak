@@ -3,13 +3,18 @@ import Script from 'next/script';
 export default function DomainPage() {
   return (
     <div>
-      <div id="upmind-domain-checker"></div>
+      <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
+      <upm-dac
+        order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
+        currency-code="CAD"
+      ></upm-dac>
+      {/* <div id="upmind-domain-checker"></div>
 
       <Script
         src="https://cdn.upmind.com/domain-widget.js"
         strategy="afterInteractive"
         data-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
-      />
+      /> */}
     </div>
   );
 }
