@@ -1,0 +1,45 @@
+.cont{
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+.bar{
+    margin: 30px 100px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.row:first-child {
+  border-top: none;
+}
+
+.leftSvg {
+  flex: 1 1 60%;
+}
+
+.rightSvg {
+  flex: 0 0 34%;
+}
+
+.shape {
+  fill: var(--shape);
+}
+
+.shape2 {
+  fill: var(--shape2);
+}
+.sv{
+    margin: 30px 100px;
+}
+.placeh{
+    /* margin: 0px 300px; */
+    padding: 60px 0px;
+}
+.icon{
+    padding: 5px;
+}

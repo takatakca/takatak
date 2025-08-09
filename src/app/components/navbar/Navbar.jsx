@@ -84,7 +84,9 @@ const Navbar = () => {
                             onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
                             onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
                         >
-                            {pgs.url ? (
+                            {pgs.title === "Domain" ? (
+                                <a href={pgs.url}>{pgs.title}</a> // Full page reload 
+                            ) : pgs.url ?(
                                 <Link href={pgs.url}>{pgs.title}</Link>
                             ) : (
                                 <span className='cursor-pointer hover:underline underline-offset-4'>{pgs.title}</span>
