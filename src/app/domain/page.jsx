@@ -125,7 +125,7 @@ export default function DomainPage() {
 
             {/* begin search  */}
             {!hasTyped && (
-              <div className="relative bottom-[300px] lg:bottom-[360px] z-10">
+              <div className="relative bottom-[300px] lg:bottom-[400px] z-10">
               <div className={`flex items-center justify-center`}>
                 <div className={`${styles.placeh} bg-[#1B076E] rounded-[10px] text-white flex flex-col gap-[15px] items-center text-center`}>
                 <h1 className={`${styles.icon} border-2 rounded-full text-[20px] font-[900]`}>
