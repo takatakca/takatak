@@ -104,7 +104,7 @@ export default function DomainPage() {
           </p>
         </div>
         <div>
-          <div className={`${styles.bar} border`}>
+          <div className={`${styles.bar} `}>
             <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
             <upm-dac
               ref={upmRef}
@@ -113,6 +113,7 @@ export default function DomainPage() {
             ></upm-dac>
           </div>
 
+          {!hasTyped && (
           <div>
             <div className={`${styles.sv}`}>
               <PlaceholderRow showRight={!isMobile}/>
@@ -124,7 +125,7 @@ export default function DomainPage() {
             </div>
 
             {/* begin search  */}
-            {!hasTyped && (
+            
               <div className="relative bottom-[300px] lg:bottom-[400px] z-10">
               <div className={`flex items-center justify-center`}>
                 <div className={`${styles.placeh} bg-[#1B076E] rounded-[10px] text-white flex flex-col gap-[15px] items-center text-center`}>
@@ -136,8 +137,8 @@ export default function DomainPage() {
                 </div>
               </div>
             </div>
-            )}
           </div>
+            )}
         </div>
        </section>
 

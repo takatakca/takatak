@@ -134,7 +134,9 @@ const Navbar = () => {
                             key={link.id}
                             className={`${ link.title.toLowerCase() === "login" ? styles.login : link.title.toLowerCase() === "signup"  ? styles.signup  : link.title.toLowerCase() === "more" ? styles.more : "" }`}
                             >
-                                {link.url ? (
+                                {link.title === "Domain" ? (
+                                     <a href={link.url}>{link.title}</a>
+                                ): link.url ? (
                                     <Link
                                         href={link.url}
                                         onClick={() => setMenuOpen(false)}
