@@ -22,6 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Performance optimizations for Upmind */}
+        <link rel="preconnect" href="https://embed.upmind.app" />
+        <link rel="dns-prefetch" href="https://embed.upmind.app" />
+      </head>
       <body
         className={`bg-gradient-to-b from-blue-900 to-blue-700 min-h-screen text-white hicontainer ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
