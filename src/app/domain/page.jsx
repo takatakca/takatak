@@ -116,6 +116,14 @@ export default function DomainPage() {
               // currency-code="CAD"
             ></upm-widget>
           </div>
+          {/* <div className={`${styles.bar} border`}>
+            <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
+            <upm-dac
+              ref={upmRef}
+              order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
+              currency-code="CAD"
+            ></upm-dac>
+          </div> */}
          {/* 
           {!hasTyped && (
           <div>
