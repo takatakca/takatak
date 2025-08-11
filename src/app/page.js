@@ -62,8 +62,8 @@ const freelancers = [
 
   return (
     <main>
-      <section className={`relative w-full flex flex-col ${styles.gradient}`}>
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between p-12 text-white">
+      <section className={`relative w-full flex flex-col md:item-center md:justify-center md:gap-[50px] ${styles.gradient}`}>
+          <div className={`flex flex-col lg:flex-row items-center justify-center lg:justify-between p-12 text-white md:pb-[30px] ${styles.ttp}`}>
           <div className={`max-w-lg flex flex-col lg:items-start lg:text-left items-center text-center gap-[30px] ${styles.pag}`}>
             <h2 className="lg:text-[48px] lg:w-[40vw] lg:leading-[60px] font-bold">Powering Your Business to the Next Level</h2>
             <p className="lg:text-[20px] lg:w-[42vw]">Seamless solutions to drive growth, streamline operations, and enhance customer relationships.</p>
@@ -81,9 +81,9 @@ const freelancers = [
           </div>
           </div>
 
-          <div className={`relative z-0 -mt-16 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center ${styles.servic} `}>
+          <div className={` w-full md:gap-x-[50px] md:gap-[30px] grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-4 justify-center ${styles.servic} `}>
           {cards.map((card) => (
-            <div key={card.title} className={`bg-white text-blue-800 rounded-[20px] shadow-lg flex flex-col gap-[13px] ${styles.serv}`}>
+            <div key={card.title} className={`bg-white text-blue-800 rounded-[20px] shadow-lg flex flex-col gap-[13px] lg:w-[17vw] w-full md:w-[vw]  ${styles.serv}`}>
               <div className='flex items-center gap-[15px]'>
                 <p className='text-[30px]'>{card.icon}</p>
                 <h3 className={`font-bold text-[15px] lg:w-[13vw] ${styles.tit}`}>{card.title}</h3>
@@ -96,14 +96,14 @@ const freelancers = [
           ))}
         </div>
       </section>
-      
-      <section className={`bg-[#e0ecf7] flex lg:flex-row gap-[70px] flex-col justify-center ${styles.dscm}`}>
-        <div>
-          <div className='flex flex-col gap-[20px]'>
+      <section className={`bg-[#e0ecf7] flex lg:flex-row md:flex-row gap-[70px] lg:gap-[70px] md:gap-[10px] flex-col  justify-center ${styles.dscm}`}>
+
+      {/* Detail Service */}
+          <div className='flex flex-col  gap-[20px]'>
               <h1 className='text-blue-900 font-bold text-[28px]'>Details Service & Campaigns</h1>
-            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-[70px] gap-y-[30px] ${styles.decamp} `}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-[30px] lg:gap-x-[70px] md:gap-x-[10px] md:gap-y-[10px] lg:gap-y-[30px] ${styles.decamp} `}>
               {services.map((item, idx) => (
-                <div key={idx} className={`bg-white text-blue-800 flex flex-col gap-[10px]  rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
+                <div key={idx} className={`bg-white text-blue-800 flex flex-col gap-[10px]  w-full rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
                   <div className='flex items-center gap-[5px]'>
                     <p className="text-2xl text-blue-600 mb-2">{item.icon}</p>
                     <h4 className="font-bold text-[15px] lg:w-[11vw]">{item.title}</h4>
@@ -120,8 +120,9 @@ const freelancers = [
               ))}
             </div>
           </div>
-        </div>
 
+
+          {/* Marketplace */}
         <div className="flex flex-col gap-[20px]">
           <h1 className="text-blue-900 font-bold text-[28px]">Marketplace</h1>
           <div className='flex flex-col gap-[40px] '>
@@ -156,7 +157,8 @@ const freelancers = [
           </div>
         </div>
 
-        <div className=''>
+        {/* Services */}
+        <div className={`${styles.listed}`}>
           {/* Categories */}
           <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] space-y-2 flex flex-col gap-[50px] ${styles.freel}`}>
             <div className='flex flex-col gap-[15px]'>
@@ -174,7 +176,7 @@ const freelancers = [
           </div>
 
           {/* Duplicate Category box */}
-          <div className={`lg:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-10 ${styles.nextfrel}`}>
+          <div className={`lg:absolute md:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-20 ${styles.nextfrel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -191,13 +193,13 @@ const freelancers = [
         </div>
       </section>
 
-      <section className={`lg:relative flex lg:flex-row flex-col gap-[50px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
+      <section className={`lg:relative md:relative flex lg:flex-row flex-col gap-[50px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
         <div className="relative flex flex-col gap-[45px]">
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
 
           <div className='flex flex-col gap-[30px]'>
-            <input className={`p-2 w-full rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
+            <input className={`p-2 w-full md:max-w-[65vw] rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
             <div className="flex flex-wrap gap-[25px] ">
               {['Development', 'Design', 'Writing', 'Video'].map((tag) => (
                 <button key={tag} className={`bg-transparent rounded-full cursor-pointer border-[1.5px] border-[#b9b8b8] ${styles.tags} `}>

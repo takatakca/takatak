@@ -18,11 +18,10 @@
 }
 .serv{
     padding: 10px 0px 5px 20px;
-    width: 17vw;
 }
+
 .detail{
     padding: 20px 0px 20px 20px;
-    width: 16vw;
 }
 .dscm{
     padding: 40px 0px;
@@ -74,6 +73,7 @@
     }
     .serv{
         width: 100%;
+        padding: 20px 0px 20px 35px;
     }
     .servic{
         padding: 0px;
@@ -82,13 +82,59 @@
     .dscm{
         padding: 40px 20px;
     }
-    .detail{
+
+    /* .detail{
         width: 100%;
-    }
+    } */
     .market{
         width: 100%;
     }
     .Fmark{
         padding: 20px ;
+    }
+    .ttp{
+        padding-bottom: 30px;
+    }
+    
+  }
+  @media screen and (max-width: 980px) and (min-width: 951px){
+    .ttp{
+        padding-bottom: 30px;
+    }
+    .gradient{
+        padding: 0px;  
+        padding-block: 50px;
+    }
+    .servic{
+        padding: 0px;
+        padding-inline: 90px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .serv{
+        padding: 20px 0px 20px 35px;
+    }
+    .dscm{
+        padding: 0px;
+        padding-block: 50px;
+        padding-inline: 30px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .detail{
+        padding-block: 20px;
+        padding-inline: 30px;
+    }
+    .freel{
+        padding: 20px 10px;
+        margin-bottom: 20px;
+        /* padding: 0px; */
+        /* margin: 0px; */
+    }
+    .Fmark{
+        padding: 50px 0px 100px 40px;
+        /* padding: 0px; */
     }
   }

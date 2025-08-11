@@ -4,7 +4,7 @@
 .bar{
     margin: 30px 100px;
 }
-/* .row {
+.row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,7 @@
 }
 .sv{
     margin: 30px 100px;
-} */
+}
 .placeh{
     padding: 40px 30px;
 }
@@ -51,13 +51,13 @@
   .bar{
     margin: 15px;
   }
-  /* .leftSvg {
+   .leftSvg {
     transform: scale(5);        
     transform-origin: 30px;  
     /* margin-bottom: 20px; */
-  /* } */ 
+   }
 
-  /* .rightSvg {
+  .rightSvg {
     display: none;                 
   }
 
@@ -68,9 +68,9 @@
   .mobileSvg {
     height: auto;
     max-height: 100px; 
-  } */
+  }
   
-  /* .mobileOnly {
+  .mobileOnly {
     display: block;
   }
   .mobileSvg rect:nth-of-type(1) {
@@ -78,25 +78,25 @@
     height: 24px !important;
     x: 20px;
     y: 34px;
-  } */
+  }
 
-  /* .mobileSvg rect:nth-of-type(2) {
+  .mobileSvg rect:nth-of-type(2) {
     width: 60px !important;
     height: 8px !important;
     y: 4px;
-  } */
-/* 
+  }
+
   .mobileSvg rect:nth-of-type(3) {
     width: 120px !important;
     height: 15px !important;
     y: 20px; 
-  } */
+  }
 
-  /* .mobileSvg rect:nth-of-type(4) {
+  .mobileSvg rect:nth-of-type(4) {
     width: 40px !important;
     height: 15px !important;
     y: 44px; 
-  } */
+  }
 
   .placeh{
     padding: 30px 10px;
