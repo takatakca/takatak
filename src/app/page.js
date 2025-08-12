@@ -128,8 +128,8 @@ const freelancers = [
           <div className='flex flex-col gap-[40px] '>
             <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800  flex flex-col  gap-[20px]  ${styles.market}`}>
               <h1 className='text-start'>Marketplace</h1>
-              <div className='flex flex-col items-center'>
-                  <div className='flex flex-col gap-[30px] w-full lg:w-[13vw]'>
+              <div className={`flex flex-col items-center `}>
+                  <div className={`flex flex-col gap-[30px] w-full lg:w-[13vw] `}>
                 
                     <input
                     type="text"
@@ -160,7 +160,7 @@ const freelancers = [
         {/* Services */}
         <div className={`${styles.listed}`}>
           {/* Categories */}
-          <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] space-y-2 flex flex-col gap-[50px] ${styles.freel}`}>
+          <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] w-full sm:w-[20vw] lg:w-[13vw] flex flex-col gap-[50px] ${styles.freel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -176,7 +176,7 @@ const freelancers = [
           </div>
 
           {/* Duplicate Category box */}
-          <div className={`lg:absolute md:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] space-y-2 z-20 ${styles.nextfrel}`}>
+          <div className={`lg:absolute md:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] w-full sm:w-[20vw] lg:w-[13vw] z-20 ${styles.nextfrel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -199,8 +199,8 @@ const freelancers = [
           <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
 
           <div className='flex flex-col gap-[30px]'>
-            <input className={`p-2 w-full md:max-w-[65vw] rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
-            <div className="flex flex-wrap gap-[25px] ">
+            <input className={`p-2 w-full md:max-w-[50vw] rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
+            <div className="flex flex-wrap gap-[25px] lg:gap-[25px] md:gap-[15px]">
               {['Development', 'Design', 'Writing', 'Video'].map((tag) => (
                 <button key={tag} className={`bg-transparent rounded-full cursor-pointer border-[1.5px] border-[#b9b8b8] ${styles.tags} `}>
                   {tag}
@@ -210,8 +210,8 @@ const freelancers = [
           </div>
 
           {/* Scrollable Freelancers */}
-          <div className={`relative w-full max-w-[660px] overflow-x-auto ${styles.scrollhide}`}>
-              <div className="flex gap-[18px] w-max px-1">
+          <div className={`relative w-full lg:max-w-[660px] md:max-w-[450px] overflow-x-auto ${styles.scrollhide}`}>
+              <div className="flex gap-[18px] lg:gap-[18px] md:gap-[0px] w-max px-1">
                 {freelancers.map((user, idx) => (
                   <div key={idx} className="text-center flex flex-col items-center shrink-0 w-[130px]">
                     <div className=" relative w-[90px] h-[90px] bg-white rounded-full mx-auto flex items-center">

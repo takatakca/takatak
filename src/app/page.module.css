@@ -97,7 +97,8 @@
     }
     
   }
-  @media screen and (max-width: 980px) and (min-width: 951px){
+  
+  @media screen and (max-width: 1000px) and (min-width: 700px){
     .ttp{
         padding-bottom: 30px;
     }
@@ -118,7 +119,7 @@
     .dscm{
         padding: 0px;
         padding-block: 50px;
-        padding-inline: 30px;
+        padding-inline: 15px;
         align-items: center;
         justify-content: center;
         justify-items: center;
@@ -128,7 +129,7 @@
         padding-inline: 30px;
     }
     .freel{
-        padding: 20px 10px;
+        
         margin-bottom: 20px;
         /* padding: 0px; */
         /* margin: 0px; */
@@ -136,5 +137,48 @@
     .Fmark{
         padding: 50px 0px 100px 40px;
         /* padding: 0px; */
+    }
+    .market{
+        width: 100%;
+    }
+    .tags{
+        padding: 2px 20px;
+    }
+  }
+
+  @media screen and (min-width:1024px){
+    .tags{
+        padding: 2px 20px;
+    }
+    .scrollhide {
+        max-width: 480px;
+    }
+    .freel{
+        width: 18vw;
+    }
+    .nextfrel{
+        width: 18vw;
+        right: 50px;
+    }
+    .Fmark{
+        gap: 30px;
+    }
+    .dscm{
+        padding: 0px;
+        padding-block: 50px;
+        padding-inline: 15px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        gap: 40px;
+    }
+    .decamp{
+        column-gap: 20px;
+        row-gap: 20px;
+        
+    }
+    .market{
+        width: 100%;
+         
     }
   }
