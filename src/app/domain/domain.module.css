@@ -102,4 +102,14 @@
     padding: 30px 10px;
     width: 80%;
 }
+
+.sip{
+  padding: 20px;
+}
+.dex{
+  padding: 15px;
+}
+.icon{
+  padding: 10px;
+}
 }

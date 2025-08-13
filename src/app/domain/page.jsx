@@ -2,82 +2,87 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./domain.module.css"
 import { FaSearch } from "react-icons/fa";
+import { BsClipboard } from "react-icons/bs";
+import { RiShieldUserLine } from "react-icons/ri";
+import { IoMdCheckmark } from "react-icons/io";
+
+
 // import { VscStarHalf } from "react-icons/vsc";
 
 
 const everysip = [
   {
-    icon : "",
-    title : "",
-    details : ""
+    icon : <BsClipboard />,
+    title : "Instant registration",
+    details : "Secure the domain you’ve always wanted without delay — register it instantly with AI‑guided setup."
+  },
+  {
+    icon : <RiShieldUserLine />,
+    title : "Free WHOIS privacy protection",
+    details : "Privacy is important — that’s why we include full WHOIS protection and proactive security checks with every domain."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Free web forwarding",
+    details : "Redirect traffic from your domain to a preferred website, making navigation and accessibility easier than ever."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Simple transfers (policy)",
+    details : "Transfers are straightforward: CA$100 to transfer in. Generate your auth codes in our control panel. Transfers‑out available after 12 months."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Unlimited email forwarding",
+    details : "Redirect unlimited emails to chosen addresses — forwarding only (no inbox hosting) — so you stay connected with efficient communication."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Flat‑rate domain renewal",
+    details : "Predictable pricing at CA$19.99/mo across terms. We cover domain, transaction, and admin costs — without sacrificing quality."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Anycast DNS & 99.9% uptime",
+    details : "Global Anycast DNS and resilient infrastructure deliver fast lookups and reliable resolution — built for speed and stability."
   },
   {
     icon : "",
-    title : "",
-    details : ""
-  },
-  {
-    icon : "",
-    title : "",
-    details : ""
+    title : "Easy contact management",
+    details : "Enjoy hassle‑free contact management — make changes, do trades or transfers, or update contact details in bulk with ease."
   },
   
 ]
 const Orderup = [
   {
-    icon : "",
-    title : "",
-    details : ""
+    icon : <BsClipboard />,
+    title : "Transparent domain pricing",
+    details : "Enjoy world-class service at a flat CA$19.99/mo — our pricing is transparent so you can make informed decisions without hidden fees or surprises."
+  },
+  {
+    icon : <BsClipboard />,
+    title : "Smart domain alerts",
+    details : "Never miss critical updates again! Our AI-driven dashboard and tailored alerts keep you up-to-date with every aspect of your domain management."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Always in your control",
+    details : "All domains are registered in your name and fully belong to you, giving you complete authority to edit, transfer, or sell when you decide."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Effortless management",
+    details : "Our intuitive tools make managing your domain simple, secure, and efficient — keeping your online presence fully under your control."
   },
   {
     icon : "",
-    title : "",
-    details : ""
+    title : "Multiple domain support",
+    details : "Add as many domains as you need to grow your business — TAKATAK scales with you, without performance limits."
   },
   {
     icon : "",
-    title : "",
-    details : ""
-  },
-  {
-    icon : "",
-    title : "",
-    details : ""
+    title : "24/7 expert assistance",
+    details : "Contact us anytime — our dedicated AI-backed support team is committed to your success and ready to solve any challenge."
   },
   
 ]
@@ -260,55 +265,73 @@ export default function DomainPage() {
         </div>
        </section>
 
-       <section>
-        <h1>We get better with every sip.</h1>
-        <p>What’s in a Mochahost domain? Everything you could want and more. From unlimited email forwarding to instant registration, you can expect our best in every. Single. One.</p>
+       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
+        <h1 className="text-[33px] text-center">We get better with{" "} <span className="font-extrabold">every tap.</span></h1>
+        <p className="text-center text-[19px] font-semibold w-[85vw]">What’s in a TAKATAK domain? Everything you could want and more. From AI‑assisted setup to instant registration, you can expect our best in every. Single. One.</p>
+        <div className="grid grid-cols-1 gap-[20px]">
+          {everysip.map((data, dex) =>(
+            <div key={dex} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
+              <h1 className={`bg-[blue] ${styles.icon} max-w-[11.8vw] text-white text-[25px] rounded-[8px]`}>{data.icon}</h1>
+              <h2 className="font-extrabold text-[18px] w-full">{data.title}</h2>
+              <p className="font-medium ">{data.details}</p>
+            </div>
+          ))}
+        </div>
        </section>
 
-       <section>
-        <h1>WOrder up!</h1>
-        <p>What do our regulars love about Mochahost? Whatever plan you choose, know for certain that you and your site are in a safe pair of hands.</p>
+       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
+        <h1 className="text-[33px] text-center font-extrabold">Locked in with every click!</h1>
+        <p className="text-center text-[19px] font-semibold w-[85vw]">What do our clients love about TAKATAK? Whatever plan you choose, know for certain that you and your domain are in safe, secure, AI-optimized hands.</p>
+        <div className="grid grid-cols-1 gap-[20px]">
+          {Orderup.map((data, dex) =>(
+            <div key={dex} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
+              <h1 className={`bg-[#e8e7ff] ${styles.icon} max-w-[11.8vw] text-[#8f59e1] text-[25px] rounded-[8px]`}>{data.icon}</h1>
+              <h2 className="font-extrabold text-[18px] w-full">{data.title}</h2>
+              <p className="font-medium ">{data.details}</p>
+            </div>
+          ))}
+        </div>
        </section>
 
-       <section>
-        <div>
-          <h1>Top-notch security</h1>
-          <p>Protect your data and online identity with comprehensive security measures. With us, you can rest easy with free privacy protection, domain locking, and robust two-factor authentication for enhanced account security.</p>
-          <hr />
-          <div>
-            <h1>✅</h1>
-            <p>LiteSpeed webservers</p>
+       <section className={`flex flex-col items-center justify-around text-black gap-[30px] bg-[#f7f8f8] ${styles.sip}`}>
+        <div className={`flex flex-col gap-[30px]`}>
+          <h1 className="text-[33px] text-start font-extrabold">Next-level <span className="font-medium">security</span></h1>
+          <p className="text-start text-[19px] font-semibold ">Protect your data and online identity with enterprise-grade, AI-driven safeguards. With TAKATAK, you can rest easy with free WHOIS privacy, domain locking, and advanced two-factor authentication for unbeatable account security.</p>
+          <hr className="text-[#d8dbdf]"/>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px]"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">LiteSpeed-optimized servers</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>No downtime</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px]"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Zero-downtime architecture</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>Custom WordPress configuration for no timeouts</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[6vw] rounded-full"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Custom AI-tuned configuration with no timeouts</p>
           </div>
         </div>
-
-        <div><img src="/img/Top.webp" alt="" /></div>
+          <img src="/img/Top.webp" alt="" className="h-[230px]"/>
        </section>
 
-       <section>
-       <div><img src="/img/Nohidden.webp" alt="" /></div>
+       <section className={`flex flex-col items-center justify-around text-black gap-[30px] bg-[white] ${styles.sip}`}>
+       <img src="/img/Nohidden.webp" alt="" className="h-[230px]" />
         <div>
-          <h1>No hidden costs</h1>
-          <p>No guessing games here - what you see is what you get. Our transparent and straightforward pricing has no hidden charges or surprise fees, so you can get a clear view of the costs associated with your domain.</p>
-          <hr />
-          <div>
-            <h1>✅</h1>
-            <p>LiteSpeed webservers</p>
+          <h1 className="text-[33px] text-start font-extrabold">No <span className="font-medium">hidden fees</span> </h1>
+          <p className="text-start text-[19px] font-semibold ">What you see is what you pay — no surprises. TAKATAK’s transparent flat-rate pricing means no extra charges or mystery fees, so you always know exactly what your domain will cost.</p>
+          <hr className="text-[#d8dbdf]"/>
+
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px]"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">LiteSpeed-optimized servers</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>No downtime</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px]"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Zero-downtime architecture</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>Custom WordPress configuration for no timeouts</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[6vw] rounded-full"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Custom AI-tuned configuration with no timeouts</p>
           </div>
         </div>
        </section>
