@@ -89,22 +89,22 @@ const Orderup = [
 
 const customers = [
   {
-    star: '',
-    title : '',
-    message : '',
-    name : ''
+    star: '⭐️⭐️⭐️⭐️⭐️',
+    title : 'Prompt solutions',
+    message : 'The support team at TAKATAK has always been prompt, and most of the time the solution is quick and thorough. Some issues were technical, some billing-related, and some domain-specific. Last time, I was referred to a senior AI-assisted tech specialist who resolved my mail service problem instantly. Thank you!',
+    name : 'Marcus D'
   },
   {
-    star: '',
-    title : '',
-    message : '',
-    name : ''
+    star: '⭐️⭐️⭐️⭐️⭐️',
+    title : 'Top-notch support and customer service',
+    message : 'We moved our existing domains from another host to TAKATAK. During the transfer, a few domains had issues, but TAKATAK’s team resolved them quickly so we could resume business without delays. Their AI+human support is top-notch, and very client-focused! Thank you TAKATAK!',
+    name : 'Clark A'
   },
   {
-    star: '',
-    title : '',
-    message : '',
-    name : ''
+    star: '⭐️⭐️⭐️⭐️⭐️',
+    title : 'I have 11 services & 6 domains with TAKATAK',
+    message : 'I manage 11 services and 6 domains with TAKATAK. Their service is amazing, and their support — especially via WhatsApp — has been fast, friendly, and incredibly helpful. TAKATAK is highly recommended!',
+    name : 'Omar'
   },
 ]
 
@@ -316,7 +316,7 @@ export default function DomainPage() {
 
        <section className={`flex flex-col items-center justify-around text-black gap-[30px] bg-[white] ${styles.sip}`}>
        <img src="/img/Nohidden.webp" alt="" className="h-[230px]" />
-        <div>
+        <div className={`flex flex-col gap-[30px]`}>
           <h1 className="text-[33px] text-start font-extrabold">No <span className="font-medium">hidden fees</span> </h1>
           <p className="text-start text-[19px] font-semibold ">What you see is what you pay — no surprises. TAKATAK’s transparent flat-rate pricing means no extra charges or mystery fees, so you always know exactly what your domain will cost.</p>
           <hr className="text-[#d8dbdf]"/>
@@ -336,30 +336,48 @@ export default function DomainPage() {
         </div>
        </section>
 
-       <section>
-       <div>
-          <h1>24/7 support</h1>
-          <p>Our dedicated support team is available around the clock to assist you with any domain-related questions or issues. Enjoy expert advice and troubleshooting at any hour, no matter where you are.</p>
-          <hr />
-          <div>
-            <h1>✅</h1>
-            <p>LiteSpeed webservers</p>
+       <section className={`flex flex-col items-center justify-around text-black gap-[30px] bg-[#f7f8f8] ${styles.sip}`}>
+        <div className={`flex flex-col gap-[30px]`}>
+          <h1 className="text-[33px] text-start font-extrabold">24/7 <span className="font-medium">AI-backed support</span></h1>
+          <p className="text-start text-[19px] font-semibold ">Our dedicated human-plus-AI support team is available around the clock to assist you with any domain-related questions or issues. Get instant answers, expert guidance, and hands-on troubleshooting anytime, anywhere in the world.</p>
+          <hr className="text-[#d8dbdf]"/>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] rounded-full"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Round-the-clock help to resolve your questions quickly</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>No downtime</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white w-[8vw] rounded-full"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Access expert and AI-powered assistance 24/7 for any concerns</p>
           </div>
-          <div>
-          <h1>✅</h1>
-          <p>Custom WordPress configuration for no timeouts</p>
+          <div className="flex items-center gap-[15px]">
+            <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[10vw] rounded-full"/>
+            <p className="text-[#5d33ff] text-[20px] font-medium">Consistent, reliable support whenever you need help with your domain</p>
           </div>
         </div>
-
-        <div><img src="/img/support.webp" alt="" /></div>
+          <img src="/img/support.webp" alt="" className="h-[230px]"/>
        </section>
 
-       <section></section>
-       <section></section>
+       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-[white] ${styles.sip}`}>
+        <h1 className="text-[33px] text-center font-bold">Don’t just take our word for it.</h1>
+        <p className="text-center text-[19px] font-normal w-[85vw]">We love our domain customers and making their day — plus, they say “TAKATAK delivers” way better than we do.</p>
+        <div className="grid grid-cols-1 gap-[20px]">
+          {customers.map((cus, index)=>(
+            <div key={index} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
+              <h1 className="bg-[green] ${styles.icon} max-w-[28vw]">{cus.star}</h1>
+              <h2 className="font-bold text-[18px] w-full">{cus.title}</h2>
+              <p className="">{cus.message}</p>
+              <h3 className="underline-offset-[3px] underline font-bold">{cus.name}</h3>
+            </div>
+          ))}
+        </div>
+       </section>
+       <section className={`flex flex-col items-start justify-around text-[white] gap-[30px] bg-[#5D31FF] ${styles.chat}`}>
+        <h4>DOMAINS SUPPORT</h4>
+        <h1 className="text-[33px] ">Give your domain questions an AI boost of solutions.</h1>
+        <p className="text-[20px] ">Our support team is available 24/7 for any domain questions or needs you have. And we’re not just running on coffee and late-night shifts — our experts and AI systems are based worldwide, so you’re always getting our best energy, instantly matched to yours.</p>
+        <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] ${styles.cbtn}`}>Let’s have a chat</button>
+        <img src="/img/chat.webp" alt="" className="h-[280px] w-full"/>
+       </section>
        <section></section>
        <section></section>
        <section></section>

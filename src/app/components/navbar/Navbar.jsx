@@ -8,6 +8,7 @@ const links = [
     { id: 1, title: "AI Automation", },
     { id: 2, title: "Marketing" },
     { id: 8, title: "Domain", url:"/domain"},
+    { id: 9, title: "Hosing", url:"/hosting"},
     { id: 3, title: "CRM Integration" },
     // { id: 3, title: "CRM Integration", url:"/dashboard" },
     // { id: 4, title: "University", url: "/university" },
@@ -84,7 +85,7 @@ const Navbar = () => {
                             onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
                             onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
                         >
-                            {pgs.title === "Domain" ? (
+                            {pgs.title === "Domain" && "Hosting" ? (
                                 <a href={pgs.url}>{pgs.title}</a> // Full page reload 
                             ) : pgs.url ?(
                                 <Link href={pgs.url}>{pgs.title}</Link>
@@ -134,7 +135,7 @@ const Navbar = () => {
                             key={link.id}
                             className={`${ link.title.toLowerCase() === "login" ? styles.login : link.title.toLowerCase() === "signup"  ? styles.signup  : link.title.toLowerCase() === "more" ? styles.more : "" }`}
                             >
-                                {link.title === "Domain" ? (
+                                {link.title === "Domain" && "Hosting" ? (
                                      <a href={link.url}>{link.title}</a>
                                 ): link.url ? (
                                     <Link

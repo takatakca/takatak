@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+@media screen and (max-width:950px){
+  .chat{
+    padding: 20px;
+    padding-bottom: 0px;
+   }
+   .cbtn{
+    padding-block: 9px;
+    padding-inline: 19px;
+   }
+}
