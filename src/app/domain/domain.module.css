@@ -120,4 +120,10 @@
   padding-block: 9px;
   padding-inline: 19px;
 }
+.tb{
+  padding: 20px;
+}
+.prc{
+  padding-left: 10px;
+}
 }

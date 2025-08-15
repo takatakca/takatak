@@ -5,6 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { BsClipboard } from "react-icons/bs";
 import { RiShieldUserLine } from "react-icons/ri";
 import { IoMdCheckmark } from "react-icons/io";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 
 // import { VscStarHalf } from "react-icons/vsc";
@@ -106,7 +107,70 @@ const customers = [
     message : 'I manage 11 services and 6 domains with TAKATAK. Their service is amazing, and their support — especially via WhatsApp — has been fast, friendly, and incredibly helpful. TAKATAK is highly recommended!',
     name : 'Omar'
   },
-]
+];
+
+const redemptionFees = [
+  { tld: ".com, .net, .org, .info, .biz", price: "CA$100" },
+  { tld: ".ag, .blackfriday, .diet, .ec, .flowers, .guitars, .hiv, .md, .mg, .nf, .property", price: "CA$300" },
+  { tld: ".ai, .game, .id, .kyoto, .lat, .movie, .sc, .so, .sport, .sucks, .versicherung, .zuerich, .watches", price: "CA$700" },
+  { tld: ".new, .theatre, .tickets", price: "CA$1,000" },
+  { tld: ".auto, .cars, .car, .bank, .insurance, .juegos, .ki, .lotto, .pr, .storage", price: "CA$3,150" },
+  { tld: ".dealer, .inc, .protection, .rich, .security, .trust, .voting", price: "CA$5,000" },
+  { tld: ".sexy", price: "CA$6,000" },
+  { tld: ".spreadbetting", price: "CA$60,000" },
+  { tld: "All other domains", price: "CA$250" }
+];
+
+const faqs = [
+  {
+    question: "What is a domain name?",
+    answer:
+      "Think of it as your business address online. Instead of a physical storefront, you have a unique domain where your brand lives and customers can connect with you.",
+  },
+  {
+    question: "How do I choose a domain name?",
+    answer:
+      // "That’s what our handy domain search tool is for – just scroll back to the top of this page and punch in some ideas to find the one that screams \"you!\"",
+      "That’s where our smart search tool comes in — just type in your ideas and our AI will suggest the perfect match."
+  },
+  {
+    question: "Can I transfer my domain(s) to TAKATAK?",
+    answer:
+      "Yes — our transfer process is near-instant. Once your payment clears, check your inbox for a welcome email and access to your TAKATAK dashboard. Transfer-in fee: CA$100, with transfer-out available after 12 months.",
+  },
+  {
+    question: "How long does it take for a newly registered domain to become active?",
+    answer:
+      "Almost instantly. We’ve built an automated setup process so your domain is live and ready in minutes.",
+  },
+  {
+    question: "Do you provide domain privacy protection services?",
+    answer:
+      "Absolutely — full WHOIS privacy is included with every TAKATAK domain at no extra charge.",
+  },
+  {
+    question: "Do you provide domain name parking?",
+    answer:
+      "Yes — we can park unlimited domains for you at no cost, until you’re ready to connect them.",
+  },
+  {
+    question: "Can I manage my domain's DNS settings?",
+    answer:
+      "Yes — manage A, CNAME, MX, TXT, and more with full control via our dashboard.",
+  },
+  {
+    question: "Can I automatically renew my domain?",
+    answer:
+      "Yes — auto-renew keeps your site running without interruptions, 24/7.",
+  },
+  {
+    question: "Do you offer bulk discounts on domains?",
+    answer:
+      "Yes — if you’re registering 50 or more, our team can tailor a pricing plan for you.",
+  },
+];
+
+
 
 
 function PlaceholderRow({ 
@@ -172,6 +236,7 @@ export default function DomainPage() {
   const [hasTyped, setHasTyped] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const upmRef = useRef(null);
+  const [openIndex, setOpenIndex] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -196,6 +261,12 @@ export default function DomainPage() {
     window.addEventListener("resize", checkScreen);
     return () => window.removeEventListener("resize", checkScreen);
   }, []);
+
+  
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
 
   return (
@@ -378,8 +449,75 @@ export default function DomainPage() {
         <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] ${styles.cbtn}`}>Let’s have a chat</button>
         <img src="/img/chat.webp" alt="" className="h-[280px] w-full"/>
        </section>
-       <section></section>
-       <section></section>
+
+
+       <section className={`flex flex-col items-center justify-around text-black gap-[30px] bg-[#f7f8f8] ${styles.sip}`}>
+          <h1 className="text-3xl  text-center text-[#1a1a4b] mb-4">
+            Redemption Fees
+          </h1>
+          <p className="text-center w-[85vw] text-[20px] text-gray-600 ">
+          Many domain registries charge an additional fee if a domain is not renewed on time. Since these fees vary depending on the registry, we’ve listed the current prices for clarity and transparency.
+          </p>
+
+          <div className="w-full max-w-4xl overflow-x-auto">
+            <table className="w-full text-left">
+              <thead>
+                <tr className={`bg-gray-100 `}>
+                  <th className={` text-sm font-semibold text-[#1a1a4b] ${styles.tb}`}>Tld</th>
+                  <th className={`relative p-4 text-sm font-semibold text-[#1a1a4b] ${styles.prc}`}>
+                    <div className="absolute inset-y-0 -left-3 w-px bg-gray-300" />
+                    Price
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {redemptionFees.map((item, index) => (
+                  <tr key={index} className="border-t border-gray-200">
+                    <td className={` text-sm text-gray-700 ${styles.tb}`}>{item.tld}</td>
+                    <td className={`relative p-4 text-sm text-gray-900 font-medium ${styles.prc}`}>
+                      <div className="absolute inset-y-0 -left-3 w-px bg-gray-200" />
+                      {item.price}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          </section>
+
+          <section className={`flex flex-col items-start justify-around text-[white] gap-[30px] bg-[white] ${styles.chat}`}>
+          <h1 className="text-3xl text-[#1a1a4b] w-full max-w-4xl">
+            Frequently asked questions
+          </h1>
+          <p className="text-gray-600 text-[20px] w-full max-w-4xl">
+            Here’s a shot of our most frequently asked domain questions. If you’re still stirring for answers, pop into our{" "}
+            live chat and one of our experts will be happy to assist you.
+          </p>
+
+          <div className="w-full max-w-4xl space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className={`border-b border-gray-200 flex flex-col gap-[20px] ${styles.tb}`}>
+                <button
+                  onClick={() => toggle(index)}
+                  className={`flex justify-between items-center w-full ${styles.qs} text-left text-[#1a1a4b] text-[20px] hover:opacity-80 transition`}
+                >
+                  <span className="w-[70vw]">{faq.question}</span>
+                  {openIndex === index ? (
+                    <ChevronUp size={20} className={`text-[#1a1a4b]`} />
+                  ) : (
+                    <ChevronDown size={20} className={`text-[#1a1a4b]`} />
+                  )}
+                </button>
+                {openIndex === index && (
+                  <div className="pb-4 text-[16px] text-gray-700">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+       </section>
+
        <section></section>
        <section></section>
        <section></section>

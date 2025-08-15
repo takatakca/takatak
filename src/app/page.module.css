@@ -65,6 +65,15 @@
     -ms-overflow-style: none;  /* IE/Edge */
     scrollbar-width: none;     /* Firefox */
   }
+
+  @media screen and (min-width: 640px) and (max-width:767px){
+    .freel{
+       width: 100%;
+    }
+    .nextfrel{
+        width: 100%;
+    }
+  }
   
 
   @media screen and (max-width:950px){
@@ -98,7 +107,7 @@
     
   }
   
-  @media screen and (max-width: 1000px) and (min-width: 700px){
+  @media screen and (max-width: 1000px) and (min-width: 768px){
     .ttp{
         padding-bottom: 30px;
     }
@@ -131,6 +140,7 @@
     .freel{
         
         margin-bottom: 20px;
+        width: 100%;
         /* padding: 0px; */
         /* margin: 0px; */
     }
