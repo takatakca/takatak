@@ -1,38 +1,59 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
 import styles from "./host.module.css"
-import Script from "next/script";
 
 
 export default function Hostingpage() {
   return (
     <main>
-      <section className={`flex flex-col items-start justify-around text-[white] gap-[30px] ${styles.chat}`}>
+      <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
+      <section className="flex flex-col items-start gap-[30px]">
         <h4>HOSTING FOR WORDPRESS</h4>
         <h1 className="text-[33px]">Stir up success <span>with our hosting for WordPress.</span></h1>
-        <p className="text-[20px]">
-          Ready to espresso your creativity online? Our WordPress hosting is the perfect blend of speed, security, and support. We've roasted up hosting solutions that are never watered down, ensuring your site performs at its peak. Whether you're a small-batch blogger or running a full-bodied e-commerce operation, our plans cater to every taste. It's time to say goodbye to bitter experiences and hello to WordPress hosting that's bold, smooth, and never leaves an aftertaste.
-        </p>
-        <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] ${styles.cbtn}`}>Find the plan for me</button>
-        
-        {/* PlanCard Widget */}
+        <p className="text-[20px]">Choose the plan that best suits your needs:</p>
+      </section>
+      <section>
+        {/*1 Portfolio Hosting */}
         <upm-widget
           as="PlanCard"
           locale="en"
           bind={`{
-            "id": "93e8d569-d072-4566-772c-d4e853121607",
+            "id": "61e50989-73d2-4752-053c-e45e610832d7",
             "currencyCode": "cad"
           }`}
         ></upm-widget>
 
-        <img src="/img/chat.webp" alt="" className="h-[280px] w-full" />
+        {/*2 Bronze Hosting */}
+        <upm-widget
+          as="PlanCard"
+          locale="en"
+          bind={`{
+            "id": "1e96d298-537d-4e75-383b-14e120637085",
+            "currencyCode": "cad"
+          }`}
+        ></upm-widget>
+
+        {/*3 Silver Hosting */}
+        <upm-widget
+          as="PlanCard"
+          locale="en"
+          bind={`{
+            "id": "80d1639e-237d-4395-3e2a-54610589e572",
+            "currencyCode": "cad"
+          }`}
+        ></upm-widget>
+        {/*4 Gold Hosting */}
+        <upm-widget
+          as="PlanCard"
+          locale="en"
+          bind={`{
+            "id": "0381d780-e72d-4dd6-701c-8413569926e5",
+            "currencyCode": "cad"
+          }`}
+        ></upm-widget>
       </section>
 
-      <Script
-        type="module"
-        src="https://embed.upmind.app/upm-widget.js"
-        strategy="afterInteractive"
-      />
+
     </main>
   );
 }
