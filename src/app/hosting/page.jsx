@@ -167,7 +167,7 @@ export default function Hostingpage() {
     <main>
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
       <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[] ${styles.chat}`}>
-        <div className="flex flex-col gap-[15px]">
+        <div className={`flex flex-col gap-[15px] ${styles.hos}`}>
           <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
           <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]"><span className="font-bold">Power up success</span> with our hosting for Website</h1>
           <p className="text-[20px] w-full">Ready to create without limits? Our WordPress hosting is the perfect mix of speed, AI security, and nonstop support. We’ve crafted hosting solutions that are never watered down, ensuring your site performs at peak efficiency. Whether you’re launching a personal blog or scaling a full e-commerce store, our plans adapt to your needs. It’s time to say goodbye to slowdowns and hello to TAKATAK WordPress hosting that’s bold, stable, and built for 2025.</p>
@@ -175,8 +175,8 @@ export default function Hostingpage() {
         </div>
         <img src="/img/hosting.webp" alt="" className="h-[280px] lg:h-[400px] sm:h-[500px] w-full"/>
        </section>
-      <section >
-        <div>
+      <section  className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
+        <div className="text-center">
           <h1>Pick a plan and<span>supercharge your WordPress.</span></h1>
           <p>Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
         </div>

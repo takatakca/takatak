@@ -8,7 +8,7 @@ const links = [
     { id: 1, title: "AI Automation", },
     { id: 2, title: "Marketing" },
     { id: 8, title: "Domain", url:"/domain"},
-    { id: 9, title: "Hosing", url:"/hosting"},
+    { id: 9, title: "Hosting", url:"/hosting"},
     { id: 3, title: "CRM Integration" },
     // { id: 3, title: "CRM Integration", url:"/dashboard" },
     // { id: 4, title: "University", url: "/university" },
