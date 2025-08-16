@@ -13,13 +13,13 @@ import { ChevronDown, ChevronUp, Route, Repeat, Send, BookCopy } from "lucide-re
 const everysip = [
   {
     icon : <BsClipboard />,
-    title : "Instant registration",
-    details : "Secure the domain you’ve always wanted without delay — register it instantly with AI‑guided setup."
+    title : "One-click installation",
+    details : "Launch your WordPress site instantly with one-click setup. Get your blog, shop, or landing page live in no time."
   },
   {
     icon : <RiShieldUserLine />,
-    title : "Free WHOIS privacy protection",
-    details : "Privacy is important — that’s why we include full WHOIS protection and proactive security checks with every domain."
+    title : "AI-powered security for WordPress",
+    details : "Stay protected with tailored WordPress security, AI-driven monitoring, and advanced"
   },
   {
     icon : <Route />,
@@ -90,21 +90,21 @@ const Orderup = [
 const customers = [
   {
     star: '/img/stars.svg',
-    title : 'Prompt solutions',
-    message : 'The support team at TAKATAK has always been prompt, and most of the time the solution is quick and thorough. Some issues were technical, some billing-related, and some domain-specific. Last time, I was referred to a senior AI-assisted tech specialist who resolved my mail service problem instantly. Thank you!',
-    name : 'Marcus D'
+    title : 'Polite and professional service',
+    message : 'The TAKATAK support team handled my WordPress issue quickly and professionally. I couldn’t get my site running until their AI-powered setup walked me through it. Everything was resolved smoothly, and I’m grateful for their polite and expert service.',
+    name : 'Wealth Angel'
   },
   {
     star: '/img/stars.svg',
-    title : 'Top-notch support and customer service',
-    message : 'We moved our existing domains from another host to TAKATAK. During the transfer, a few domains had issues, but TAKATAK’s team resolved them quickly so we could resume business without delays. Their AI+human support is top-notch, and very client-focused! Thank you TAKATAK!',
-    name : 'Clark A'
+    title : 'Fastest WP hosting and professional support',
+    message : 'Fastest WP hosting and professional support',
+    name : 'Denys'
   },
   {
     star: '/img/stars.svg',
-    title : 'I have 11 services & 6 domains with TAKATAK',
-    message : 'I manage 11 services and 6 domains with TAKATAK. Their service is amazing, and their support — especially via WhatsApp — has been fast, friendly, and incredibly helpful. TAKATAK is highly recommended!',
-    name : 'Omar'
+    title : 'PHP issue solved in one chat',
+    message : 'I had a PHP problem that broke my site, and TAKATAK solved it in a single chat. I previously waited a week at another host with no fix — TAKATAK fixed everything instantly. Their reliability is unmatched.',
+    name : 'Redline Designs'
   },
 ];
 const faqs = [
@@ -166,11 +166,6 @@ export default function Hostingpage() {
   return (
     <main>
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
-      {/* <section className="flex flex-col items-start gap-[30px]">
-        <h4></h4>
-        <h1 className="text-[33px]">Stir up success <span>with our hosting for WordPress.</span></h1>
-        <p className="text-[20px]">Choose the plan that best suits your needs:</p>
-      </section> */}
       <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[] ${styles.chat}`}>
         <div className="flex flex-col gap-[15px]">
           <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
@@ -182,8 +177,8 @@ export default function Hostingpage() {
        </section>
       <section >
         <div>
-          <h1>Pick a plan and<span>energize your WordPress.</span></h1>
-          <p>Order your usual, or make moves on a totally fresh taste. Our WordPress hosting plans are suited for any palette – including yours.</p>
+          <h1>Pick a plan and<span>supercharge your WordPress.</span></h1>
+          <p>Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
           {/*1 Portfolio Hosting */}
@@ -227,8 +222,8 @@ export default function Hostingpage() {
         </div>
       </section>
       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
-              <h1 className="text-[33px] text-center">We get better with{" "} <span className="font-extrabold lg:font-bold">every tap.</span></h1>
-              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw]">What’s in a TAKATAK domain? Everything you could want and more. From AI‑assisted setup to instant registration, you can expect our best in every. Single. One.</p>
+        <h1 className="text-[33px] text-center">Our hosting gets{" "} <span className="font-extrabold lg:font-bold">smarter with every click.</span></h1>
+              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw]">What do our clients love about TAKATAK WordPress hosting? Whatever plan you choose, know for certain that your site is in a safe pair of hands.</p>
               <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
                 {everysip.map((data, dex) =>(
                   <div key={dex} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
@@ -253,79 +248,79 @@ export default function Hostingpage() {
               </div>
         </section>
         <section className={`flex flex-col lg:flex-row items-center justify-around text-black gap-[30px] bg-[#f7f8f8] ${styles.secur}`}>
-                <div className={`flex flex-col gap-[30px]`}>
-                  <h1 className="text-[33px] text-start font-extrabold lg:font-bold">Next-level <span className="font-medium">security</span></h1>
-                  <p className="text-start text-[19px] font-semibold lg:w-[49vw] lg:font-normal lg:text-[#545964]">Protect your data and online identity with enterprise-grade, AI-driven safeguards. With TAKATAK, you can rest easy with free WHOIS privacy, domain locking, and advanced two-factor authentication for unbeatable account security.</p>
-                  <hr className="text-[#d8dbdf]"/>
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">LiteSpeed-optimized servers</p>
-                  </div>
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Zero-downtime architecture</p>
-                  </div>
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white w-[6vw] lg:w-max sm:w-max md:w-max  rounded-full flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Custom AI-tuned configuration with no timeouts</p>
-                  </div>
-                </div>
-                  <img src="/img/Top.webp" alt="" className="h-[230px] lg:h-[400px]"/>
+          <div className={`flex flex-col gap-[30px]`}>
+            <h1 className="text-[33px] text-start font-extrabold lg:font-bold">We’ve <span className="font-medium">optimized performance</span> especially for WordPress.</h1>
+            <p className="text-start text-[19px] font-semibold lg:w-[49vw] lg:font-normal lg:text-[#545964]">We want every part of your TAKATAK WordPress hosting experience to be smooth, fast, and reliable. Our LiteSpeed servers and AI caching deliver lightning-fast load times, zero downtime, and a custom WordPress setup designed to eliminate interruptions.</p>
+            <hr className="text-[#d8dbdf]"/>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">LiteSpeed servers with AI tuning for maximum speed</p>
+            </div>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Seamless operation backed by zero-downtime architecture</p>
+            </div>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[6vw] lg:w-max sm:w-max md:w-max  rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Custom WordPress optimization for uninterrupted performance</p>
+            </div>
+          </div>
+            <img src="/img/Top.webp" alt="" className="h-[230px] lg:h-[400px]"/>
         </section>
         <section className={`flex flex-col lg:flex-row items-center justify-around text-black gap-[30px] bg-[white] ${styles.secur}`}>
-               <img src="/img/Nohidden.webp" alt="" className="h-[230px] lg:h-[400px]" />
-                <div className={`flex flex-col gap-[30px]`}>
-                  <h1 className="text-[33px] text-start font-extrabold lg:font-bold">No <span className="font-medium">hidden fees</span> </h1>
-                  <p className="text-start text-[19px] font-semibold lg:w-[38vw] lg:font-normal lg:text-[#545964]">What you see is what you pay — no surprises. TAKATAK’s transparent flat-rate pricing means no extra charges or mystery fees, so you always know exactly what your domain will cost.</p>
-                  <hr className="text-[#d8dbdf]"/>
-        
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Flat CA$19.99/mo — no hidden add-ons or upsells</p>
-                  </div>
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Full breakdown of domain-related costs for total clarity</p>
-                  </div>
-                  <div className="flex items-center gap-[15px]">
-                    <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                    <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Goodbye to surprise charges with our straightforward model</p>
-                  </div>
-                </div>
+          <img src="/img/Nohidden.webp" alt="" className="h-[230px] lg:h-[400px]" />
+          <div className={`flex flex-col gap-[30px]`}>
+            <h1 className="text-[33px] text-start font-extrabold lg:font-bold">Effortlessly<span className="font-medium">build your WordPress site</span> </h1>
+            <p className="text-start text-[19px] font-semibold lg:w-[38vw] lg:font-normal lg:text-[#545964]">Build a site that feels effortless — launch instantly with TAKATAK’s one-click WordPress install, the Gutenberg block editor, and access to countless plugins and themes. Everything is supported by expert guidance and AI-driven setup, so you can focus on creating without technical barriers.</p>
+            <hr className="text-[#d8dbdf]"/>
+  
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Instant WordPress installation</p>
+            </div>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">No technical background required</p>
+            </div>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Access to premium themes, plugins, and AI guidance</p>
+            </div>
+          </div>
         </section>
         <section className={`flex flex-col lg:flex-row items-center justify-around text-black gap-[30px] bg-[#f7f8f8] ${styles.secur}`}>
-            <div className={`flex flex-col gap-[30px]`}>
-              <h1 className="text-[33px] text-start font-extrabold  lg:font-bold">24/7 <span className="font-medium">AI-backed support</span></h1>
-              <p className="text-start text-[19px] font-semibold lg:w-[48vw] lg:font-normal lg:text-[#545964]">Our dedicated human-plus-AI support team is available around the clock to assist you with any domain-related questions or issues. Get instant answers, expert guidance, and hands-on troubleshooting anytime, anywhere in the world.</p>
-              <hr className="text-[#d8dbdf]"/>
-              <div className="flex items-center gap-[15px]">
-                <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Round-the-clock help to resolve your questions quickly</p>
-              </div>
-              <div className="flex items-center gap-[15px]">
-                <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Access expert and AI-powered assistance 24/7 for any concerns</p>
-              </div>
-              <div className="flex items-center gap-[15px]">
-                <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[10vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
-                <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Consistent, reliable support whenever you need help with your domain</p>
-              </div>
+          <div className={`flex flex-col gap-[30px]`}>
+            <h1 className="text-[33px] text-start ">Let us handle your <span className="font-extrabold  lg:font-bold">free WordPress migration.</span></h1>
+            <p className="text-start text-[19px] font-semibold lg:w-[48vw] lg:font-normal lg:text-[#545964]">Seamlessly move your WordPress site to TAKATAK — no hassle, no downtime. Our expert-led migration ensures a smooth transfer with AI-assisted setup and hands-on guidance. Got multiple sites to move? Bring them all — we’ll take care of it.</p>
+            <hr className="text-[#d8dbdf]"/>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Expert-led free migrations for existing sites</p>
             </div>
-              <img src="/img/support.webp" alt="" className="h-[230px] lg:h-[380px]"/>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Zero interruptions during the migration process</p>
+            </div>
+            <div className="flex items-center gap-[15px]">
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[10vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">AI-powered + human support throughout the journey</p>
+            </div>
+          </div>
+            <img src="/img/support.webp" alt="" className="h-[230px] lg:h-[380px]"/>
        </section>
        <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-[white] ${styles.sip}`}>
-               <h1 className="text-[33px] text-center font-bold">Don’t just take our word for it.</h1>
-               <p className="text-center text-[19px] font-normal w-[85vw] lg:w-[52vw] lg:text-[#545964]">We love our domain customers and making their day — plus, they say “TAKATAK delivers” way better than we do.</p>
-               <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-[20px]">
-                 {customers.map((cus, index)=>(
-                   <div key={index} className={`bg-[#f7f8f8] ${styles.dex} flex flex-col gap-[15px]`}>
-                     <img src={cus.star} alt="stars"  className={`h-[20px] flex self-start`}/>
-                     <h2 className="font-bold text-[18px] w-full">{cus.title}</h2>
-                     <p className="lg:text-[#545964]">{cus.message}</p>
-                     <h3 className="underline-offset-[3px] underline font-bold">{cus.name}</h3>
-                   </div>
-                 ))}
-               </div>
+          <h1 className="text-[33px] text-center ">Don’t just <span className="font-bold">take our word for it.</span></h1>
+          <p className="text-center text-[19px] font-normal w-[85vw] lg:w-[52vw] lg:text-[#545964]">We love our TAKATAK WordPress hosting clients and making their day — plus, they say “TAKATAK is unstoppable” way better than we do.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 gap-[20px]">
+            {customers.map((cus, index)=>(
+              <div key={index} className={`bg-[#f7f8f8] ${styles.dex} flex flex-col gap-[15px]`}>
+                <img src={cus.star} alt="stars"  className={`h-[20px] flex self-start`}/>
+                <h2 className="font-bold text-[18px] w-full">{cus.title}</h2>
+                <p className="lg:text-[#545964]">{cus.message}</p>
+                <h3 className="underline-offset-[3px] underline font-bold">{cus.name}</h3>
+              </div>
+            ))}
+          </div>
         </section>
         <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[#5D31FF] ${styles.chat}`}>
                 <div className="flex flex-col gap-[15px]">

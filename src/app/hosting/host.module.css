@@ -7,7 +7,25 @@
   padding-block: 9px;
   padding-inline: 19px;
  }
-
+.icon{
+    padding: 8px;
+  }
+.sip{
+  padding: 20px;
+  }
+.dex{
+  padding: 20px;
+  }
+.secur{
+  padding-block: 60px;
+  padding-inline: 20px;
+}
+.prc{
+  padding-left: 10px;
+}
+.tb{
+  padding: 20px;
+}
 
 
 
@@ -17,5 +35,11 @@
     padding: 20px;
     padding-bottom: 0px;
    }
+  .dex{
+    padding: 15px;
+  }
+  .icon{
+    padding: 10px;
+  }
 
 }

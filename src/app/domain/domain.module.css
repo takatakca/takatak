@@ -68,6 +68,8 @@
 .tb{
   padding: 20px;
 }
+
+
 @media screen and (max-width:950px){
   .bar{
     margin: 15px;
