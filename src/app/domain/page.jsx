@@ -452,7 +452,7 @@ export default function DomainPage() {
           <p className="text-[20px] w-full">Our support team is available 24/7 for any domain questions or needs you have. And we’re not just running on coffee and late-night shifts — our experts and AI systems are based worldwide, so you’re always getting our best energy, instantly matched to yours.</p>
           <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Let’s have a chat</button>
         </div>
-        <img src="/img/chat.webp" alt="" className="h-[280px] lg:h-[400px] w-full"/>
+        <img src="/img/chat.webp" alt="" className="h-[280px] lg:h-[500px] sm:h-[650px] w-full"/>
        </section>
 
 
