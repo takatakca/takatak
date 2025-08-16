@@ -448,7 +448,7 @@ export default function DomainPage() {
        <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[#5D31FF] ${styles.chat}`}>
         <div className="flex flex-col gap-[15px]">
           <h4 className="text-[#B2ADFE]">DOMAINS SUPPORT</h4>
-          <h1 className="text-[33px]- lg:w-[40vw] lg:text-[40px]">Give your domain questions an AI boost of solutions.</h1>
+          <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]">Give your domain questions an AI boost of solutions.</h1>
           <p className="text-[20px] w-full">Our support team is available 24/7 for any domain questions or needs you have. And we’re not just running on coffee and late-night shifts — our experts and AI systems are based worldwide, so you’re always getting our best energy, instantly matched to yours.</p>
           <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Let’s have a chat</button>
         </div>
@@ -524,23 +524,6 @@ export default function DomainPage() {
             ))}
           </div>
        </section>
-
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       <section></section>
-       
-
     </main>
   )
 }

@@ -7,12 +7,21 @@ export default function Hostingpage() {
   return (
     <main>
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
-      <section className="flex flex-col items-start gap-[30px]">
-        <h4>HOSTING FOR WORDPRESS</h4>
+      {/* <section className="flex flex-col items-start gap-[30px]">
+        <h4></h4>
         <h1 className="text-[33px]">Stir up success <span>with our hosting for WordPress.</span></h1>
         <p className="text-[20px]">Choose the plan that best suits your needs:</p>
-      </section>
-      <section>
+      </section> */}
+      <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[] ${styles.chat}`}>
+        <div className="flex flex-col gap-[15px]">
+          <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
+          <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]"><span className="font-bold">Power up success</span> with our hosting for Website</h1>
+          <p className="text-[20px] w-full">Ready to create without limits? Our WordPress hosting is the perfect mix of speed, AI security, and nonstop support. We’ve crafted hosting solutions that are never watered down, ensuring your site performs at peak efficiency. Whether you’re launching a personal blog or scaling a full e-commerce store, our plans adapt to your needs. It’s time to say goodbye to slowdowns and hello to TAKATAK WordPress hosting that’s bold, stable, and built for 2025.</p>
+          <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Find the plan for me</button>
+        </div>
+        <img src="/img/hosting.webp" alt="" className="h-[280px] lg:h-[400px] sm:h-[500px] w-full"/>
+       </section>
+      <section className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
         {/*1 Portfolio Hosting */}
         <upm-widget
           as="PlanCard"
