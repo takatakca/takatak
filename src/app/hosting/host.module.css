@@ -2,6 +2,20 @@
 .chat{
   padding: 20px;
   padding-bottom: 0px;
+
+background: linear-gradient(
+  160deg,              /* diagonal tilt: left-top → bottom-right */
+  #001051 0%,          /* navy across top-left */
+  #001453 25%,         /* navy still across top-right */
+  #244372 45%,         /* transition starts */
+  #0A9295 65%,         
+  #0BBCAC 82%, 
+  #0ECDB4 100%         /* teal at bottom-right */
+);
+
+}
+.assi{
+  padding-bottom: 20px;
 }
 .cbtn{
   padding-block: 9px;

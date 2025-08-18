@@ -132,7 +132,6 @@ const faqs = [
   {
     question: "How do I choose a domain name?",
     answer:
-      // "That’s what our handy domain search tool is for – just scroll back to the top of this page and punch in some ideas to find the one that screams \"you!\"",
       "That’s where our smart search tool comes in — just type in your ideas and our AI will suggest the perfect match."
   },
   {

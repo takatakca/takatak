@@ -14,41 +14,41 @@ const everysip = [
   {
     icon : <BsClipboard />,
     title : "One-click installation",
-    details : "Launch your WordPress site instantly with one-click setup. Get your blog, shop, or landing page live in no time."
+    details : "Launch WordPress in seconds with our guided one-click setup. Get your shop, blog, or landing page live without delay."
   },
   {
     icon : <RiShieldUserLine />,
-    title : "AI-powered security for WordPress",
-    details : "Stay protected with tailored WordPress security, AI-driven monitoring, and advanced"
+    title : "Security for WordPress",
+    details : "Stay protected with tailored WordPress security, AI-driven monitoring, and advanced WordPress-tuned hardening boost stability and guard against threats—24/7."
   },
   {
     icon : <Route />,
-    title : "Free web forwarding",
-    details : "Redirect traffic from your domain to a preferred website, making navigation and accessibility easier than ever."
+    title : "Automatic backups",
+    details : "Enjoy worry-free backups stored offsite, with easy browsing, quick restores, and downloads—no extra plugins."
   },
   {
     icon : <Repeat />,
-    title : "Simple transfers (policy)",
-    details : "Transfers are straightforward: CA$100 to transfer in. Generate your auth codes in our control panel. Transfers‑out available after 12 months."
+    title : "Free migrations",
+    details : "Move your site with zero downtime. We handle the transfer and verification, including multiple sites at no extra cost."
   },
   {
     icon : <Send />,
-    title : "Unlimited email forwarding",
-    details : "Redirect unlimited emails to chosen addresses — forwarding only (no inbox hosting) — so you stay connected with efficient communication."
-  },
-  {
-    icon : <LiaHandHoldingUsdSolid />,
-    title : "Flat‑rate domain renewal",
-    details : "Predictable pricing at CA$19.99/mo across terms. We cover domain, transaction, and admin costs — without sacrificing quality."
+    title : "cPanel control panel",
+    details : "Manage sites, PHP, DNS, and files with cPanel/WHM plus our clean dashboard—Linux-friendly and simple to use."
   },
   {
     icon : <AiOutlineGlobal />,
-    title : "Anycast DNS & 99.9% uptime",
-    details : "Global Anycast DNS and resilient infrastructure deliver fast lookups and reliable resolution — built for speed and stability."
+    title : "Unlimited databases",
+    details : "Create as many MySQL/MariaDB databases as you need, with ample space to grow apps, content, and stores."
+  },
+  {
+    icon : <LiaHandHoldingUsdSolid />,
+    title : "Speed optimized",
+    details : "Handle traffic spikes with elastic resources so you can grow your audience with no downtime."
   },
   {
     icon : <BookCopy />,
-    title : "Easy contact management",
+    title : "Scalable resources",
     details : "Enjoy hassle‑free contact management — make changes, do trades or transfers, or update contact details in bulk with ease."
   },
   
@@ -57,33 +57,43 @@ const everysip = [
 const Orderup = [
   {
     icon : '/img/Freetransfer.svg',
-    title : "Transparent domain pricing",
-    details : "Enjoy world-class service at a flat CA$19.99/mo — our pricing is transparent so you can make informed decisions without hidden fees or surprises."
+    title : "Free migration",
+    details : "Transfer your website to our platform at zero cost, ensuring a smooth transition with no downtime or disconnection for your audience."
   },
   {
     icon : '/img/Notification.svg',
-    title : "Smart domain alerts",
-    details : "Never miss critical updates again! Our AI-driven dashboard and tailored alerts keep you up-to-date with every aspect of your domain management."
+    title : "Instant setup",
+    details : "With rapid site setup from our expert + AI team, enjoy swift deployment of your hosting plan and a quick launch for your website."
   },
   {
     icon : '/img/transfer.svg',
-    title : "Always in your control",
-    details : "All domains are registered in your name and fully belong to you, giving you complete authority to edit, transfer, or sell when you decide."
+    title : "Transparent pricing",
+    details : "Get what you pay for—no surprises. Clear, straightforward pricing with no hidden fees, plus useful features included."
   },
   {
     icon : '/img/management.svg',
-    title : "Effortless management",
-    details : "Our intuitive tools make managing your domain simple, secure, and efficient — keeping your online presence fully under your control."
+    title : "Free SSL certificates",
+    details : "Secure your site from day one with automatically issued SSL. Encrypt traffic, boost trust, and meet best‑practice standards."
   },
   {
     icon : '/img/domains.svg',
-    title : "Multiple domain support",
-    details : "Add as many domains as you need to grow your business — TAKATAK scales with you, without performance limits."
+    title : "24/7 expert support",
+    details : "From managed migrations to tricky PHP errors, rely on AI‑backed specialists to enhance performance and resolve issues quickly."
   },
   {
     icon : '/img/support.svg',
-    title : "24/7 expert assistance",
-    details : "Contact us anytime — our dedicated AI-backed support team is committed to your success and ready to solve any challenge."
+    title : "Global service",
+    details : "Choose servers across worldwide regions for reliable performance, low latency, and proximity to your target audience."
+  },
+  {
+    icon : '/img/support.svg',
+    title : "99.9% uptime guarantee",
+    details : "Rest easy with our uptime assurance—your website stays consistently available, building reliability and trust for your brand."
+  },
+  {
+    icon : '/img/support.svg',
+    title : "Carbon‑neutral hosting",
+    details : "Run greener infrastructure with our carbon‑neutral approach, reducing impact while maintaining top‑tier hosting quality."
   },
   
 ];
@@ -109,50 +119,29 @@ const customers = [
 ];
 const faqs = [
   {
-    question: "What is a domain name?",
+    question: "What is WordPress hosting?",
     answer:
-      "Think of it as your business address online. Instead of a physical storefront, you have a unique domain where your brand lives and customers can connect with you.",
+      "If you already run a WordPress site, this is tailor-made for you. TAKATAK's WordPress hosting ensures your site runs on servers fully optimized for WordPress with enterprise-grade security, speed, and uptime .",
   },
   {
-    question: "How do I choose a domain name?",
+    question: "Do all of your WordPress support plans?",
     answer:
-      // "That’s what our handy domain search tool is for – just scroll back to the top of this page and punch in some ideas to find the one that screams \"you!\"",
-      "That’s where our smart search tool comes in — just type in your ideas and our AI will suggest the perfect match."
+     "Yes — every single plan is built with WordPress in mind.",
   },
   {
-    question: "Can I transfer my domain(s) to TAKATAK?",
+    question: "Which WordPress hosting plan is best for me?",
     answer:
-      "Yes — our transfer process is near-instant. Once your payment clears, check your inbox for a welcome email and access to your TAKATAK dashboard. Transfer-in fee: CA$100, with transfer-out available after 12 months.",
+      "Our plans are designed to fit all levels of business — from personal blogs to high-traffic eCommerce stores. The best choice depends on your visitors, features (like WooCommerce), and how much you want TAKATAK to manage for you. If you'd like expert guidance, our team is always ready to help.",
   },
   {
-    question: "How long does it take for a newly registered domain to become active?",
+    question: "I already have a WordPress site with another host, can I migrate it to TAKATAK?",
     answer:
-      "Almost instantly. We’ve built an automated setup process so your domain is live and ready in minutes.",
+      "Absolutely! Just open a migration request in your dashboard, share your old host logins, and we'll move your site over with zero downtime — usually in under 24 hours.",
   },
   {
-    question: "Do you provide domain privacy protection services?",
+    question: "Do you offer specific WordPress support?",
     answer:
-      "Absolutely — full WHOIS privacy is included with every TAKATAK domain at no extra charge.",
-  },
-  {
-    question: "Do you provide domain name parking?",
-    answer:
-      "Yes — we can park unlimited domains for you at no cost, until you’re ready to connect them.",
-  },
-  {
-    question: "Can I manage my domain's DNS settings?",
-    answer:
-      "Yes — manage A, CNAME, MX, TXT, and more with full control via our dashboard.",
-  },
-  {
-    question: "Can I automatically renew my domain?",
-    answer:
-      "Yes — auto-renew keeps your site running without interruptions, 24/7.",
-  },
-  {
-    question: "Do you offer bulk discounts on domains?",
-    answer:
-      "Yes — if you’re registering 50 or more, our team can tailor a pricing plan for you.",
+      "Yes. Our support team is made up of WordPress specialists available 24/7 . If you're ever in a tough spot, just reach out — we'll get you back on track quickly.",
   },
 ];
 
@@ -173,12 +162,12 @@ export default function Hostingpage() {
           <p className="text-[20px] w-full">Ready to create without limits? Our WordPress hosting is the perfect mix of speed, AI security, and nonstop support. We’ve crafted hosting solutions that are never watered down, ensuring your site performs at peak efficiency. Whether you’re launching a personal blog or scaling a full e-commerce store, our plans adapt to your needs. It’s time to say goodbye to slowdowns and hello to TAKATAK WordPress hosting that’s bold, stable, and built for 2025.</p>
           <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Find the plan for me</button>
         </div>
-        <img src="/img/hosting.webp" alt="" className="h-[280px] lg:h-[400px] sm:h-[500px] w-full"/>
+        <img src="/img/hosting.webp" alt="" className="h-[300px] lg:h-[400px] sm:h-[500px] w-full"/>
        </section>
       <section  className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
-        <div className="text-center">
-          <h1>Pick a plan and<span>supercharge your WordPress.</span></h1>
-          <p>Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
+        <div className=" flex flex-col items-center">
+          <h1 className="text-[33px] text-center">Pick a plan and<span className="font-bold lg:font-bol"> supercharge your WordPress.</span></h1>
+          <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw" >Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
           {/*1 Portfolio Hosting */}
@@ -223,7 +212,7 @@ export default function Hostingpage() {
       </section>
       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
         <h1 className="text-[33px] text-center">Our hosting gets{" "} <span className="font-extrabold lg:font-bold">smarter with every click.</span></h1>
-              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw]">What do our clients love about TAKATAK WordPress hosting? Whatever plan you choose, know for certain that your site is in a safe pair of hands.</p>
+              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw]">What do our clients love about TAKATAK WordPress hosting? Whatever plan you choose, know for certain your site is safe, fast, and AI-optimized around the clock.</p>
               <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
                 {everysip.map((data, dex) =>(
                   <div key={dex} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
@@ -235,9 +224,9 @@ export default function Hostingpage() {
               </div>
       </section>
       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
-              <h1 className="text-[33px] text-center font-extrabold lg:font-bold">Locked in with every click!</h1>
-              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[52vw]">What do our clients love about TAKATAK? Whatever plan you choose, know for certain that you and your domain are in safe, secure, AI-optimized hands.</p>
-              <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-[20px]">
+              <h1 className="text-[33px] text-center font-extrabold lg:font-bold">Order up!</h1>
+              <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[52vw]">What do our clients love about TAKATAK? Whatever plan you choose, know for certain that you and your site are in safe, AI‑optimized hands.</p>
+              <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
                 {Orderup.map((data, dex) =>(
                   <div key={dex} className={`bg-[#f7f8f8] ${styles.dex} rounded-[10px] flex flex-col gap-[15px]`}>
                     <img src={data.icon} alt="icon" className={`h-[60px] w-[60px] flex self-start justify-center-safe ${styles.icon}`}/>
@@ -322,48 +311,49 @@ export default function Hostingpage() {
             ))}
           </div>
         </section>
-        <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[#5D31FF] ${styles.chat}`}>
-                <div className="flex flex-col gap-[15px]">
-                  <h4 className="text-[#B2ADFE]">DOMAINS SUPPORT</h4>
-                  <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]">Give your domain questions an AI boost of solutions.</h1>
-                  <p className="text-[20px] w-full">Our support team is available 24/7 for any domain questions or needs you have. And we’re not just running on coffee and late-night shifts — our experts and AI systems are based worldwide, so you’re always getting our best energy, instantly matched to yours.</p>
-                  <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Let’s have a chat</button>
-                </div>
-                <img src="/img/chat.webp" alt="" className="h-[280px] lg:h-[400px] w-full"/>
+
+        <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px]  ${styles.chat}`}>
+          <div className={`flex flex-col gap-[15px] ${styles.assi}`}>
+            <h4 className="text-[#B2ADFE]">WORDPRESS ASSISTANCE</h4>
+            <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]">Got questions? We'll deliver the perfect solution.</h1>
+            <p className="text-[20px] w-full">Our expert + AI support team is available 24/7 for any WordPress needs. We don't rely on caffeine or late-night rushes — our specialists are based worldwide, ensuring you always get the right answer, delivered fast and at full strength.</p>
+            <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Let’s have a chat</button>
+          </div>
+          <img src="/img/assistant.webp" alt="assistant" className="h-[300px] lg:h-[500px] w-full"/>
         </section>
+
         <section className={`flex flex-col lg:flex-row items-start  justify-around text-[white] gap-[30px] bg-[white] ${styles.secur}`}>
-                  <div className="flex flex-col gap-[30px]">
-                    <h1 className="text-3xl lg:text-[40px] lg:w-max text-[#1a1a4b] w-full max-w-4xl">
-                    Frequently asked questions
-                    </h1>
-                    <p className="text-gray-600 text-[20px] w-full max-w-4xl">
-                      Here’s a shot of our most frequently asked domain questions. If you’re still stirring for answers, pop into our{" "}
-                      live chat and one of our experts will be happy to assist you.
-                    </p>
+          <div className="flex flex-col gap-[30px]">
+            <h1 className="text-3xl lg:text-[40px] lg:w-max text-[#1a1a4b] w-full max-w-4xl">
+            Frequently asked questions
+            </h1>
+            <p className="text-gray-600 text-[20px] w-full max-w-4xl">
+              Here's a quick round-up of our most common TAKATAK WordPress Hosting questions. If you're still looking for answers, jump into our live chat and one of our AI + human experts will be there for you.
+            </p>
+          </div>
+
+          <div className="w-full max-w-4xl space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className={`border-b border-gray-200 flex flex-col gap-[20px] ${styles.tb}`}>
+                <button
+                  onClick={() => toggle(index)}
+                  className={`flex justify-between items-center w-full ${styles.qs} text-left text-[#1a1a4b] text-[20px] hover:opacity-80 transition`}
+                >
+                  <span className="w-[70vw] lg:w-max">{faq.question}</span>
+                  {openIndex === index ? (
+                    <ChevronUp size={20} className={`text-[#1a1a4b]`} />
+                  ) : (
+                    <ChevronDown size={20} className={`text-[#1a1a4b]`} />
+                  )}
+                </button>
+                {openIndex === index && (
+                  <div className="pb-4 text-[16px] text-gray-700">
+                    {faq.answer}
                   </div>
-        
-                  <div className="w-full max-w-4xl space-y-4">
-                    {faqs.map((faq, index) => (
-                      <div key={index} className={`border-b border-gray-200 flex flex-col gap-[20px] ${styles.tb}`}>
-                        <button
-                          onClick={() => toggle(index)}
-                          className={`flex justify-between items-center w-full ${styles.qs} text-left text-[#1a1a4b] text-[20px] hover:opacity-80 transition`}
-                        >
-                          <span className="w-[70vw] lg:w-max">{faq.question}</span>
-                          {openIndex === index ? (
-                            <ChevronUp size={20} className={`text-[#1a1a4b]`} />
-                          ) : (
-                            <ChevronDown size={20} className={`text-[#1a1a4b]`} />
-                          )}
-                        </button>
-                        {openIndex === index && (
-                          <div className="pb-4 text-[16px] text-gray-700">
-                            {faq.answer}
-                          </div>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </section>
 
 
