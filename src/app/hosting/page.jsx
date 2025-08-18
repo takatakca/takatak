@@ -323,8 +323,8 @@ export default function Hostingpage() {
         </section>
 
         <section className={`flex flex-col lg:flex-row items-start  justify-around text-[white] gap-[30px] bg-[white] ${styles.secur}`}>
-          <div className="flex flex-col gap-[30px]">
-            <h1 className="text-3xl lg:text-[40px] lg:w-max text-[#1a1a4b] w-full max-w-4xl">
+          <div className="flex flex-col gap-[30px] flex-wrap">
+            <h1 className="text-3xl lg:text-[30px] lg:w-max text-[#1a1a4b] w-full max-w-full md:max-w-fit">
             Frequently asked questions
             </h1>
             <p className="text-gray-600 text-[20px] w-full max-w-4xl">
@@ -332,7 +332,7 @@ export default function Hostingpage() {
             </p>
           </div>
 
-          <div className="w-full max-w-4xl space-y-4">
+          <div className="w-full max-w-full space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className={`border-b border-gray-200 flex flex-col gap-[20px] ${styles.tb}`}>
                 <button

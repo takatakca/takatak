@@ -491,7 +491,7 @@ export default function DomainPage() {
 
           <section className={`flex flex-col lg:flex-row items-start  justify-around text-[white] gap-[30px] bg-[white] ${styles.secur}`}>
           <div className="flex flex-col gap-[30px]">
-            <h1 className="text-3xl lg:text-[40px] lg:w-max text-[#1a1a4b] w-full max-w-4xl">
+            <h1 className="text-3xl lg:text-[40px] lg:w-max text-[#1a1a4b] w-full max-w-4xl md:max-w-fit">
             Frequently asked questions
             </h1>
             <p className="text-gray-600 text-[20px] w-full max-w-4xl">
