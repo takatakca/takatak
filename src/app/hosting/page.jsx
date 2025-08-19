@@ -1,18 +1,20 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
 import styles from "./host.module.css"
-import { FaSearch } from "react-icons/fa";
-import { BsClipboard } from "react-icons/bs";
+import { FaCpanel } from "react-icons/fa";
+import { BsDatabaseFillCheck } from "react-icons/bs";
 import { RiShieldUserLine } from "react-icons/ri";
-import { IoMdCheckmark } from "react-icons/io";
+import { IoMdCheckmark, IoIosExpand } from "react-icons/io";
 import { LiaHandHoldingUsdSolid } from "react-icons/lia";
-import { AiOutlineGlobal } from "react-icons/ai";
+import { SlSpeedometer } from "react-icons/sl";
+import { AiOutlineGlobal, AiOutlineRetweet } from "react-icons/ai";
+import { RxRocket } from "react-icons/rx";
 import { ChevronDown, ChevronUp, Route, Repeat, Send, BookCopy } from "lucide-react";
 
 
 const everysip = [
   {
-    icon : <BsClipboard />,
+    icon : <RxRocket />,
     title : "One-click installation",
     details : "Launch WordPress in seconds with our guided one-click setup. Get your shop, blog, or landing page live without delay."
   },
@@ -22,7 +24,7 @@ const everysip = [
     details : "Stay protected with tailored WordPress security, AI-driven monitoring, and advanced WordPress-tuned hardening boost stability and guard against threats—24/7."
   },
   {
-    icon : <Route />,
+    icon : <AiOutlineRetweet />,
     title : "Automatic backups",
     details : "Enjoy worry-free backups stored offsite, with easy browsing, quick restores, and downloads—no extra plugins."
   },
@@ -32,22 +34,22 @@ const everysip = [
     details : "Move your site with zero downtime. We handle the transfer and verification, including multiple sites at no extra cost."
   },
   {
-    icon : <Send />,
+    icon : <FaCpanel />,
     title : "cPanel control panel",
     details : "Manage sites, PHP, DNS, and files with cPanel/WHM plus our clean dashboard—Linux-friendly and simple to use."
   },
   {
-    icon : <AiOutlineGlobal />,
+    icon : <BsDatabaseFillCheck />,
     title : "Unlimited databases",
     details : "Create as many MySQL/MariaDB databases as you need, with ample space to grow apps, content, and stores."
   },
   {
-    icon : <LiaHandHoldingUsdSolid />,
+    icon : <SlSpeedometer />,
     title : "Speed optimized",
     details : "Handle traffic spikes with elastic resources so you can grow your audience with no downtime."
   },
   {
-    icon : <BookCopy />,
+    icon : <IoIosExpand />,
     title : "Scalable resources",
     details : "Enjoy hassle‑free contact management — make changes, do trades or transfers, or update contact details in bulk with ease."
   },
@@ -56,42 +58,42 @@ const everysip = [
 
 const Orderup = [
   {
-    icon : '/img/Freetransfer.svg',
+    icon : '/img/mig.svg',
     title : "Free migration",
     details : "Transfer your website to our platform at zero cost, ensuring a smooth transition with no downtime or disconnection for your audience."
   },
   {
-    icon : '/img/Notification.svg',
+    icon : '/img/setup.svg',
     title : "Instant setup",
     details : "With rapid site setup from our expert + AI team, enjoy swift deployment of your hosting plan and a quick launch for your website."
   },
   {
-    icon : '/img/transfer.svg',
+    icon : '/img/Mon.svg',
     title : "Transparent pricing",
     details : "Get what you pay for—no surprises. Clear, straightforward pricing with no hidden fees, plus useful features included."
   },
   {
-    icon : '/img/management.svg',
+    icon : '/img/world.svg',
     title : "Free SSL certificates",
     details : "Secure your site from day one with automatically issued SSL. Encrypt traffic, boost trust, and meet best‑practice standards."
   },
   {
-    icon : '/img/domains.svg',
+    icon : '/img/support.svg',
     title : "24/7 expert support",
     details : "From managed migrations to tricky PHP errors, rely on AI‑backed specialists to enhance performance and resolve issues quickly."
   },
   {
-    icon : '/img/support.svg',
+    icon : '/img/global.svg',
     title : "Global service",
     details : "Choose servers across worldwide regions for reliable performance, low latency, and proximity to your target audience."
   },
   {
-    icon : '/img/support.svg',
+    icon : '/img/99.svg',
     title : "99.9% uptime guarantee",
     details : "Rest easy with our uptime assurance—your website stays consistently available, building reliability and trust for your brand."
   },
   {
-    icon : '/img/support.svg',
+    icon : '/img/green.svg',
     title : "Carbon‑neutral hosting",
     details : "Run greener infrastructure with our carbon‑neutral approach, reducing impact while maintaining top‑tier hosting quality."
   },
@@ -155,7 +157,7 @@ export default function Hostingpage() {
   return (
     <main>
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
-      <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] bg-[] ${styles.chat}`}>
+      <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] ${styles.host}`}>
         <div className={`flex flex-col gap-[15px] ${styles.hos}`}>
           <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
           <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]"><span className="font-bold">Power up success</span> with our hosting for Website</h1>
@@ -242,37 +244,37 @@ export default function Hostingpage() {
             <p className="text-start text-[19px] font-semibold lg:w-[49vw] lg:font-normal lg:text-[#545964]">We want every part of your TAKATAK WordPress hosting experience to be smooth, fast, and reliable. Our LiteSpeed servers and AI caching deliver lightning-fast load times, zero downtime, and a custom WordPress setup designed to eliminate interruptions.</p>
             <hr className="text-[#d8dbdf]"/>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] w-[7vw] lg:w-max sm:w-max md:w-max text-white rounded-[50px] flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">LiteSpeed servers with AI tuning for maximum speed</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white rounded-[50px] flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] w-[8vw] lg:w-max sm:w-max md:w-max text-white rounded-[50px] flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Seamless operation backed by zero-downtime architecture</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[6vw] lg:w-max sm:w-max md:w-max  rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[8vw] lg:w-max sm:w-max md:w-max  rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Custom WordPress optimization for uninterrupted performance</p>
             </div>
           </div>
-            <img src="/img/Top.webp" alt="" className="h-[230px] lg:h-[400px]"/>
+            <img src="/img/optimise.webp" alt="" className="h-[230px] lg:h-[400px]"/>
         </section>
         <section className={`flex flex-col lg:flex-row items-center justify-around text-black gap-[30px] bg-[white] ${styles.secur}`}>
-          <img src="/img/Nohidden.webp" alt="" className="h-[230px] lg:h-[400px]" />
+          <img src="/img/effortlessly.webp" alt="" className="h-[230px] lg:h-[400px]" />
           <div className={`flex flex-col gap-[30px]`}>
-            <h1 className="text-[33px] text-start font-extrabold lg:font-bold">Effortlessly<span className="font-medium">build your WordPress site</span> </h1>
+            <h1 className="text-[33px] text-start font-extrabold lg:font-bold">Effortlessly <span className="font-medium">build your WordPress site</span> </h1>
             <p className="text-start text-[19px] font-semibold lg:w-[38vw] lg:font-normal lg:text-[#545964]">Build a site that feels effortless — launch instantly with TAKATAK’s one-click WordPress install, the Gutenberg block editor, and access to countless plugins and themes. Everything is supported by expert guidance and AI-driven setup, so you can focus on creating without technical barriers.</p>
             <hr className="text-[#d8dbdf]"/>
   
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[4vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Instant WordPress installation</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white w-[4.5vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">No technical background required</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Access to premium themes, plugins, and AI guidance</p>
             </div>
           </div>
@@ -283,19 +285,19 @@ export default function Hostingpage() {
             <p className="text-start text-[19px] font-semibold lg:w-[48vw] lg:font-normal lg:text-[#545964]">Seamlessly move your WordPress site to TAKATAK — no hassle, no downtime. Our expert-led migration ensures a smooth transfer with AI-assisted setup and hands-on guidance. Got multiple sites to move? Bring them all — we’ll take care of it.</p>
             <hr className="text-[#d8dbdf]"/>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[5.5vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Expert-led free migrations for existing sites</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[8vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[6vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">Zero interruptions during the migration process</p>
             </div>
             <div className="flex items-center gap-[15px]">
-              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[10vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
+              <IoMdCheckmark className="bg-[#5d33ff] text-white  w-[7vw] lg:w-max sm:w-max md:w-max rounded-full flex self-center justify-center-safe"/>
               <p className="text-[#5d33ff] text-[20px] font-medium lg:font-normal">AI-powered + human support throughout the journey</p>
             </div>
           </div>
-            <img src="/img/support.webp" alt="" className="h-[230px] lg:h-[380px]"/>
+            <img src="/img/migration.webp" alt="" className="h-[230px] lg:h-[380px]"/>
        </section>
        <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-[white] ${styles.sip}`}>
           <h1 className="text-[33px] text-center ">Don’t just <span className="font-bold">take our word for it.</span></h1>
