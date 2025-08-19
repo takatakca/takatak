@@ -85,7 +85,7 @@ const Navbar = () => {
                             onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
                             onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
                         >
-                            {pgs.title === "Domain" && "Hosting" ? (
+                            {(pgs.title === "Domain" || pgs.title === "Hosting") ? (
                                 <a href={pgs.url}>{pgs.title}</a> // Full page reload 
                             ) : pgs.url ?(
                                 <Link href={pgs.url}>{pgs.title}</Link>
@@ -135,7 +135,7 @@ const Navbar = () => {
                             key={link.id}
                             className={`${ link.title.toLowerCase() === "login" ? styles.login : link.title.toLowerCase() === "signup"  ? styles.signup  : link.title.toLowerCase() === "more" ? styles.more : "" }`}
                             >
-                                {link.title === "Domain" && "Hosting" ? (
+                                {(link.title === "Domain" || link.title === "Hosting") ? (
                                      <a href={link.url}>{link.title}</a>
                                 ): link.url ? (
                                     <Link
