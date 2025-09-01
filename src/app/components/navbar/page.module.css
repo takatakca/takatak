@@ -1,40 +1,82 @@
-.nav{
-  padding: 0px 50px;
+
+.topbar{
+    padding-inline: 20px;
+    padding-block: 8px;
 }
-.gradient {
+.search{
+    padding-inline: 12px;
+    padding-block: 8px;
+}
+.icon{
+    padding-inline: 16px;
+    padding-block: 8px;
+}
+.deal{
+    padding-inline: 12px;
+    padding-block: 8px;
+}
+/* .nav{
+  padding: 0px 50px;
+} */
+/* .gradient {
   background: 
     linear-gradient(to top, rgba(0,0,0,0) 0%, #1d4ed8 100%),
     linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
-}
-.login{
+} */
+/* .login{
     background-color: #01A2D9;
     padding: 3px 20px;
     border-radius: 5px;
-}
-.login:hover{
+} */
+/* .login:hover{
     background-color: #4ca8ea;
-}
-.signup{
+} */
+/* .signup{
     border: 1.5px solid white;
     padding: 3px 20px;
     border-radius: 5px;
-}
-.signup:hover{
+} */
+/* .signup:hover{
     background-color: #01A2D9;
-}
+} */
 
 
 
 @media screen and (max-width:950px) {
-    .login{
+    .hd{
+        padding-inline: 18px;
+    }
+    .logo{
+        padding-inline: 24px;
+    }
+    .mobsearc{
+        padding-inline: 16px;
+        padding-block: 8px;
+    }
+    .selec{
+        padding-inline: 8px;
+        padding-block: 8px;
+    }
+    .inpt{
+        padding-inline: 8px;
+        padding-block: 8px;
+    }
+    .icon{
+        padding-inline: 12px;
+        padding-block: 8px;
+    }
+    .deal{
+        padding-inline: 24px;
+    }
+    /* .login{
         background-color: #01A2D9;
         padding: 3px 20px;
         border-radius: 5px;
         text-align: center;
         border: 1.5px solid white;
         margin-right: 20px;
-    }
-    .signup{
+    } */
+    /* .signup{
         background-color: #01A2D9;
         text-align: center;
         border: 1.5px solid white;
@@ -42,8 +84,8 @@
         border-radius: 5px;
         margin: 20px 0px;
         margin-right: 20px;
-    }
-    .more{
+    } */
+    /* .more{
         margin-left: 15px;
-    }
+    } */
 }
