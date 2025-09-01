@@ -1,0 +1,44 @@
+.load{
+    margin-top: 100px;
+    color: white;
+    font-size: 20px;
+}
+.top{
+    padding-bottom: 100px;
+}
+.prduct{
+    padding-top: 15px;
+}
+.activ{
+}
+.actv1, .actv2, .actv3, .actv4{
+    padding: 3px 20px;
+}
+.tic{
+    padding: 3px 15px;
+}
+.aff{
+    padding: 5px 10px;
+}
+.nestd{
+    padding: 10px;
+}
+.oo{
+    padding-left: 30px;
+}
+.spc{
+    padding: 0px 16px;
+}
+.tive{
+    padding: 15px;
+}
+.sec2{
+    padding-top: 15px;
+    padding-right: 20px;
+}
+.view{
+    padding: 2px 15px;
+}
+.hr{
+    padding: 20px 80px 20px 0px;
+}

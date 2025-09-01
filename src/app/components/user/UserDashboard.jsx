@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { TbCancel } from "react-icons/tb";
 import { FcPaid } from "react-icons/fc";
-import styles from "../home/home.module.css"
+import styles from "../user/userdash.module.css"
 import { AppContext } from '../../context/AppContext';
 import { useRouter } from 'next/navigation';
 
@@ -46,7 +46,7 @@ const orderinfo = [
   },
 ]
 
-export default function Home() {
+export default function UserDashboard() {
   const [activeTab, setActiveTab] = useState('Overview');
   const tabs = ['Overview', 'Commissions', 'Payouts'];
 

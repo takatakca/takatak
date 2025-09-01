@@ -1,44 +1,190 @@
-.load{
-    margin-top: 100px;
-    color: white;
-    font-size: 20px;
+.gradient{
+    padding: 0px 0px 50px 50px;
+    background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
 }
-.top{
-    padding-bottom: 100px;
+.butn{
+    padding: 6px 30px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.prduct{
-    padding-top: 15px;
+.butn:hover{
+    background-color: #4ca8ea;
 }
-.activ{
+.servic{
+    padding: 0px 50px 0px 0px;
 }
-.actv1, .actv2, .actv3, .actv4{
-    padding: 3px 20px;
+.img{
+    margin-bottom: -10px;
 }
-.tic{
-    padding: 3px 15px;
+.serv{
+    padding: 10px 0px 5px 20px;
 }
-.aff{
-    padding: 5px 10px;
+
+.detail{
+    padding: 20px 0px 20px 20px;
 }
-.nestd{
-    padding: 10px;
+.dscm{
+    padding: 40px 0px;
 }
-.oo{
-    padding-left: 30px;
+.market{
+    padding: 20px 10px;
+    width: 15.5vw;
 }
-.spc{
-    padding: 0px 16px;
+.inp{
+    padding: 10px 7px;
 }
-.tive{
-    padding: 15px;
+.butto{
+    padding: 8px;
 }
-.sec2{
-    padding-top: 15px;
-    padding-right: 20px;
+.freel{
+    padding: 20px 10px;
+    margin-bottom: 20px;
 }
-.view{
-    padding: 2px 15px;
+.hirefst{
+    padding: 6px 20px;
 }
-.hr{
-    padding: 20px 80px 20px 0px;
+.nextfrel{
+    padding: 20px 10px;
 }
+.fmarketplc{
+    padding: 20px 10px;
+}
+.Fmark{
+    padding: 50px 0px 100px 40px;
+}
+.tags{
+    padding: 2px 35px;
+}
+.srch{
+    padding: 10px 14px;
+}
+
+
+  
+
+  @media screen and (min-width: 640px) and (max-width:767px){
+    .freel{
+       width: 100%;
+    }
+    .nextfrel{
+        width: 100%;
+    }
+  }
+  
+
+  @media screen and (max-width:950px){
+    .gradient{
+        padding: 20px 15px 50px 15px;
+    }
+    .serv{
+        width: 100%;
+        padding: 20px 0px 20px 35px;
+    }
+    .servic{
+        padding: 0px;
+        gap: 30px;
+    }
+    .dscm{
+        padding: 40px 20px;
+    }
+
+    /* .detail{
+        width: 100%;
+    } */
+    .market{
+        width: 100%;
+    }
+    .Fmark{
+        padding: 20px ;
+    }
+    .ttp{
+        padding-bottom: 30px;
+    }
+    
+  }
+  
+  @media screen and (max-width: 1000px) and (min-width: 768px){
+    .ttp{
+        padding-bottom: 30px;
+    }
+    .gradient{
+        padding: 0px;  
+        padding-block: 50px;
+    }
+    .servic{
+        padding: 0px;
+        padding-inline: 90px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .serv{
+        padding: 20px 0px 20px 35px;
+    }
+    .dscm{
+        padding: 0px;
+        padding-block: 50px;
+        padding-inline: 15px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+    }
+    .detail{
+        padding-block: 20px;
+        padding-inline: 30px;
+    }
+    .freel{
+        
+        margin-bottom: 20px;
+        width: 100%;
+        /* padding: 0px; */
+        /* margin: 0px; */
+    }
+    .Fmark{
+        padding: 50px 0px 100px 40px;
+        /* padding: 0px; */
+    }
+    .market{
+        width: 100%;
+    }
+    .tags{
+        padding: 2px 20px;
+    }
+  }
+
+  @media screen and (min-width:1024px){
+    .tags{
+        padding: 2px 20px;
+    }
+    .scrollhide {
+        max-width: 480px;
+    }
+    .freel{
+        width: 18vw;
+    }
+    .nextfrel{
+        width: 18vw;
+        right: 50px;
+    }
+    .Fmark{
+        gap: 30px;
+    }
+    .dscm{
+        padding: 0px;
+        padding-block: 50px;
+        padding-inline: 15px;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        gap: 40px;
+    }
+    .decamp{
+        column-gap: 20px;
+        row-gap: 20px;
+        
+    }
+    .market{
+        width: 100%;
+         
+    }
+  }
