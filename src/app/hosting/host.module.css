@@ -1,7 +1,8 @@
 
 .chat{
-  padding: 20px;
+  /* padding: 20px; */
   padding-bottom: 0px;
+  padding-inline: 150px;
 
 background: linear-gradient(
   160deg,              /* diagonal tilt: left-top → bottom-right */
@@ -11,6 +12,19 @@ background: linear-gradient(
   #0A9295 65%,         
   #0BBCAC 82%, 
   #0ECDB4 100%         /* teal at bottom-right */
+);
+}
+.host{
+  padding: 40px 35px 0px 100px;
+
+background: linear-gradient(
+  160deg,              /* diagonal tilt: left-top → bottom-right */
+  #000B50 0%,          /* navy across top-left */
+  #000B50 25%,         /* navy still across top-right */
+  #0D0957 45%,         /* transition starts */
+  #191073 65%,         
+  #501EB1 82%, 
+  #7122D4 100%         /* teal at bottom-right */
 );
 
 }
@@ -59,4 +73,11 @@ background: linear-gradient(
     padding: 10px;
   }
 
+}
+
+@media screen and (max-width:950px){
+  .host{
+    padding: 20px;
+    padding-bottom: 0px;
+  }
 }

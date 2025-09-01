@@ -31,6 +31,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="text-xl md:text-2xl font-bold text-blue-900">TAKATAK</div>
 
+<<<<<<< HEAD
         {/* Search Section (hidden on mobile, full on md+) */}
         <div className="hidden md:flex items-center border border-gray-300 rounded-md overflow-hidden w-1/2">
           <select
@@ -57,6 +58,133 @@ export default function Navbar() {
           <button className="bg-orange-500 px-4 py-2 text-white hover:bg-orange-600">
             🔍
           </button>
+=======
+        const handleStorageChange = () => {
+            const token = sessionStorage.getItem("authToken");
+            setIsLoggedIn(!!token);
+        }
+        
+        // Listen to changes (optional for real-time sync across tabs)
+        window.addEventListener("storage", handleStorageChange);
+        return () => window.removeEventListener("storage", handleStorageChange);
+    }, []);
+
+    const filteredLinks = links.filter(link => {
+        if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
+          return false; // remove login/signup if user is logged in
+        }
+        return true;
+      });
+      
+
+    return (
+        <div className={`${styles.gradient} text-white rounded-t-[20px]`}>
+            {/* Top navbar */}
+            <div className={`flex justify-between items-center h-[50px] px-4 lg:px-8 ${styles.nav}`}>
+                <Link href="/" className="font-semibold text-[20px] tracking-[1px]">takatak.ca</Link>
+
+                {/* Mobile menu toggle button */}
+                <button
+                    onClick={() => setMenuOpen(true)}
+                    className="lg:hidden"
+                    aria-label="Open Menu"
+                >
+                    <Menu className="w-6 h-6" />
+                </button>
+
+                {/* Desktop menu */}
+                <div className='hidden lg:flex gap-6 relative'>
+                    {filteredLinks.map(pgs => (
+                        <div
+                            key={pgs.id}
+                            className={`relative flex items-center ${ pgs.title.toLowerCase() === "login" ? styles.login : pgs.title.toLowerCase() === "signup"  ? styles.signup  : "" }`}
+                            onMouseEnter={() => pgs.subLinks && setShowDropdown(true)}
+                            onMouseLeave={() => pgs.subLinks && setShowDropdown(false)}
+                        >
+                            {(pgs.title === "Domain" || pgs.title === "Hosting") ? (
+                                <a href={pgs.url}>{pgs.title}</a> // Full page reload 
+                            ) : pgs.url ?(
+                                <Link href={pgs.url}>{pgs.title}</Link>
+                            ) : (
+                                <span className='cursor-pointer hover:underline underline-offset-4'>{pgs.title}</span>
+                            )}
+
+                            {pgs.subLinks && showDropdown && (
+                                <div className='absolute top-[25px] left-0 bg-[#1e1919] text-white shadow-lg rounded z-50 w-[60vw] grid grid-cols-3 gap-[10px]'>
+                                    {pgs.subLinks.map(sub => (
+                                        <Link
+                                            key={sub.id}
+                                            href={sub.url}
+                                            className='block px-4 py-2 hover:text-black hover:bg-gray-800'
+                                        >
+                                            {sub.title}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Slide-in mobile sidebar */}
+            <div className={`fixed inset-0 z-50 lg:hidden transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'} pointer-events-auto`}>
+                {/* Overlay */}
+                <div
+                    onClick={() => setMenuOpen(false)}
+                    className={`absolute inset-0 bg-transparent bg-opacity-50`}
+                />
+
+                {/* Sidebar panel */}
+                <div className='absolute right-0 top-0 h-full w-[70%] max-w-xs bg-[#1e1919] text-white p-4 overflow-y-auto sidebar '>
+                    <div className="flex justify-end items-center close">
+                        <button onClick={() => setMenuOpen(false)} aria-label="Close Menu" >
+                            <X className="w-[35px] h-[35px] " />
+                        </button>
+                    </div>
+
+                    {/* Sidebar content */}
+                    <nav className="space-y-4 text-[18px] navcont">
+                        {filteredLinks.map(link => (
+                            
+                            <div 
+                            key={link.id}
+                            className={`${ link.title.toLowerCase() === "login" ? styles.login : link.title.toLowerCase() === "signup"  ? styles.signup  : link.title.toLowerCase() === "more" ? styles.more : "" }`}
+                            >
+                                {(link.title === "Domain" || link.title === "Hosting") ? (
+                                     <a href={link.url}>{link.title}</a>
+                                ): link.url ? (
+                                    <Link
+                                        href={link.url}
+                                        onClick={() => setMenuOpen(false)}
+                                        className="block py-2"
+                                    >
+                                        {link.title}
+                                    </Link>
+                                ) : (
+                                    <span className="block py-2">{link.title}</span>
+                                )}
+
+                                {link.subLinks && (
+                                    <div className="pl-4 space-y-1 sublink flex flex-col gap-[10px] text-[20px]">
+                                        {link.subLinks.map(sub => (
+                                            <Link
+                                                key={sub.id}
+                                                href={sub.url}
+                                                onClick={() => setMenuOpen(false)}
+                                                className="block py-1 text-sm text-gray-300"
+                                            >
+                                                {sub.title}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </nav>
+                </div>
+            </div>
+>>>>>>> 38d5d21d640bad7de43815f8710c06947e9f0431
         </div>
 
         {/* Account + Cart + Mobile Menu */}
