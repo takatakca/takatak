@@ -62,40 +62,7 @@ const freelancers = [
 
   return (
     <main>
-      <section className={`relative w-full flex flex-col md:item-center md:justify-center md:gap-[50px] ${styles.gradient}`}>
-          <div className={`flex flex-col lg:flex-row items-center justify-center lg:justify-between p-12 text-white md:pb-[30px] ${styles.ttp}`}>
-          <div className={`max-w-lg flex flex-col lg:items-start lg:text-left items-center text-center gap-[30px] ${styles.pag}`}>
-            <h2 className="lg:text-[48px] lg:w-[40vw] lg:leading-[60px] font-bold">Powering Your Business to the Next Level</h2>
-            <p className="lg:text-[20px] lg:w-[42vw]">Seamless solutions to drive growth, streamline operations, and enhance customer relationships.</p>
-            <Link href='/signup'>
-              {/* <button className={`bg-[#01A2D9] text-white-700 font-semibold lg:w-[13vw] ${styles.butn}`}>Get Started</button> */}
-            </Link>
-          </div>
-          <div className="relative z-10 mt-10 lg:mt-0">
-            <img src="/img/hmp.png" alt="Profile" className={`lg:w-[500px] lg:h-[500px] object-cover w-[400px] h-[400px] lg:rounded-full mx-auto ${styles.img}`}
-            style={{
-              maskImage: 'linear-gradient(to bottom, black 80%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent)',
-            }} />
-            <div className={`text-yellow-400 text-[30px] text-center z-20 relative top-[-10px] lg:right-[50px] ${styles.star}`}>  ★★★★★ </div>
-          </div>
-          </div>
-
-          <div className={` w-full md:gap-x-[50px] md:gap-[30px] grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-4 justify-center ${styles.servic} `}>
-          {cards.map((card) => (
-            <div key={card.title} className={`bg-white text-blue-800 rounded-[20px] shadow-lg flex flex-col gap-[13px] lg:w-[17vw] w-full md:w-[vw]  ${styles.serv}`}>
-              <div className='flex items-center gap-[15px]'>
-                <p className='text-[30px]'>{card.icon}</p>
-                <h3 className={`font-bold text-[15px] lg:w-[13vw] ${styles.tit}`}>{card.title}</h3>
-              </div>
-              <ul className="space-y-1 text-sm">
-                {card.desc.map((item, idx) => <li key={idx}>• {item}</li>)}
-              </ul>
-              <a href="#" className="text-blue-600 text-sm mt-2 inline-block underline">Learn More</a>
-            </div>
-          ))}
-        </div>
-      </section>
+      
       <section className={`bg-[#e0ecf7] flex lg:flex-row md:flex-row gap-[70px] lg:gap-[70px] md:gap-[10px] flex-col  justify-center ${styles.dscm}`}>
 
       {/* Detail Service */}
@@ -124,9 +91,9 @@ const freelancers = [
 
           {/* Marketplace */}
         <div className="flex flex-col gap-[20px]">
-          <h1 className="text-blue-900 font-bold text-[28px]">Marketplace</h1>
+          {/* <h1 className="text-blue-900 font-bold text-[28px]">Marketplace</h1> */}
           <div className='flex flex-col gap-[40px] '>
-            <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800  flex flex-col  gap-[20px]  ${styles.market}`}>
+            {/* <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800  flex flex-col  gap-[20px]  ${styles.market}`}>
               <h1 className='text-start'>Marketplace</h1>
               <div className={`flex flex-col items-center `}>
                   <div className={`flex flex-col gap-[30px] w-full lg:w-[13vw] `}>
@@ -141,7 +108,7 @@ const freelancers = [
                     </button>
                   </div>
               </div>
-            </div>
+            </div> */}
 
             <div className={`bg-white text-blue-800 flex flex-col gap-[10px]  rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
               <div className='flex gap-[5px] items-center'>

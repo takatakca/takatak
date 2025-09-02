@@ -5,7 +5,7 @@ import { TbWorldWww } from "react-icons/tb";
 import {  ShoppingCart,  Globe, SearchCheck, Smartphone,  MapPin,  PhoneCall,  Plane,  Users,  Heart,  Building,  Menu,  X,} from "lucide-react";
 
 const links = [
-    { id: 1, title: "Domain", url:"/domain", icon:<TbWorldWww size={23}/>    },
+    { id: 1, title: "Domain", url:"/domain", icon:<TbWorldWww size={23}/>},
     { id: 2, title: "Hosting", url:"/hosting", icon:<img src="/img/host.png" width={20} height={20} alt="Hosting" style={{ filter: "invert(1)" }}/>},
     { id: 3, title: "Web & Hosting", icon: <img src="/img/webhost.png" width={20} height={20} alt="Hosting" /> },
     { id: 4, title: "Mobile Apps", icon: <Smartphone size={16} /> },
@@ -40,18 +40,20 @@ export default function Navbar() {
           <select
             value={selectedService}
             onChange={(e) => setSelectedService(e.target.value)}
-            className={`px-3 py-2 text-sm outline-none border-r border-gray-300 ${styles.search}`}
+            className={`px-3 py-2 text-sm  outline-none border-r border-gray-300 ${styles.search}`}
           >
-            <option>All Services</option>
-            <option>Web & Hosting</option>
-            <option>Mobile Apps</option>
-            <option>Local Listings</option>
-            <option>Lead Generation</option>
-            <option>VoIP Phone</option>
-            <option>Travel Cuba</option>
-            <option>Social Platform</option>
-            <option>Dating</option>
-            <option>Property Management</option>
+            <option className="text-white">All Services</option>
+            <option className="text-black">Domain</option>
+            <option className="text-black">Hosting</option>
+            <option className="text-black">Web & Hosting</option>
+            <option className="text-black">Mobile Apps</option>
+            <option className="text-black">Local Listings</option>
+            <option className="text-black">Lead Generation</option>
+            <option className="text-black">VoIP Phone</option>
+            <option className="text-black">Travel Cuba</option>
+            <option className="text-black">Social Platform</option>
+            <option className="text-black">Dating</option>
+            <option className="text-black">Property Management</option>
           </select>
           <input
             type="text"
@@ -119,14 +121,14 @@ export default function Navbar() {
       </div>
 
       {/* Secondary Menu */}
-      <div className={`flex items-center justify-center gap-3  md:px-6 py-2 text-sm text-white overflow-x-auto no-scrollbar ${styles.deal}`}>
+      <div className={`flex items-center justify-start gap-3  md:px-6 py-2 text-sm text-white overflow-x-auto no-scrollbar ${styles.deal}`}>
         {/* Today's Deals */}
         <button className={`bg-blue-500 px-3 py-1 rounded-sm font-semibold whitespace-nowrap hover:bg-blue-600 ${styles.deal}`}>
           Today&apos;s Deals
         </button>
 
         {/* Scrollable Links */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-[30px]">
           {links.map((deal, index)=>(
             <div key={index} className="flex items-center gap-1 hover:text-orange-400 whitespace-nowrap">
               {deal.icon}

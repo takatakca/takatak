@@ -60,6 +60,45 @@
 }
 
 
+/* LEADSERVICES COMPONENT */
+.gm{
+    /* padding-inline: 24px; */
+    /* padding-block: 48px; */
+}
+.grt{
+    margin-bottom: 32px;
+}
+.grt span{
+    padding-inline: 12px;
+    padding-block: 4px;
+}
+.grt h2{
+    margin-top: 16px;
+}
+ .card{
+    padding: 15px;
+}
+.card span{
+    padding-inline: 8px;
+    padding-block: 4px;
+    margin-bottom: 8px;
+}
+.card button{
+
+    padding-block: 5px;
+    margin-top: auto;
+}
+.tag{
+    padding-inline: 13px;
+    padding-block: 3px;
+}
+.navbt{
+    margin-top: 24px;
+}
+.navbt button{
+    padding-inline: 20px;
+    padding-block: 6px;
+}
   
 
   @media screen and (min-width: 640px) and (max-width:767px){

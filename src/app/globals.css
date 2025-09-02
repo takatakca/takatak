@@ -121,6 +121,10 @@ a{
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   
 }
+.pagetop{
+  /* padding-top: 200px; */
+  padding-top: 100px;
+}
 .space{
   padding: 5px 0px 5px 20px;
 }
@@ -258,6 +262,9 @@ a{
 
 
 @media screen and (max-width:950px) {
+  .pagetop{
+  padding-top: 250px;
+}
   .nav{
   padding: 0px 20px;
 }
