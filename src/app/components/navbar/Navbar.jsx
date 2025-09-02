@@ -135,7 +135,7 @@ export default function Navbar() {
           {links.map((deal, i)=>(
             <div key={i} className="flex items-center gap-1 hover:text-orange-400 whitespace-nowrap">
               {deal.icon}
-              {deal.title === "Domain" && "Hosting" ? (
+              {(deal.title === "Domain" || deal.title === "Hosting") ? (
                   <a href={deal.url}>{deal.title}</a> // Full page reload 
               ) : deal.url ?(
                   <Link href={deal.url}>{deal.title}</Link>
