@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from 'next/link';
 import styles from "./page.module.css"
 import { TbWorldWww } from "react-icons/tb";
 import {  ShoppingCart,  Globe, SearchCheck, Smartphone,  MapPin,  PhoneCall,  Plane,  Users,  Heart,  Building,  Menu,  X,} from "lucide-react";
@@ -33,7 +34,9 @@ export default function Navbar() {
       {/* Main Navbar */}
       <div className={`text-white flex items-center justify-between shadow ${styles.logo}`}>
         {/* Logo */}
-        <div className="text-xl md:text-2xl font-bold text-[white]">TAKATAK</div>
+        <div className="text-xl md:text-2xl font-bold text-[white]">
+          <Link href="/">TAKATAK</Link>
+        </div>
 
         {/* Search Section (hidden on mobile, full on md+) */}
         <div className="hidden md:flex items-center border border-gray-300 rounded-md overflow-hidden w-1/2">
@@ -129,10 +132,17 @@ export default function Navbar() {
 
         {/* Scrollable Links */}
         <div className="flex items-center gap-[30px]">
-          {links.map((deal, index)=>(
-            <div key={index} className="flex items-center gap-1 hover:text-orange-400 whitespace-nowrap">
+          {links.map((deal, i)=>(
+            <div key={i} className="flex items-center gap-1 hover:text-orange-400 whitespace-nowrap">
               {deal.icon}
-              {deal.title}
+              {deal.title === "Domain" && "Hosting" ? (
+                  <a href={deal.url}>{deal.title}</a> // Full page reload 
+              ) : deal.url ?(
+                  <Link href={deal.url}>{deal.title}</Link>
+              ) : (
+                  <span className='cursor-pointer hover:underline underline-offset-4'>{deal.title}</span>
+              )}
+              
             </div>
           ))}
         </div>

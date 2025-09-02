@@ -2,7 +2,6 @@
 import styles from "./home.module.css";
 import { useRef } from "react";
 import Link from 'next/link';
-// import styles from "./home.module.css";
 
 const services = [
   {
