@@ -82,89 +82,79 @@ export default function LeadServices() {
           </div>
           </div>
 
-           <div className={`w-full ${styles.gm}`}>
+           {/* <div className={`w-full ${styles.gm}`}> */}
       {/* Header */}
-      <div className={`text-center ${styles.grt}`}>
-        <span className="bg-blue-500 text-white rounded-full text-sm font-semibold">
-          Growth & Marketing
-        </span>
-        <h2 className={`text-3xl font-bold text-[white]`}>Lead Generation Services</h2>
-        <p className="text-[white]">Grow your business with targeted leads</p>
-      </div>
+      <div className="flex flex-col items-center ">
+        <div className={`text-center ${styles.grt}`}>
+          <span className="bg-blue-500 text-white rounded-full text-sm font-semibold">
+            Growth & Marketing
+          </span>
+          <h2 className={`text-3xl font-bold text-[white]`}>Lead Generation Services</h2>
+          <p className="text-[white]">Grow your business with targeted leads</p>
+        </div>
 
-      {/* Scrollable Cards */}
-      <div
-        ref={scrollRef}
-        className={`flex gap-6 overflow-x-auto no-scrollbar `}
-      >
-        {services.map((s, i) => (
-          <div
-            key={i}
-            className={`min-w-[300px] w-[300px] rounded-2xl shadow-lg bg-white`}
-          >
-            <main className={`relative  w-full h-40 rounded-t-lg shadow-lg bg-gradient-to-r from-gray-800 to-orange-500 flex items-center justify-center `}>
-              {s.tag && (
-              <span className={`absolute top-3 right-3 text-xs bg-blue-500 text-white rounded-full w-fit ${styles.tag}`}>
-                {s.tag}
-              </span>
-            )}
-            <span className="text-4xl">{s.tagicon}</span>
-            </main>
-            <div className={`flex flex-col gap-[8px] ${styles.card}`}>
-              <h3 className="text-lg font-semibold text-black">{s.title}</h3>
-              <p className="text-black ">{s.desc}</p>
-              <section className="flex gap-[10px] items-start justify-items-normal">
-                <p className="text-[orange]">{s.rating}</p>
-                <p className="text-black">{s.reviews}</p>
-              </section>
-              <p className="text-blue-500 font-bold text-xl">{s.price}</p>
-              <ul className="text-sm text-black space-y-1">
-                {s.features.map((f, idx) => (
-                  <li key={idx}>✓ {f}</li>
-                ))}
-              </ul>
-              <button className=" bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-gradient-to-r from-gray-800 to-orange-500">
-                {s.button}
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Navigation Buttons */}
-      <div className={`flex justify-center gap-4 ${styles.navbt}`}>
-        <button
-          onClick={() => scroll("left")}
-          className="px-4 py-2 bg-gray-200 text-black rounded-lg"
+        {/* Scrollable Cards */}
+        <div className="w-full flex justify-center">
+        <div
+          ref={scrollRef}
+          className={`flex gap-6 overflow-x-auto no-scrollbar `}
         >
-          ← Previous
-        </button>
-        <button className="px-4 py-2 bg-blue-500 text-white rounded-lg">
-          View All Marketing Services
-        </button>
-        <button
-          onClick={() => scroll("right")}
-          className="px-4 py-2 bg-gray-200 text-black rounded-lg"
-        >
-          Next →
-        </button>
-      </div>
-    </div>
-
-          {/* <div className={` w-full md:gap-x-[50px] md:gap-[30px] grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-4 justify-center ${styles.servic} `}>
-          {cards.map((card) => (
-            <div key={card.title} className={`bg-white text-blue-800 rounded-[20px] shadow-lg flex flex-col gap-[13px] lg:w-[17vw] w-full md:w-[vw]  ${styles.serv}`}>
-              <div className='flex items-center gap-[15px]'>
-                <p className='text-[30px]'>{card.icon}</p>
-                <h3 className={`font-bold text-[15px] lg:w-[13vw] ${styles.tit}`}>{card.title}</h3>
+          {services.map((s, i) => (
+            <div
+              key={i}
+              className={`min-w-[300px] w-[300px] rounded-2xl shadow-lg bg-white`}
+            >
+              <main className={`relative  w-full h-40 rounded-t-lg shadow-lg bg-gradient-to-r from-gray-800 to-orange-500 flex items-center justify-center `}>
+                {s.tag && (
+                <span className={`absolute top-3 right-3 text-xs bg-blue-500 text-white rounded-full w-fit ${styles.tag}`}>
+                  {s.tag}
+                </span>
+              )}
+              <span className="text-4xl">{s.tagicon}</span>
+              </main>
+              <div className={`flex flex-col gap-[8px] ${styles.card}`}>
+                <h3 className="text-lg font-semibold text-black">{s.title}</h3>
+                <p className="text-black ">{s.desc}</p>
+                <section className="flex gap-[10px] items-start justify-items-normal">
+                  <p className="text-[orange]">{s.rating}</p>
+                  <p className="text-black">{s.reviews}</p>
+                </section>
+                <p className="text-blue-500 font-bold text-xl">{s.price}</p>
+                <ul className="text-sm text-black space-y-1">
+                  {s.features.map((f, idx) => (
+                    <li key={idx}>✓ {f}</li>
+                  ))}
+                </ul>
+                <button className=" bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-gradient-to-r from-gray-800 to-orange-500">
+                  {s.button}
+                </button>
               </div>
-              <ul className="space-y-1 text-sm">
-                {card.desc.map((item, idx) => <li key={idx}>• {item}</li>)}
-              </ul>
-              <a href="#" className="text-blue-600 text-sm mt-2 inline-block underline">Learn More</a>
             </div>
           ))}
-        </div> */}
+        </div>
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className={`flex justify-center gap-4 ${styles.navbt}`}>
+          <button
+            onClick={() => scroll("left")}
+            className="px-4 py-2 bg-gray-200 text-black rounded-lg"
+          >
+            ← Previous
+          </button>
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-lg">
+            View All Marketing Services
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="px-4 py-2 bg-gray-200 text-black rounded-lg"
+          >
+            Next →
+          </button>
+        </div>
+
+      </div>
+    {/* </div> */}
       </section>
    
   );
