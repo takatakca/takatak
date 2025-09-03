@@ -177,7 +177,7 @@ const freelancers = [
           </div>
 
           {/* Scrollable Freelancers */}
-          <div className={`relative w-full lg:max-w-[660px] md:max-w-[450px] overflow-x-auto ${styles.scrollhide}`}>
+          <div className={`relative w-full lg:max-w-[660px] md:max-w-[450px] overflow-x-auto no-scrollbar ${styles.scrollhide}`}>
               <div className="flex gap-[18px] lg:gap-[18px] md:gap-[0px] w-max px-1">
                 {freelancers.map((user, idx) => (
                   <div key={idx} className="text-center flex flex-col items-center shrink-0 w-[130px]">
