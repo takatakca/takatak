@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from 'next/link';
 import styles from "./page.module.css"
 import { TbWorldWww } from "react-icons/tb";
@@ -17,11 +17,34 @@ const links = [
     { id: 9, title: "Social Platform", icon:<Users size={16} /> },
     { id: 10, title: "Dating", icon:<Heart size={16} />  },
     { id: 11, title: "Property Management", icon:<Building size={16} /> },
+    { id: 12, title: "Login", url:"/login"},
+    { id: 13, title: "Signup", url:"/signup"}
 ]
 
 export default function Navbar() {
   const [selectedService, setSelectedService] = useState("All Services");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(()=>{
+    const token = sessionStorage.getItem("authToken");
+    setIsLoggedIn(!!token); // true if token exists
+
+    const handleStorageChange = () => {
+        const token = sessionStorage.getItem("authToken");
+        setIsLoggedIn(!!token);
+    }
+    
+    // Listen to changes (optional for real-time sync across tabs)
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+}, []);
+
+const filteredLinks = links.filter(link => {
+    if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
+      return false; // remove login/signup if user is logged in
+    }
+    return true;
+  });
 
   return (
     <div className={`fixed top-0 left-0 w-full z-50 bg-[black] flex flex-col gap-[20px] ${styles.topbar}`}>
@@ -72,10 +95,40 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
           {/* Desktop */}
           <div className="hidden md:flex items-center gap-6">
-            <div className="text-sm">
+            {/* <div className="text-sm">
               <p>Hello, sign in</p>
               <p className="font-semibold cursor-pointer">Account</p>
-            </div>
+            </div> */}
+            <div className="text-sm">
+  {/* "Hello, sign in" → login link if not logged in */}
+  <p>
+    {isLoggedIn ? (
+      "Hello, welcome back"
+    ) : (
+      <Link
+        href={filteredLinks.find(l => l.title.toLowerCase() === "login")?.url || "/login"}
+        className="cursor-pointer hover:underline underline-offset-4"
+      >
+        Hello, sign in
+      </Link>
+    )}
+  </p>
+
+  {/* "Account" → signup if not logged in, /account if logged in */}
+  <p>
+    <Link
+      href={
+        isLoggedIn
+          ? "/"
+          : filteredLinks.find(l => l.title.toLowerCase() === "signup")?.url || "/signup"
+      }
+      className="font-semibold cursor-pointer hover:underline underline-offset-4"
+    >
+      Account
+    </Link>
+  </p>
+</div>
+
             <div className="flex items-center gap-1 cursor-pointer">
               <ShoppingCart size={22} />
               <span className="text-sm font-semibold">Cart (0)</span>
@@ -90,6 +143,9 @@ export default function Navbar() {
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+
+
+        
       </div>
 
       {/* Mobile Search */}

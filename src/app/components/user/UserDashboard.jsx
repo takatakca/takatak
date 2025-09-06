@@ -56,30 +56,30 @@ export default function UserDashboard() {
     
 
     useEffect(()=>{
-        // const token = sessionStorage.getItem("authToken");
+        const token = sessionStorage.getItem("authToken");
 
-        // if (!token) {
-        // // Redirect if not authenticated
-        // router.push('/login');
-        // return;
-        // }
+        if (!token) {
+        // Redirect if not authenticated
+        router.push('/login');
+        return;
+        }
 
-        // const fetchUser = async ()=>{
-        //     try {
-        //         await dashboard(); // Will set user in context
-        //     } catch (error) {
-        //         console.log("Dashboard fetch failed:", error);
-        //         // Optionally remove invalid token and redirect
-        //         sessionStorage.removeItem("authToken");
-        //         router.push('/login');
-        //     }finally {
-        //         setLoading(false);
-        //       }
-        // };
-        // fetchUser();
+        const fetchUser = async ()=>{
+            try {
+                await dashboard(); // Will set user in context
+            } catch (error) {
+                console.log("Dashboard fetch failed:", error);
+                // Optionally remove invalid token and redirect
+                sessionStorage.removeItem("authToken");
+                router.push('/login');
+            }finally {
+                setLoading(false);
+              }
+        };
+        fetchUser();
     }, []);
 
-    // if (loading) return <div className='flex justify-center'><p className={`${styles.load}`}>Loading dashboard...</p></div>;
+    if (loading) return <div className='flex justify-center'><p className={`${styles.load}`}>Loading dashboard...</p></div>;
 
     return (
       <div className={`flex justify-around gap-[150px] ${styles.top}`}>

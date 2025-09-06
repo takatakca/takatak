@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import styles from "./domain.module.css"
 import { FaSearch } from "react-icons/fa";
 import { BsClipboard } from "react-icons/bs";
@@ -8,6 +8,8 @@ import { IoMdCheckmark } from "react-icons/io";
 import { LiaHandHoldingUsdSolid } from "react-icons/lia";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { ChevronDown, ChevronUp, Route, Repeat, Send, BookCopy } from "lucide-react";
+import ProtectedRoute from "../components/ProtectedRoute";
+import { AppContext } from "../context/AppContext";
 
 
 // import { VscStarHalf } from "react-icons/vsc";
@@ -238,6 +240,24 @@ export default function DomainPage() {
   const [isMobile, setIsMobile] = useState(false);
   const upmRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
+  const { getUpmindClientId } = useContext(AppContext);
+  const [clientId, setClientId] = useState(null);
+  console.log(getUpmindClientId);
+  // console.log("At the top");
+  
+  useEffect(() => {
+    async function loadClientId() {
+      try {
+        const id = await getUpmindClientId();
+        console.log("👉 Upmind clientId from backend:", id);
+        setClientId(id);
+      } catch (err) {
+        console.error("Failed to get clientId:", err);
+      }
+    }
+    loadClientId();
+  }, []);
+  
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -271,6 +291,7 @@ export default function DomainPage() {
 
 
   return (
+    // <ProtectedRoute>
     <main className="">
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
        <section className={`${styles.cont} flex flex-col item-center justify-center`}>
@@ -295,6 +316,7 @@ export default function DomainPage() {
             <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
             <upm-dac
               ref={upmRef}
+              client-id={clientId}
               order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
               currency-code="CAD"
             ></upm-dac>
@@ -524,5 +546,6 @@ export default function DomainPage() {
           </div>
        </section>
     </main>
+    // </ProtectedRoute>
   )
 }

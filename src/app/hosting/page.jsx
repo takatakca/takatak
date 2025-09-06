@@ -10,6 +10,7 @@ import { SlSpeedometer } from "react-icons/sl";
 import { AiOutlineGlobal, AiOutlineRetweet } from "react-icons/ai";
 import { RxRocket } from "react-icons/rx";
 import { ChevronDown, ChevronUp, Route, Repeat, Send, BookCopy } from "lucide-react";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 
 const everysip = [
@@ -155,6 +156,7 @@ export default function Hostingpage() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
+    // <ProtectedRoute>
     <main>
       <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
       <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] ${styles.host}`}>
@@ -360,5 +362,6 @@ export default function Hostingpage() {
 
 
     </main>
+    // </ProtectedRoute>
   );
 }

@@ -11,46 +11,46 @@ export const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const router = useRouter();
 
-    const INACTIVITY_LIMIT = 10 * 60 * 60 * 1000; // 10 hours in ms
+    // const INACTIVITY_LIMIT = 10 * 60 * 60 * 1000; // 10 hours in ms
 
-    // ✅ Auto-logout on inactivity
-    useEffect(() => {
-      let timeout;
+    // // ✅ Auto-logout on inactivity
+    // useEffect(() => {
+    //   let timeout;
 
-      const resetTimer = () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-          const token = sessionStorage.getItem("authToken");
-          if(token){
-            console.log("User inactive for 10 hours. Logging out...");
-            sessionStorage.removeItem("authToken");
-            setUser(null);
-            router.push('/login');
-            }
-        }, INACTIVITY_LIMIT);
-      };
+    //   const resetTimer = () => {
+    //     clearTimeout(timeout);
+    //     timeout = setTimeout(() => {
+    //       const token = sessionStorage.getItem("authToken");
+    //       if(token){
+    //         console.log("User inactive for 10 hours. Logging out...");
+    //         sessionStorage.removeItem("authToken");
+    //         setUser(null);
+    //         router.push('/login');
+    //         }
+    //     }, INACTIVITY_LIMIT);
+    //   };
 
-      const activityEvents = ['mousemove', 'keydown', 'scroll', 'click'];
-      activityEvents.forEach(event =>
-        window.addEventListener(event, resetTimer)
-      );
+    //   const activityEvents = ['mousemove', 'keydown', 'scroll', 'click'];
+    //   activityEvents.forEach(event =>
+    //     window.addEventListener(event, resetTimer)
+    //   );
 
-      resetTimer(); // Start timer on mount
+    //   resetTimer(); // Start timer on mount
 
-      return () => {
-        activityEvents.forEach(event =>
-          window.removeEventListener(event, resetTimer)
-        );
-        clearTimeout(timeout);
-      };
-    }, []);
+    //   return () => {
+    //     activityEvents.forEach(event =>
+    //       window.removeEventListener(event, resetTimer)
+    //     );
+    //     clearTimeout(timeout);
+    //   };
+    // }, []);
 
     const signup = async(regData)=>{
         setLoading(true);
         try {
-            const res = await axios.post("https://tak-q7r0.onrender.com/register", regData);
-            setUser(res.data.user);
-            // Optionally store token
+            const res = await axios.post("https://takatak.onrender.com/register", regData);
+            if (res.data.user) 
+              setUser(res.data.user);
             return res.data;
         } catch (error) {
             throw error;
@@ -62,8 +62,9 @@ export const AppProvider = ({ children }) => {
     const login = async (loginData) => {
     setLoading(true);
     try {
-      const res = await axios.post('https://tak-q7r0.onrender.com/login', loginData);
-      setUser(res.data.user);
+      const res = await axios.post('https://takatak.onrender.com/login', loginData);
+      if (res.data.user) 
+        setUser(res.data.user);
       return res.data;
     } catch (err) {
       throw err;
@@ -75,8 +76,9 @@ export const AppProvider = ({ children }) => {
   const verifyotp = async (verifyotpData)=>{
     setLoading(true);
     try {
-      const res = await axios.post('https://tak-q7r0.onrender.com/verify-otp', verifyotpData);
-      setUser(res.data.user);
+      const res = await axios.post('https://takatak.onrender.com/verify-otp', verifyotpData);
+      if (res.data.user) 
+        setUser(res.data.user);
       return res.data;
     } catch (err) {
       throw err;
@@ -87,7 +89,7 @@ export const AppProvider = ({ children }) => {
 
   const resendcode = async(data)=>{
     try {
-      const res = await axios.post('https://tak-q7r0.onrender.com/resend-code', data);
+      const res = await axios.post('https://takatak.onrender.com/resend-code', data);
       if (res.data.user) 
         setUser(res.data.user);
       return res.data;
@@ -101,7 +103,7 @@ export const AppProvider = ({ children }) => {
   const dashboard = async()=>{
     const token = sessionStorage.getItem("authToken");
     try {
-      const res = await axios.get('https://tak-q7r0.onrender.com/dashboard', {
+      const res = await axios.get('https://takatak.onrender.com/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -117,9 +119,22 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  const getUpmindClientId = async () => {
+    const token = sessionStorage.getItem("authToken");
+    try {
+      const res = await axios.get("https://takatak.onrender.com/upmind-client", {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      return res.data.upmindClientId;
+    } catch (err) {
+      throw err;
+    }
+  };
+  
+
 
     return (
-    <AppContext.Provider value={{ user, loading, signup, login, verifyotp, resendcode, dashboard}}>
+    <AppContext.Provider value={{ user, loading, signup, login, verifyotp, resendcode, getUpmindClientId, dashboard}}>
       {children}
     </AppContext.Provider>
   );

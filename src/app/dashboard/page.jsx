@@ -7,13 +7,13 @@ import { FaFileInvoiceDollar } from "react-icons/fa6";
 import { FaUserFriends } from "react-icons/fa";
 import { FcCustomerSupport } from "react-icons/fc";
 import { IoSettings } from "react-icons/io5";
-import Home from '../components/user/UserDashboard';
 import Mydashboard from '../components/myDashboard/Mydashborad';
 import Invoice from '../components/invoices/Invoice';
 import Affiliate from '../components/affiliateProgram/Affiliate';
 import Support from '../components/support/Support';
 import Setting from '../components/settings/Setting';
 import ProtectedRoute from '../components/ProtectedRoute';
+import UserDashboard from '../components/user/UserDashboard';
 
 
 
@@ -30,12 +30,12 @@ const sideItem = [
     {   label: "Settings", icon: <IoSettings /> },
 ]
 
-export default function dashboard() {
+export default function Dashboard() {
   const [onactive, setOnactive] = useState('Home');
 
   const activeBoard = () => {
     switch(onactive){
-      case "Home" : return <Home />;
+      case "UserDashboard" : return <UserDashboard />;
       case "My Dashboard" : return <Mydashboard />;
       case "Invoices" : return <Invoice />;
       case "Affillate" : return <Affiliate />;
