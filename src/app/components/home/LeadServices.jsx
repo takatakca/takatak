@@ -86,6 +86,14 @@ export default function LeadServices() {
       {/* Header */}
       <div className="flex flex-col items-center ">
         <div className={`text-center ${styles.grt}`}>
+          <div>
+          <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
+            <upm-dac
+              // ref={upmRef}
+              order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
+              currency-code="CAD"
+            ></upm-dac>
+          </div>
           <span className="bg-blue-500 text-white rounded-full text-sm font-semibold">
             Growth & Marketing
           </span>
