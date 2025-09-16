@@ -13,10 +13,13 @@ export default function Login() {
   const router = useRouter();
   const { login, loading } = useContext(AppContext);
   const [load, setLoad] = useState(false);
-  const [loguser, setLoguser] = useState({ phone: "", email: "" });
+  const [loguser, setLoguser] = useState({ 
+    phone: "",
+    email:""
+   });
 
   const handleSubmit = async () => {
-    // if (!loguser.phone && !loguser.email) {
+    // if (!loguser.phone) {
     //   toast.error("Both phone and email are required", { position: "top-center" });
     //   return;
     // }
@@ -24,7 +27,7 @@ export default function Login() {
     setLoad(true);
     try {
       await login(loguser);
-      toast.success("Otp sent to your number & email!", { position: "top-center" });
+      toast.success("Otp sent to your number!", { position: "top-center" });
 
       // Save separately
       sessionStorage.setItem("verifyPhone", loguser.phone);

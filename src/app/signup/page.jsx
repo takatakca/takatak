@@ -22,7 +22,8 @@ export default function Signup() {
     lastName: "",
     username: "",
     email: "",
-    phone: ""
+    phone: "",
+    password:""
   })
 
 
@@ -30,7 +31,7 @@ export default function Signup() {
     e.preventDefault();
     
 
-    if (!form.firstName || !form.lastName || !form.username || !form.email || !form.phone) {
+    if (!form.firstName || !form.lastName || !form.username || !form.email || !form.phone || !form.password) {
       
     toast.error("All fields are required", { position: "top-center" });
     return;
@@ -39,6 +40,14 @@ export default function Signup() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(form.email)) {
     toast.error("Please enter a valid email address", { position: "top-center" });
+    return;
+  }
+  const password = form.password.trim(); // remove leading/trailing spaces
+  if (password.length < 6 || password.length > 20) {
+    toast.error(
+      "Password must be between 6 and 20 characters and cannot be empty or just spaces",
+      { position: "top-center" }
+    );
     return;
   }
   setLoad(true)
@@ -104,6 +113,7 @@ export default function Signup() {
               value={form.email}
               onChange={e => setForm({ ...form, email: e.target.value })}
               placeholder="Email"
+              autoComplete="email"
               className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none "
             />
             
@@ -123,6 +133,15 @@ export default function Signup() {
                 required: true,
                 autoFocus: false,
               }}
+            />
+
+            <input
+              type="password"
+              value={form.password}
+              onChange={e => setForm({ ...form, password: e.target.value })}
+              placeholder="Password"
+              autoComplete="current-password"
+              className=" border border-gray-300 rounded-lg px-4 py-2 focus:outline-none "
             />
 
             <button

@@ -35,10 +35,10 @@ export default function Dashboard() {
 
   const activeBoard = () => {
     switch(onactive){
-      case "UserDashboard" : return <UserDashboard />;
+      case "Home" : return <UserDashboard />;
       case "My Dashboard" : return <Mydashboard />;
       case "Invoices" : return <Invoice />;
-      case "Affillate" : return <Affiliate />;
+      case "Affillate Program" : return <Affiliate />;
       case "Support" : return <Support />;
       case "Settings": return <Setting />
 
@@ -52,7 +52,7 @@ export default function Dashboard() {
     }
   };
   return (
-    // <ProtectedRoute>
+    <ProtectedRoute>
       <div className={`flex flex-col gap-[15px] text-white lg:flex-row min-h-screen ${styles.dash}`}>
         {/* Sidebar */}
         <aside className={`w-full lg:w-[17vw] space-y-2 flex lg:flex-col flex-row gap-[15px] overflow-x-auto whitespace-nowrap ${styles.sidbar}`}>
@@ -76,6 +76,6 @@ export default function Dashboard() {
         </main>
       </div>
 
-    // </ProtectedRoute>
+    </ProtectedRoute>
   )
 }

@@ -6,9 +6,9 @@ import { TbWorldWww } from "react-icons/tb";
 import { ShoppingCart, SearchCheck, Smartphone, MapPin, PhoneCall, Plane, Users, Heart, Building, Menu, X } from "lucide-react";
 
 const links = [
-    { id: 1, title: "Domain", url: "/domain", icon: <TbWorldWww size={23} />, searchType: "domain" },
+    { id: 4, title: "Domain", url: "/domain", icon: <TbWorldWww size={23} />, searchType: "domain" },
     { id: 2, title: "Hosting", url: "/hosting", icon: <img src="/img/host.png" width={20} height={20} alt="Hosting" style={{ filter: "invert(1)" }} />, searchType: "hosting" },
-    { id: 4, title: "Mobile Apps", icon: <Smartphone size={16} />, searchType: "mobile" },
+    { id: 1, title: "Mobile Apps", icon: <Smartphone size={16} />, searchType: "mobile" },
     { id: 5, title: "Local Listings", icon: <MapPin size={16} />, searchType: "local" },
     { id: 6, title: "Lead Generation", icon: <Users size={16} />, searchType: "leads" },
     { id: 7, title: "VoIP Phone", icon: <PhoneCall size={16} />, searchType: "voip" },
@@ -16,12 +16,12 @@ const links = [
     { id: 9, title: "Social Platform", icon: <Users size={16} />, searchType: "social" },
     { id: 10, title: "Dating", icon: <Heart size={16} />, searchType: "dating" },
     { id: 11, title: "Property Management", icon: <Building size={16} />, searchType: "property" },
-    { id: 12, title: "Login", url: "/login" },
-    { id: 13, title: "Signup", url: "/signup" }
+    // { id: 12, title: "Login", url: "/login" },
+    // { id: 13, title: "Signup", url: "/signup" }
 ]
 
 export default function Navbar() {
-    const [selectedService, setSelectedService] = useState("Domain");
+    const [selectedService, setSelectedService] = useState("Mobile Apps");
     const [searchQuery, setSearchQuery] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
@@ -102,7 +102,7 @@ export default function Navbar() {
                     />
                     <button
                         type="submit"
-                        className={`bg-blue-600 text-white hover:bg-blue-700 px-4 py-2`}
+                        className={`bg-blue-600 text-white hover:bg-blue-700 ${styles.icon}`}
                     >
                         <SearchCheck size={20} />
                     </button>
@@ -127,14 +127,14 @@ export default function Navbar() {
                 </div>
 
                 {/* Search Section (hidden on mobile, full on md+) */}
-                <div className="hidden md:flex items-center w-1/2 border rounded-[]">
+                <div className="hidden md:flex items-center border border-gray-300 rounded-md overflow-hidden w-1/2">
                     <select
                         value={selectedService}
                         onChange={(e) => {
                             setSelectedService(e.target.value);
                             setSearchQuery("");
                         }}
-                        className={`px-3 py-2 text-sm outline-none border-r border-gray-300 bg-white text-black ${styles.search}`}
+                        className={` text-sm outline-none border-r border-gray-300 bg-white text-black ${styles.search}`}
                     >
                         {links
                             .filter(link => link.searchType)
@@ -150,32 +150,31 @@ export default function Navbar() {
                 <div className="flex items-center gap-4">
                     {/* Desktop */}
                     <div className="hidden md:flex items-center gap-6">
-                        <div className="text-sm">
+                        {isLoggedIn ? (
+                            <Link href="/dashboard" className="flex items-center gap-2 cursor-pointer hover:text-orange-400">
+                            <Users size={22} />
+                            <span className="font-semibold">Dashboard</span>
+                            </Link>
+                        ) : (
+                            <div className="text-sm">
                             <p>
-                                {isLoggedIn ? (
-                                    "Hello, welcome back"
-                                ) : (
-                                    <Link
-                                        href={filteredLinks.find(l => l.title.toLowerCase() === "login")?.url || "/login"}
-                                        className="cursor-pointer hover:underline underline-offset-4"
-                                    >
-                                        Hello, sign in
-                                    </Link>
-                                )}
+                                <Link
+                                href={filteredLinks.find(l => l.title.toLowerCase() === "login")?.url || "/login"}
+                                className="cursor-pointer hover:underline underline-offset-4"
+                                >
+                                Hello, sign in
+                                </Link>
                             </p>
                             <p>
                                 <Link
-                                    href={
-                                        isLoggedIn
-                                            ? "/account"
-                                            : filteredLinks.find(l => l.title.toLowerCase() === "signup")?.url || "/signup"
-                                    }
-                                    className="font-semibold cursor-pointer hover:underline underline-offset-4"
+                                href={filteredLinks.find(l => l.title.toLowerCase() === "signup")?.url || "/signup"}
+                                className="font-semibold cursor-pointer hover:underline underline-offset-4"
                                 >
-                                    Account
+                                Account
                                 </Link>
                             </p>
-                        </div>
+                            </div>
+                        )}
 
                         <div className="flex items-center gap-1 cursor-pointer">
                             <ShoppingCart size={22} />
@@ -195,13 +194,14 @@ export default function Navbar() {
 
             {/* Mobile Search */}
             <div className={`md:hidden px-4 ${styles.mobsearc}`}>
+                <div className="flex items-center border border-gray-300 rounded-md overflow-hidden">
                 <select
                     value={selectedService}
                     onChange={(e) => {
                         setSelectedService(e.target.value);
                         setSearchQuery("");
                     }}
-                    className={`w-full px-2 py-2 text-sm outline-none border border-gray-300 mb-2 bg-white text-black ${styles.selec}`}
+                    className={`text-sm outline-none border border-gray-300 mb-2 bg-white text-black ${styles.selec}`}
                 >
                     {links
                         .filter(link => link.searchType)
@@ -211,6 +211,7 @@ export default function Navbar() {
                     }
                 </select>
                 {renderSearchInput()}
+                </div>
             </div>
 
             {/* Secondary Menu */}

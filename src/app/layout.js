@@ -27,11 +27,24 @@ export default function RootLayout({ children }) {
         {/* Performance optimizations for Upmind */}
         <link rel="preconnect" href="https://embed.upmind.app" />
         <link rel="dns-prefetch" href="https://embed.upmind.app" />
+        <link rel="preconnect" href="https://widgets.upmind.app" />
+        <link rel="dns-prefetch" href="https://widgets.upmind.app" />
         
       </head>
       <body
         className={`bg-gradient-to-b from-blue-900 to-blue-700 min-h-screen text-white hicontainer ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <Script
+          type="module"
+          src="https://embed.upmind.app/upm-widget.js"
+          strategy="afterInteractive"
+        />
+
+        <Script
+          src="https://widgets.upmind.app/dac/upm-dac.min.js"
+          strategy="afterInteractive"
+        />
+
         {/* GTM Script (HEAD) */}
         <Script id="gtm-head" strategy="afterInteractive">
           {`

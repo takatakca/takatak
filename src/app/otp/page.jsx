@@ -25,7 +25,7 @@ export default function Otp() {
   // Controls resend button cooldown
   const [canResend, setCanResend] = useState(true);
   const [attempts, setAttempts] = useState(0);
-    const {verifyotp, loading, login, resendcode} = useContext(AppContext);
+    const {verifyotp, fetchUpmindClientId, loading, login, resendcode, dashboard } = useContext(AppContext);
     const [load, setLoad] = useState(false);
     const [loguser, setLoguser] = useState({ 
       otp: "",
@@ -125,13 +125,22 @@ export default function Otp() {
     try {
       const res = await verifyotp(finalData);
       sessionStorage.setItem("authToken", res.token)
+      // Fetch user dashboard data
+    await dashboard();
+       //  fetch Upmind clientId right after login success
+      await fetchUpmindClientId();
   
       toast.success("User Currently Active", { position: "top-center" });
       sessionStorage.removeItem("verifyPhone");
       sessionStorage.removeItem("verifyEmail");
       sessionStorage.removeItem("otpAttempts");
   
-      router.push('/dashboard');
+      const params = new URLSearchParams(window.location.search);
+      const redirectPath = params.get("redirect") || sessionStorage.getItem("redirectAfterLogin") || "/dashboard";
+      sessionStorage.removeItem("redirectAfterLogin");
+      router.push(redirectPath);
+
+      // router.push('/dashboard');
     } catch (err) {
       const errorMessage =
         err?.response?.data?.error ||
@@ -161,11 +170,17 @@ export default function Otp() {
     
     
   };
-  useEffect(() => {
-  if (otp.every(d => d !== "") && otp.length === 6) {
-    handleSubmit(new Event('submit'));
+//   useEffect(() => {
+//   if (otp.every(d => d !== "") && otp.length === 6) {
+//     handleSubmit(new Event('submit'));
+//   }
+// }, [otp]);
+useEffect(() => {
+  if (otp.every(d => d !== "")) {
+    handleSubmit(); // just call it directly
   }
 }, [otp]);
+
 
 
   const handleMailSubmit = async(e)=>{
@@ -267,9 +282,7 @@ export default function Otp() {
                   )}
 
                   {/* OTP input boxes */}
-                  <form 
-                  onSubmit={handleSubmit}
-                  className="flex justify-center gap-2 mb-6">
+                  <form  onSubmit={handleSubmit}   className="flex justify-center gap-2 mb-6">
                     {otp.map((digit, idx) => (
                       <input
                         key={idx}
@@ -284,7 +297,7 @@ export default function Otp() {
                         className={getOtpInputClass(digit)}
                       />
                     ))}
-                  </form>
+                  
 
                   {attempts >= 3 && (
                     <p className="text-red-500 text-center text-sm font-medium mt-2">
@@ -303,6 +316,7 @@ export default function Otp() {
                     {loading || load ? "Verifying..." : "Verify"}
                   </button>
                   {/* </Link> */}
+                  </form>
 
                   <div className='flex flex-col items-center gap-[25px]'>
                     <button 

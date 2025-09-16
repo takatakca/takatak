@@ -28,6 +28,12 @@ background: linear-gradient(
 );
 
 }
+.err{
+  padding-block: 300px;
+  padding-inline: 300px;
+  color: white;
+  font-size: 30px;
+}
 .assi{
   padding-bottom: 20px;
 }

@@ -240,26 +240,9 @@ export default function DomainPage() {
   const [isMobile, setIsMobile] = useState(false);
   const upmRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
-  const { getUpmindClientId } = useContext(AppContext);
-  const [clientId, setClientId] = useState(null);
-  console.log(getUpmindClientId);
-  // console.log("At the top");
-  
-  useEffect(() => {
-    async function loadClientId() {
-      try {
-        const id = await getUpmindClientId();
-        console.log("👉 Upmind clientId from backend:", id);
-        setClientId(id);
-      } catch (err) {
-        console.error("Failed to get clientId:", err);
-      }
-    }
-    loadClientId();
-  }, []);
-  
+  const { upmindClientId } = useContext(AppContext);
 
-  useEffect(() => {
+    useEffect(() => {
     const interval = setInterval(() => {
       if (upmRef.current) {
         const input = upmRef.current.shadowRoot?.querySelector("input");
@@ -291,9 +274,9 @@ export default function DomainPage() {
 
 
   return (
-    // <ProtectedRoute>
+    <ProtectedRoute>
     <main className="">
-      <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
+      {/* <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/> */}
        <section className={`${styles.cont} flex flex-col item-center justify-center`}>
         <div className="flex flex-col items-center justify-center text-white gap-[40px]">
           <h1 className="text-center text-[30px] w-[90vw] lg:text-[34px] font-[700] lg:w-[45vw]">Power Your Online Success{" "} <span className="font-medium">with the Perfect Domain.</span> </h1>
@@ -313,10 +296,13 @@ export default function DomainPage() {
               // order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
               // currency-code="CAD"
             ></upm-widget> */}
-            <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
+
+
+
+            {/* <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script> */}
             <upm-dac
               ref={upmRef}
-              client-id={clientId}
+              client-id={upmindClientId}
               order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
               currency-code="CAD"
             ></upm-dac>
@@ -546,6 +532,6 @@ export default function DomainPage() {
           </div>
        </section>
     </main>
-    // </ProtectedRoute>
+   </ProtectedRoute>
   )
 }

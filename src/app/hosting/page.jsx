@@ -1,5 +1,6 @@
 "use client"
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import styles from "./host.module.css"
 import { FaCpanel } from "react-icons/fa";
 import { BsDatabaseFillCheck } from "react-icons/bs";
@@ -11,6 +12,7 @@ import { AiOutlineGlobal, AiOutlineRetweet } from "react-icons/ai";
 import { RxRocket } from "react-icons/rx";
 import { ChevronDown, ChevronUp, Route, Repeat, Send, BookCopy } from "lucide-react";
 import ProtectedRoute from "../components/ProtectedRoute";
+import { AppContext } from "../context/AppContext";
 
 
 const everysip = [
@@ -151,14 +153,20 @@ const faqs = [
 
 export default function Hostingpage() {
   const [openIndex, setOpenIndex] = useState(null);
+  const { upmindClientId } = useContext(AppContext);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    // <ProtectedRoute>
+    <ProtectedRoute>
     <main>
-      <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/>
+      {/* <Script
+          type="module"
+          src="https://embed.upmind.app/upm-widget.js"
+          strategy="afterInteractive"
+        /> */}
+      {/* <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/> */}
       <section className={`flex flex-col lg:flex-row items-start lg:items-center justify-around text-[white] gap-[30px] ${styles.host}`}>
         <div className={`flex flex-col gap-[15px] ${styles.hos}`}>
           <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
@@ -177,6 +185,7 @@ export default function Hostingpage() {
           {/*1 Portfolio Hosting */}
         <upm-widget
           as="PlanCard"
+          client-id={upmindClientId}
           locale="en"
           bind={`{
             "id": "61e50989-73d2-4752-053c-e45e610832d7",
@@ -187,6 +196,7 @@ export default function Hostingpage() {
         {/*2 Bronze Hosting */}
         <upm-widget
           as="PlanCard"
+          client-id={upmindClientId}
           locale="en"
           bind={`{
             "id": "1e96d298-537d-4e75-383b-14e120637085",
@@ -197,6 +207,7 @@ export default function Hostingpage() {
         {/*3 Silver Hosting */}
         <upm-widget
           as="PlanCard"
+          client-id={upmindClientId}
           locale="en"
           bind={`{
             "id": "80d1639e-237d-4395-3e2a-54610589e572",
@@ -206,6 +217,7 @@ export default function Hostingpage() {
         {/*4 Gold Hosting */}
         <upm-widget
           as="PlanCard"
+          client-id={upmindClientId}
           locale="en"
           bind={`{
             "id": "0381d780-e72d-4dd6-701c-8413569926e5",
@@ -362,6 +374,6 @@ export default function Hostingpage() {
 
 
     </main>
-    // </ProtectedRoute>
+    </ProtectedRoute>
   );
 }
