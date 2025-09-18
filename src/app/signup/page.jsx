@@ -54,9 +54,10 @@ export default function Signup() {
     try {
       setLoad(false)
       await signup(form);
-      sessionStorage.setItem("verifyPhone", form.phone);
+      // sessionStorage.setItem("verifyPhone", form.phone);
+      sessionStorage.setItem("verifyEmail", form.email);
       
-      toast.success("Otp sent to your number!", { position: "top-center" });
+      toast.success("Otp sent to your mail!", { position: "top-center" });
       router.push('/otp');
     } catch (err) {
       setLoad(false)

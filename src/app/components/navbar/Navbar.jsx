@@ -1,9 +1,11 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useContext } from "react";
 import Link from 'next/link';
 import styles from "./page.module.css"
 import { TbWorldWww } from "react-icons/tb";
 import { ShoppingCart, SearchCheck, Smartphone, MapPin, PhoneCall, Plane, Users, Heart, Building, Menu, X } from "lucide-react";
+import { AppContext } from "@/app/context/AppContext";
+// import { AppContext } from "../context/AppContext";
 
 const links = [
     { id: 4, title: "Domain", url: "/domain", icon: <TbWorldWww size={23} />, searchType: "domain" },
@@ -16,31 +18,34 @@ const links = [
     { id: 9, title: "Social Platform", icon: <Users size={16} />, searchType: "social" },
     { id: 10, title: "Dating", icon: <Heart size={16} />, searchType: "dating" },
     { id: 11, title: "Property Management", icon: <Building size={16} />, searchType: "property" },
-    // { id: 12, title: "Login", url: "/login" },
-    // { id: 13, title: "Signup", url: "/signup" }
 ]
 
 export default function Navbar() {
+    const { user, logout } = useContext(AppContext)
     const [selectedService, setSelectedService] = useState("Mobile Apps");
     const [searchQuery, setSearchQuery] = useState("");
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [scriptLoaded, setScriptLoaded] = useState(false);
     const upmRef = useRef(null);
-    const clientId = "your-client-id"; // Replace with your actual client ID
 
-    useEffect(() => {
-        const token = sessionStorage.getItem("authToken");
-        setIsLoggedIn(!!token);
+    // useEffect(() => {
+    //     const token = sessionStorage.getItem("authToken");
+    //     setIsLoggedIn(!!token);
 
-        const handleStorageChange = () => {
-            const token = sessionStorage.getItem("authToken");
-            setIsLoggedIn(!!token);
-        }
+    //     const handleStorageChange = () => {
+    //         const token = sessionStorage.getItem("authToken");
+    //         setIsLoggedIn(!!token);
+    //     }
 
-        window.addEventListener("storage", handleStorageChange);
-        return () => window.removeEventListener("storage", handleStorageChange);
-    }, []);
+    //     window.addEventListener("storage", handleStorageChange);
+    //     return () => window.removeEventListener("storage", handleStorageChange);
+    // }, []);
+
+    const handleLogout = () => {
+    logout();
+    setMenuOpen(false); // close mobile menu after logout
+};
+
 
     useEffect(() => {
         // Load the Upmind script dynamically
@@ -59,12 +64,12 @@ export default function Navbar() {
         }
     }, [scriptLoaded]);
 
-    const filteredLinks = links.filter(link => {
-        if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
-            return false;
-        }
-        return true;
-    });
+    // const filteredLinks = links.filter(link => {
+    //     if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
+    //         return false;
+    //     }
+    //     return true;
+    // });
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -82,7 +87,6 @@ export default function Navbar() {
                 <div className="w-full">
                     <upm-dac
                         ref={upmRef}
-                        client-id={clientId}
                         order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
                         currency-code="CAD"
                         style={{ display: 'block', width: '100%' }}
@@ -150,31 +154,40 @@ export default function Navbar() {
                 <div className="flex items-center gap-4">
                     {/* Desktop */}
                     <div className="hidden md:flex items-center gap-6">
-                        {isLoggedIn ? (
+                  {user ? (
+                        <div className="flex items-center gap-6">
                             <Link href="/dashboard" className="flex items-center gap-2 cursor-pointer hover:text-orange-400">
-                            <Users size={22} />
-                            <span className="font-semibold">Dashboard</span>
+                                <Users size={22} />
+                                <span className="font-semibold">Dashboard</span>
                             </Link>
-                        ) : (
-                            <div className="text-sm">
+                            <button
+                                onClick={handleLogout}
+                                className="flex items-center gap-2 text-sm hover:text-red-500"
+                            >
+                                Logout
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="text-sm">
                             <p>
                                 <Link
-                                href={filteredLinks.find(l => l.title.toLowerCase() === "login")?.url || "/login"}
-                                className="cursor-pointer hover:underline underline-offset-4"
+                                    href="/login"
+                                    className="cursor-pointer hover:underline underline-offset-4"
                                 >
-                                Hello, sign in
+                                    Hello, sign in
                                 </Link>
                             </p>
                             <p>
                                 <Link
-                                href={filteredLinks.find(l => l.title.toLowerCase() === "signup")?.url || "/signup"}
-                                className="font-semibold cursor-pointer hover:underline underline-offset-4"
+                                    href="/signup"
+                                    className="font-semibold cursor-pointer hover:underline underline-offset-4"
                                 >
-                                Account
+                                    Account
                                 </Link>
                             </p>
-                            </div>
-                        )}
+                        </div>
+                    )}
+
 
                         <div className="flex items-center gap-1 cursor-pointer">
                             <ShoppingCart size={22} />
@@ -248,22 +261,32 @@ export default function Navbar() {
 
             {/* Mobile Menu Dropdown */}
             {menuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-200 px-4 py-3 space-y-3">
-                    <p className="font-semibold cursor-pointer">Account</p>
-                    <p className="cursor-pointer">Cart (0)</p>
-                    <div className="pt-3 border-t border-gray-200">
-                        {filteredLinks.map((link) => (
-                            <div key={link.id} className="py-2 text-black">
-                                {link.url ? (
-                                    <Link href={link.url} onClick={() => setMenuOpen(false)}>
-                                        {link.title}
-                                    </Link>
-                                ) : (
-                                    <span>{link.title}</span>
-                                )}
-                            </div>
-                        ))}
+                <div className="md:hidden bg-white border-t border-gray-200 px-4 py-3 space-y-3 text-black">
+                    {user ? (
+                        <>
+                            <Link href="/dashboard" onClick={() => setMenuOpen(false)}>
+                                Dashboard
+                            </Link>
+                            <button onClick={handleLogout} className="block text-left w-full hover:text-red-500">
+                                Logout
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/login" onClick={() => setMenuOpen(false)}>
+                                Hello, sign in
+                            </Link>
+                            <Link href="/signup" onClick={() => setMenuOpen(false)}>
+                                Account
+                            </Link>
+                            <p className="cursor-pointer">Cart (0)</p>
+                        </>
+                    )}
+                    <div className="flex items-center gap-1 cursor-pointer">
+                        <ShoppingCart size={22} />
+                        <span className="text-sm font-semibold">Cart (0)</span>
                     </div>
+
                 </div>
             )}
         </div>

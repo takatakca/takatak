@@ -21,7 +21,7 @@ const [activity, setActivity] = useState([]);
 
     const INACTIVITY_LIMIT = 10 * 60 * 60 * 1000; // 10 hours in ms
 
-    // ✅ Auto-logout on inactivity
+    //  Auto-logout on inactivity
     useEffect(() => {
       let timeout;
 
@@ -51,12 +51,12 @@ const [activity, setActivity] = useState([]);
         );
         clearTimeout(timeout);
       };
-    }, []);
+    }, [INACTIVITY_LIMIT, router]);
 
     const signup = async(regData)=>{
         setLoading(true);
         try {
-            const res = await axios.post("https://takatak.onrender.com/register", regData);
+            const res = await axios.post("https://takatak.onrender.com/auth/register", regData);
             if (res.data.user) 
               setUser(res.data.user);
             return res.data;
@@ -70,7 +70,7 @@ const [activity, setActivity] = useState([]);
     const login = async (loginData) => {
     setLoading(true);
     try {
-      const res = await axios.post('https://takatak.onrender.com/login', loginData);
+      const res = await axios.post('https://takatak.onrender.com/auth/login', loginData);
       if (res.data.user) 
         setUser(res.data.user);
       return res.data;
@@ -84,7 +84,7 @@ const [activity, setActivity] = useState([]);
   const verifyotp = async (verifyotpData)=>{
     setLoading(true);
     try {
-      const res = await axios.post('https://takatak.onrender.com/verify-otp', verifyotpData);
+      const res = await axios.post('https://takatak.onrender.com/auth/verify-otp', verifyotpData);
       if (res.data.user) 
         setUser(res.data.user);
       return res.data;
@@ -98,7 +98,7 @@ const [activity, setActivity] = useState([]);
   const resendcode = async(data)=>{
     setLoading(true);
     try {
-      const res = await axios.post('https://takatak.onrender.com/resend-code', data);
+      const res = await axios.post('https://takatak.onrender.com/auth/resend-code', data);
       if (res.data.user) 
         setUser(res.data.user);
       return res.data;
@@ -109,25 +109,37 @@ const [activity, setActivity] = useState([]);
     }
   }
 
+   // ✅ New logout function
+  const logout = async () => {
+    try {
+      await axios.post(
+        "https://takatak.onrender.com/auth/logout",
+        {},
+        { withCredentials: true }
+      );
+    } catch (err) {
+      console.error("Logout API error:", err);
+    } finally {
+      sessionStorage.removeItem("authToken");
+      setUser(null);
+      setOrders([]);
+      setInvoices([]);
+      setActivity([]);
+      router.push("/login");
+    }
+  };
+
   const dashboard = async()=>{
     const token = sessionStorage.getItem("authToken");
     if (!token) throw new Error("No auth token");
 
     try {
-      const res = await axios.get('https://takatak.onrender.com/dashboard', {
+      const res = await axios.get('https://takatak.onrender.com/user/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }); 
 
-
-    //   const userData = res.data?.data || res.data?.user || null;
-    //    if (userData) {
-    //   setUser(userData);
-    //   return userData;
-    //   }else {
-    //   throw new Error("Invalid dashboard response");
-    // }
 
         const { user, orders, invoices, activity } = res.data;
 
@@ -152,31 +164,18 @@ const [activity, setActivity] = useState([]);
     }
   }
 
-  // const getUpmindClientId = async () => {
-  //   const token = sessionStorage.getItem("authToken");
-  //   try {
-  //     const res = await axios.get("https://takatak.onrender.com/upmindClientId", {
-  //       headers: { Authorization: `Bearer ${token}` }
-  //     });
-  //     return res.data.upmindClientId;
-  //   } catch (err) {
-  //     throw err;
-  //   }
-  // };
-
 
   const fetchUpmindClientId = async () => {
     // setLoading(true);
     try {
       const token = sessionStorage.getItem("authToken");
       if (!token){
-        // console.warn("No auth token yet, skipping Upmind fetch");
         setUpmindClientId(null);
         return null;
       }
 
       const res = await axios.get(
-        "https://takatak.onrender.com/upmindClientId",
+        "https://takatak.onrender.com/user/upmindClientId",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -199,7 +198,7 @@ const [activity, setActivity] = useState([]);
 
 
     return (
-    <AppContext.Provider value={{ user, loading, orders, invoices, activity, upmindClientId, signup, login, verifyotp, resendcode, fetchUpmindClientId, dashboard}}>
+    <AppContext.Provider value={{ user, loading, orders, invoices, activity, upmindClientId, signup, login, verifyotp, resendcode, logout, fetchUpmindClientId, dashboard}}>
       {children}
     </AppContext.Provider>
   );

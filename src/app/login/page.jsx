@@ -20,7 +20,7 @@ export default function Login() {
 
   const handleSubmit = async () => {
     // if (!loguser.phone) {
-    //   toast.error("Both phone and email are required", { position: "top-center" });
+    //   toast.error("Phone number is required", { position: "top-center" });
     //   return;
     // }
 
@@ -30,8 +30,8 @@ export default function Login() {
       toast.success("Otp sent to your number!", { position: "top-center" });
 
       // Save separately
-      sessionStorage.setItem("verifyPhone", loguser.phone);
-      sessionStorage.setItem("verifyEmail", loguser.email);
+      sessionStorage.setItem("verifyPhone", loguser.phone || "");
+      sessionStorage.setItem("verifyEmail", loguser.email || "");
 
       router.push('/otp');
     } catch (err) {
@@ -67,7 +67,7 @@ export default function Login() {
         <div className='flex flex-col gap-[40px] items-center'>
           {/* Email Input */}
           <input
-            className='border px-3 py-2 rounded w-[250px]'
+            className={`border border-black outline-0 px-3 py-2 rounded w-full text-black text-[20px] ${styles.emal}`}
             value={loguser.email}
             onChange={(e) => setLoguser({ ...loguser, email: e.target.value })}
             type="email"
@@ -76,7 +76,7 @@ export default function Login() {
           />
 
           {/* Phone Input */}
-          <PhoneInput
+          {/* <PhoneInput
             value={loguser.phone}
             onChange={(value) => setLoguser({ ...loguser, phone: value })}
             country={'us'}
@@ -90,7 +90,7 @@ export default function Login() {
               required: true,
               autoFocus: false,
             }}
-          />
+          /> */}
 
           <div className='flex flex-col gap-[30px]'>
             <button

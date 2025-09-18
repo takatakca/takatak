@@ -19,3 +19,7 @@
     font-size: 1rem;
     /* border-width: 0 0 1px !important;  */
 }
+.emal{
+    padding-inline: 12px;
+    padding-block: 8px;
+}
