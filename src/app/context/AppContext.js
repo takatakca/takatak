@@ -18,6 +18,13 @@ export const AppProvider = ({ children }) => {
 const [invoices, setInvoices] = useState([]);
 const [activity, setActivity] = useState([]);
 
+const [summary, setSummary] = useState({
+  totalOrders: 0,
+  totalInvoices: 0,
+  unpaidInvoices: 0,
+  activeTickets: 0,
+});
+
 
     const INACTIVITY_LIMIT = 10 * 60 * 60 * 1000; // 10 hours in ms
 
@@ -151,7 +158,16 @@ const [activity, setActivity] = useState([]);
       setInvoices(invoices || []);
       setActivity(activity || []);
 
-      return { user, orders, invoices, activity };
+        // build summary
+  const summaryData = {
+    totalOrders: orders?.length || 0,
+    totalInvoices: invoices?.length || 0,
+    unpaidInvoices: invoices?.filter(inv => inv.status === "unpaid").length || 0,
+    activeTickets: activity?.filter(act => act.type === "ticket" && act.status === "open").length || 0,
+  };
+  setSummary(summaryData);
+
+      return { user, orders, invoices, activity, summary: summaryData};
     } else {
       throw new Error("Invalid dashboard response");
     }
@@ -198,7 +214,7 @@ const [activity, setActivity] = useState([]);
 
 
     return (
-    <AppContext.Provider value={{ user, loading, orders, invoices, activity, upmindClientId, signup, login, verifyotp, resendcode, logout, fetchUpmindClientId, dashboard}}>
+    <AppContext.Provider value={{ user, loading, orders, invoices, activity, upmindClientId, summary, signup, login, verifyotp, resendcode, logout, fetchUpmindClientId, dashboard}}>
       {children}
     </AppContext.Provider>
   );

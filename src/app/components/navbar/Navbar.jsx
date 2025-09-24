@@ -11,7 +11,7 @@ const links = [
     { id: 4, title: "Domain", url: "/domain", icon: <TbWorldWww size={23} />, searchType: "domain" },
     { id: 2, title: "Hosting", url: "/hosting", icon: <img src="/img/host.png" width={20} height={20} alt="Hosting" style={{ filter: "invert(1)" }} />, searchType: "hosting" },
     { id: 1, title: "Mobile Apps", icon: <Smartphone size={16} />, searchType: "mobile" },
-    { id: 5, title: "Local Listings", icon: <MapPin size={16} />, searchType: "local" },
+    { id: 5, title: "Local Listings", icon: <MapPin size={16} />, searchType: "local",  },
     { id: 6, title: "Lead Generation", icon: <Users size={16} />, searchType: "leads" },
     { id: 7, title: "VoIP Phone", icon: <PhoneCall size={16} />, searchType: "voip" },
     { id: 8, title: "Cuba Travel", icon: <Plane size={16} />, searchType: "travel" },
@@ -27,19 +27,6 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [scriptLoaded, setScriptLoaded] = useState(false);
     const upmRef = useRef(null);
-
-    // useEffect(() => {
-    //     const token = sessionStorage.getItem("authToken");
-    //     setIsLoggedIn(!!token);
-
-    //     const handleStorageChange = () => {
-    //         const token = sessionStorage.getItem("authToken");
-    //         setIsLoggedIn(!!token);
-    //     }
-
-    //     window.addEventListener("storage", handleStorageChange);
-    //     return () => window.removeEventListener("storage", handleStorageChange);
-    // }, []);
 
     const handleLogout = () => {
     logout();
@@ -63,13 +50,6 @@ export default function Navbar() {
             };
         }
     }, [scriptLoaded]);
-
-    // const filteredLinks = links.filter(link => {
-    //     if (isLoggedIn && (link.title.toLowerCase() === "login" || link.title.toLowerCase() === "signup")) {
-    //         return false;
-    //     }
-    //     return true;
-    // });
 
     const handleSearch = (e) => {
         e.preventDefault();

@@ -1,4 +1,23 @@
-.load{
+.main{
+    padding: 24px;
+}
+.lent{
+    padding: 20px;
+}
+.alltime{
+    padding: 10px;
+}
+.view{
+    padding-block: 3px;
+    padding-inline: 12px;
+}
+.acti{
+    padding: 8px;
+}
+
+
+
+/* .load{
     margin-top: 100px;
     color: white;
     font-size: 20px;
@@ -41,4 +60,4 @@
 }
 .hr{
     padding: 20px 80px 20px 0px;
-}
+} */

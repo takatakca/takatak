@@ -1,6 +1,10 @@
 .gradient{
-    padding: 0px 0px 50px 50px;
-    background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%);
+    /* padding: 80px 0px 50px 50px; */
+    /* background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%); */
+    padding-block: 70px;
+}
+.tp{
+    padding-inline: 100px;
 }
 .butn{
     padding: 6px 30px;

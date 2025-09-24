@@ -71,7 +71,7 @@ export default function Dashboard() {
         </aside>
 
         {/* Content Area */}
-        <main>
+        <main className='flex-1'>
           {activeBoard()}
         </main>
       </div>

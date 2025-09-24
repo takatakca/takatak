@@ -18,7 +18,8 @@ export default function Login() {
     email:""
    });
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault
     // if (!loguser.phone) {
     //   toast.error("Phone number is required", { position: "top-center" });
     //   return;
@@ -65,15 +66,18 @@ export default function Login() {
         </div>
 
         <div className='flex flex-col gap-[40px] items-center'>
-          {/* Email Input */}
-          <input
-            className={`border border-black outline-0 px-3 py-2 rounded w-full text-black text-[20px] ${styles.emal}`}
-            value={loguser.email}
-            onChange={(e) => setLoguser({ ...loguser, email: e.target.value })}
-            type="email"
-            placeholder="Enter your email"
-            required
-          />
+          <form action="">
+            {/* Email Input */}
+            <input
+              className={`border border-black outline-0 px-3 py-2 rounded w-full text-black text-[20px] ${styles.emal}`}
+              value={loguser.email}
+              onChange={(e) => setLoguser({ ...loguser, email: e.target.value })}
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+
+          </form>
 
           {/* Phone Input */}
           {/* <PhoneInput
