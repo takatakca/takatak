@@ -1,13 +1,23 @@
 .gradient{
     /* padding: 80px 0px 50px 50px; */
     /* background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%); */
-    padding-block: 70px;
+    padding-top: 70px;
+}
+.wrapper{
+    padding-inline: 12px;
+    padding-block: 8px;
+    padding-right: 30px;
 }
 .tp{
     padding-inline: 100px;
 }
+.serv{
+    padding-inline: 12px;
+    padding-block: 8px;
+    /* padding: 10px 0px 5px 20px; */
+}
 .butn{
-    padding: 6px 30px;
+    padding: 8px 60px;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -15,96 +25,131 @@
     background-color: #4ca8ea;
 }
 .servic{
-    padding: 0px 50px 0px 0px;
+    padding-inline: 100px;
+    padding-block: 50px;
+    /* padding: 0px 50px 0px 0px; */
 }
-.img{
+.cardsec{
+    padding-bottom: 40px;
+}
+.ctop{
+    padding-inline: 13px;
+    padding-block: 10px;
+}
+.cbotom{
+    padding: 10px 13px 0px 13px;
+}
+.topaction{
+    padding-inline: 8px;
+    padding-block: 4px;
+}
+.cbtn{
+    margin-top: 20px;
+    margin-left: 13px;
+    padding-inline: 16px;
+    padding-block: 8px;
+}
+.leadfind{
+    padding-inline: 12px;
+    padding-block: 8px;
+}
+.domin{
+    padding-left: 20px;
+    padding-block: 20px;
+}
+.sta{
+    padding-block: 4px;
+    padding-inline: 8px;
+}
+.trf{
+    padding-block: 8px;
+    padding-inline: 20px;
+}
+/* .img{
     margin-bottom: -10px;
-}
-.serv{
-    padding: 10px 0px 5px 20px;
-}
+} */
 
-.detail{
+/* .detail{
     padding: 20px 0px 20px 20px;
-}
-.dscm{
+} */
+/* .dscm{
     padding: 40px 0px;
-}
-.market{
+} */
+/* .market{
     padding: 20px 10px;
     width: 15.5vw;
-}
-.inp{
+} */
+/* .inp{
     padding: 10px 7px;
-}
-.butto{
+} */
+/* .butto{
     padding: 8px;
-}
-.freel{
+} */
+/* .freel{
     padding: 20px 10px;
     margin-bottom: 20px;
-}
-.hirefst{
+} */
+/* .hirefst{
     padding: 6px 20px;
-}
-.nextfrel{
+} */
+/* .nextfrel{
     padding: 20px 10px;
-}
-.fmarketplc{
+} */
+/* .fmarketplc{
     padding: 20px 10px;
-}
-.Fmark{
+} */
+/* .Fmark{
     padding: 50px 0px 100px 40px;
-}
-.tags{
+} */
+/* .tags{
     padding: 2px 35px;
-}
-.srch{
+} */
+/* .srch{
     padding: 10px 14px;
-}
+} */
 
 
 /* LEADSERVICES COMPONENT */
-.gm{
-    /* padding-inline: 24px; */
-    /* padding-block: 48px; */
-}
-.grt{
+/* .gm{
+    padding-inline: 24px;
+    padding-block: 48px;
+} */
+/* .grt{
     margin-bottom: 32px;
-}
-.grt span{
+} */
+/* .grt span{
     padding-inline: 12px;
     padding-block: 4px;
-}
-.grt h2{
+} */
+/* .grt h2{
     margin-top: 16px;
-}
- .card{
+} */
+ /* .card{
     padding: 15px;
-}
-.card span{
+} */
+/* .card span{
     padding-inline: 8px;
     padding-block: 4px;
     margin-bottom: 8px;
-}
-.card button{
+} */
+/* .card button{
 
     padding-block: 5px;
     margin-top: auto;
-}
-.tag{
+} */
+/* .tag{
     padding-inline: 13px;
     padding-block: 3px;
-}
-.navbt{
+} */
+/* .navbt{
     margin-top: 24px;
-}
-.navbt button{
+} */
+/* .navbt button{
     padding-inline: 20px;
     padding-block: 6px;
-}
+} */
   
-
+/* 
   @media screen and (min-width: 640px) and (max-width:767px){
     .freel{
        width: 100%;
@@ -112,90 +157,85 @@
     .nextfrel{
         width: 100%;
     }
-  }
+  } */
   
 
   @media screen and (max-width:950px){
     .gradient{
-        padding: 20px 15px 50px 15px;
+        padding-top: 40px;
+        /* padding: 20px 15px 50px 15px; */
+    }
+    .tp{
+        padding-inline: 10px;
     }
     .serv{
         width: 100%;
         padding: 20px 0px 20px 35px;
     }
     .servic{
-        padding: 0px;
-        gap: 30px;
-    }
-    .dscm{
-        padding: 40px 20px;
+        padding-inline: 0px;
+        padding-block: 50px;
+        /* padding: 0px; */
+        /* gap: 30px; */
     }
 
-    /* .detail{
+
+    /* .dscm{
+        padding: 40px 20px;
+    } */
+
+    /* .market{
         width: 100%;
     } */
-    .market{
-        width: 100%;
-    }
-    .Fmark{
+    /* .Fmark{
         padding: 20px ;
-    }
-    .ttp{
+    } */
+    /* .ttp{
         padding-bottom: 30px;
-    }
+    } */
     
   }
   
   @media screen and (max-width: 1000px) and (min-width: 768px){
-    .ttp{
+    /* .ttp{
         padding-bottom: 30px;
-    }
+    } */
     .gradient{
-        padding: 0px;  
-        padding-block: 50px;
-    }
-    .servic{
-        padding: 0px;
-        padding-inline: 90px;
-        align-items: center;
-        justify-content: center;
-        justify-items: center;
+        padding-block: 0px;  
+        /* padding-block: 50px; */
     }
     .serv{
         padding: 20px 0px 20px 35px;
     }
-    .dscm{
+    /* .dscm{
         padding: 0px;
         padding-block: 50px;
         padding-inline: 15px;
         align-items: center;
         justify-content: center;
         justify-items: center;
-    }
-    .detail{
+    } */
+    /* .detail{
         padding-block: 20px;
         padding-inline: 30px;
-    }
-    .freel{
+    } */
+    /* .freel{
         
         margin-bottom: 20px;
         width: 100%;
-        /* padding: 0px; */
-        /* margin: 0px; */
-    }
-    .Fmark{
+    } */
+    /* .Fmark{
         padding: 50px 0px 100px 40px;
-        /* padding: 0px; */
-    }
-    .market{
+    } */
+    /* .market{
         width: 100%;
-    }
-    .tags{
+    } */
+    /* .tags{
         padding: 2px 20px;
-    }
+    } */
   }
 
-  @media screen and (min-width:1024px){
+  /* @media screen and (min-width:1024px){
     .tags{
         padding: 2px 20px;
     }
@@ -230,4 +270,4 @@
         width: 100%;
          
     }
-  }
+  } */
