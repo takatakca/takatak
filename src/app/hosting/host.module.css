@@ -1,4 +1,7 @@
 
+.pagetop{
+  padding-top: 150px;
+}
 .chat{
   /* padding: 20px; */
   padding-bottom: 0px;
@@ -38,9 +41,11 @@ background: linear-gradient(
   padding-bottom: 20px;
 }
 .cbtn{
+  color: black;
+  background-color: white;
   padding-block: 9px;
   padding-inline: 19px;
- }
+}
 .icon{
     padding: 8px;
   }
@@ -68,6 +73,9 @@ background: linear-gradient(
 
 
 @media screen and (max-width:950px){
+  .pagetop{
+    padding-top: 200px;
+  }
   .chat{
     padding: 20px;
     padding-bottom: 0px;
@@ -78,12 +86,16 @@ background: linear-gradient(
   .icon{
     padding: 10px;
   }
-
-}
-
-@media screen and (max-width:950px){
   .host{
     padding: 20px;
     padding-bottom: 0px;
   }
+
 }
+
+/* @media screen and (max-width:950px){
+  .host{
+    padding: 20px;
+    padding-bottom: 0px;
+  }
+} */

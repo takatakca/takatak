@@ -63,10 +63,10 @@ const freelancers = [
   return (
     <main>
       
-      <section className={`bg-[#e0ecf7] flex lg:flex-row md:flex-row gap-[70px] lg:gap-[70px] md:gap-[10px] flex-col  justify-center ${styles.dscm}`}>
+      {/* <section className={`bg-[#e0ecf7] flex lg:flex-row md:flex-row gap-[70px] lg:gap-[70px] md:gap-[10px] flex-col  justify-center ${styles.dscm}`}> */}
 
       {/* Detail Service */}
-          <div className='flex flex-col  gap-[20px]'>
+          {/* <div className='flex flex-col  gap-[20px]'>
               <h1 className='text-blue-900 font-bold text-[28px]'>Details Service & Campaigns</h1>
             <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-y-[30px] lg:gap-x-[70px] md:gap-x-[10px] md:gap-y-[10px] lg:gap-y-[30px] ${styles.decamp} `}>
               {services.map((item, idx) => (
@@ -86,29 +86,13 @@ const freelancers = [
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
 
           {/* Marketplace */}
-        <div className="flex flex-col gap-[20px]">
-          {/* <h1 className="text-blue-900 font-bold text-[28px]">Marketplace</h1> */}
+        {/* <div className="flex flex-col gap-[20px]">
+
           <div className='flex flex-col gap-[40px] '>
-            {/* <div className={`bg-white rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] text-blue-800  flex flex-col  gap-[20px]  ${styles.market}`}>
-              <h1 className='text-start'>Marketplace</h1>
-              <div className={`flex flex-col items-center `}>
-                  <div className={`flex flex-col gap-[30px] w-full lg:w-[13vw] `}>
-                
-                    <input
-                    type="text"
-                    placeholder="Search marketplace..."
-                    className={`flex-grow border border-blue-300 rounded-md outline-none focus:ring-0 ${styles.inp}`}
-                    />
-                    <button className={`bg-[#01A2D9] text-white rounded-md hover:bg-blue-700 transition ${styles.butto}`}  onClick={handleSearch}>
-                      Search marketplace
-                    </button>
-                  </div>
-              </div>
-            </div> */}
 
             <div className={`bg-white text-blue-800 flex flex-col gap-[10px]  rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] ${styles.detail}`}>
               <div className='flex gap-[5px] items-center'>
@@ -122,12 +106,12 @@ const freelancers = [
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Services */}
-        <div className={`${styles.listed}`}>
+        {/* <div className={`${styles.listed}`}> */}
           {/* Categories */}
-          <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] w-full sm:w-[20vw] lg:w-[13vw] flex flex-col gap-[50px] ${styles.freel}`}>
+          {/* <div className={`bg-white text-blue-900 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] w-full sm:w-[20vw] lg:w-[13vw] flex flex-col gap-[50px] ${styles.freel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -140,10 +124,10 @@ const freelancers = [
               <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
             <button className={`bg-[#01A2D9] text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
-          </div>
+          </div> */}
 
           {/* Duplicate Category box */}
-          <div className={`lg:absolute md:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] w-full sm:w-[20vw] lg:w-[13vw] z-20 ${styles.nextfrel}`}>
+          {/* <div className={`lg:absolute md:absolute bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] flex flex-col gap-[50px] w-full sm:w-[20vw] lg:w-[13vw] z-20 ${styles.nextfrel}`}>
             <div className='flex flex-col gap-[15px]'>
               <h4 className="font-bold text-[15px]">Graphics & Design</h4>
               <hr className='text-[#efeaea]'/>
@@ -156,17 +140,17 @@ const freelancers = [
               <h4 className="font-bold text-[15px]">Writing & Translation</h4>
             </div>
             <button className={`bg-[#01A2D9] text-white rounded ${styles.hirefst}`}>Hire a Freelancer</button>
-          </div>
-        </div>
-      </section>
+          </div> */}
+        {/* </div> */}
+      {/* </section> */}
 
       <section className={`lg:relative md:relative flex lg:flex-row flex-col gap-[50px] text-white bg-gradient-to-b from-blue-700 to-blue-800 ${styles.Fmark}`}>
         {/* Left Column */}
         <div className="relative flex flex-col gap-[45px]">
-          <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3>
+          {/* <h3 className="text-xl font-bold mb-4">Marketing Campaign</h3> */}
 
           <div className='flex flex-col gap-[30px]'>
-            <input className={`p-2 w-full md:max-w-[50vw] rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." />
+            {/* <input className={`p-2 w-full md:max-w-[50vw] rounded-[15px] text-blue-800 bg-white border outline-none focus:ring-0  ${styles.srch} `} placeholder="Search marketplace..." /> */}
             <div className="flex flex-wrap gap-[25px] lg:gap-[25px] md:gap-[15px]">
               {['Development', 'Design', 'Writing', 'Video'].map((tag) => (
                 <button key={tag} className={`bg-transparent rounded-full cursor-pointer border-[1.5px] border-[#b9b8b8] ${styles.tags} `}>
@@ -197,11 +181,11 @@ const freelancers = [
 
           </div>
             {/* Right edge blur to hint scrollable */}
-            <div className="lg:pointer-events-none lg:absolute lg:top-[200px] lg:right-0 lg:h-[15vw] lg:w-10 lg:bg-gradient-to-l from-blue-800 to-transparent z-10" />
+            <div className="lg:pointer-events-none lg:absolute lg:top-[50px] lg:right-0 lg:h-[15vw] lg:w-10 lg:bg-gradient-to-l from-blue-800 to-transparent z-10" />
         </div>
 
         {/* Right Column */}
-        <div className=''>
+        {/* <div className=''>
           <h1>FMarketplace</h1>
           <div className={`bg-white text-blue-900 p-6 rounded-xl shadow-[0_12px_24px_rgba(0,0,0,0.12)] space-y-2 flex flex-col gap-[40px] ${styles.fmarketplc}`}>
             <div className="flex flex-col gap-[10px]">
@@ -222,7 +206,7 @@ const freelancers = [
               Hire a Freelancer
             </button>
           </div>
-        </div>
+        </div> */}
       </section>
 
     </main>

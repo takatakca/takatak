@@ -153,14 +153,14 @@ const faqs = [
 
 export default function Hostingpage() {
   const [openIndex, setOpenIndex] = useState(null);
-  const { upmindClientId } = useContext(AppContext);
+  // const { upmindClientId } = useContext(AppContext);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <ProtectedRoute>
-    <main>
+    // <ProtectedRoute>
+    <main className={`${styles.pagetop}`}>
       {/* <Script
           type="module"
           src="https://embed.upmind.app/upm-widget.js"
@@ -172,7 +172,8 @@ export default function Hostingpage() {
           <h4 className="text-[#b3aeff]">HOSTING FOR WORDPRESS</h4>
           <h1 className="text-[33px] lg:w-[40vw] lg:text-[40px]"><span className="font-bold">Power up success</span> with our hosting for Website</h1>
           <p className="text-[20px] w-full">Ready to create without limits? Our WordPress hosting is the perfect mix of speed, AI security, and nonstop support. We’ve crafted hosting solutions that are never watered down, ensuring your site performs at peak efficiency. Whether you’re launching a personal blog or scaling a full e-commerce store, our plans adapt to your needs. It’s time to say goodbye to slowdowns and hello to TAKATAK WordPress hosting that’s bold, stable, and built for 2025.</p>
-          <button className={`bg-[white] text-[black] rounded-[8px] text-[18px] w-max ${styles.cbtn}`}>Find the plan for me</button>
+          
+           <a href="/checkout" className={` rounded-[8px] text-[18px] w-max font-semibold ${styles.cbtn}`}>Find the plan for me</a>
         </div>
         <img src="/img/hosting.webp" alt="" className="h-[300px] lg:h-[400px] sm:h-[500px] w-full"/>
        </section>
@@ -181,8 +182,8 @@ export default function Hostingpage() {
           <h1 className="text-[33px] text-center">Pick a plan and<span className="font-bold lg:font-bol"> supercharge your WordPress.</span></h1>
           <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw" >Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
-          {/*1 Portfolio Hosting */}
+        {/* <div className="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
+          1 Portfolio Hosting
         <upm-widget
           as="PlanCard"
           client-id={upmindClientId}
@@ -193,7 +194,7 @@ export default function Hostingpage() {
           }`}
         ></upm-widget>
 
-        {/*2 Bronze Hosting */}
+        2 Bronze Hosting
         <upm-widget
           as="PlanCard"
           client-id={upmindClientId}
@@ -204,7 +205,7 @@ export default function Hostingpage() {
           }`}
         ></upm-widget>
 
-        {/*3 Silver Hosting */}
+        3 Silver Hosting
         <upm-widget
           as="PlanCard"
           client-id={upmindClientId}
@@ -214,7 +215,7 @@ export default function Hostingpage() {
             "currencyCode": "cad"
           }`}
         ></upm-widget>
-        {/*4 Gold Hosting */}
+        4 Gold Hosting
         <upm-widget
           as="PlanCard"
           client-id={upmindClientId}
@@ -224,7 +225,7 @@ export default function Hostingpage() {
             "currencyCode": "cad"
           }`}
         ></upm-widget>
-        </div>
+        </div> */}
       </section>
       <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
         <h1 className="text-[33px] text-center">Our hosting gets{" "} <span className="font-extrabold lg:font-bold">smarter with every click.</span></h1>
@@ -374,6 +375,6 @@ export default function Hostingpage() {
 
 
     </main>
-    </ProtectedRoute>
+    // </ProtectedRoute>
   );
 }

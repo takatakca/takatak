@@ -1,7 +1,7 @@
 .gradient{
     /* padding: 80px 0px 50px 50px; */
     /* background: linear-gradient(to right, #1d4ed8 0%, #1d4ed8 60%, #4ca8ea 100%); */
-    padding-top: 70px;
+    padding-top: 200px;
 }
 .wrapper{
     padding-inline: 12px;
@@ -98,12 +98,12 @@
 /* .fmarketplc{
     padding: 20px 10px;
 } */
-/* .Fmark{
+.Fmark{
     padding: 50px 0px 100px 40px;
-} */
-/* .tags{
+}
+.tags{
     padding: 2px 35px;
-} */
+}
 /* .srch{
     padding: 10px 14px;
 } */
@@ -162,7 +162,7 @@
 
   @media screen and (max-width:950px){
     .gradient{
-        padding-top: 40px;
+        padding-top: 250px;
         /* padding: 20px 15px 50px 15px; */
     }
     .tp{
@@ -187,9 +187,9 @@
     /* .market{
         width: 100%;
     } */
-    /* .Fmark{
+    .Fmark{
         padding: 20px ;
-    } */
+    }
     /* .ttp{
         padding-bottom: 30px;
     } */
@@ -224,35 +224,35 @@
         margin-bottom: 20px;
         width: 100%;
     } */
-    /* .Fmark{
+    .Fmark{
         padding: 50px 0px 100px 40px;
-    } */
+    }
     /* .market{
         width: 100%;
     } */
-    /* .tags{
+    .tags{
         padding: 2px 20px;
-    } */
+    }
   }
 
-  /* @media screen and (min-width:1024px){
+   @media screen and (min-width:1024px){
     .tags{
         padding: 2px 20px;
     }
     .scrollhide {
         max-width: 480px;
     }
-    .freel{
+    /* .freel{
         width: 18vw;
-    }
-    .nextfrel{
+    } */
+    /* .nextfrel{
         width: 18vw;
         right: 50px;
-    }
+    } */
     .Fmark{
         gap: 30px;
     }
-    .dscm{
+    /* .dscm{
         padding: 0px;
         padding-block: 50px;
         padding-inline: 15px;
@@ -260,14 +260,14 @@
         justify-content: center;
         justify-items: center;
         gap: 40px;
-    }
-    .decamp{
+    } */
+    /* .decamp{
         column-gap: 20px;
         row-gap: 20px;
         
-    }
-    .market{
+    } */
+    /* .market{
         width: 100%;
          
-    }
-  } */
+    } */
+  } 

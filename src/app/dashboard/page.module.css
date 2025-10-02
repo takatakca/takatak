@@ -1,6 +1,12 @@
 .dash{
-    padding-top: 70px;
+    padding-top: 160px;
 }
 .sidbar{
   padding: 5px 0px 5px 20px;
+}
+
+@media screen and (max-width:900px) {
+  .dash{
+    padding-top: 230px;
+  }
 }

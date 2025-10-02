@@ -14,10 +14,10 @@ body{
   background-color: #111;
   color: #bbb;
 
-  /* --upm-lm-contrast-color: 255 255 255; */
-  /* --upm-dm-contrast-color: 255 255 255; */
-  /* --upm-neutral-contrast-color: 255 255 255; */
-  /* --upm-muted-contrast-color: 255 255 255; */
+  --upm-lm-contrast-color: 255 255 255;
+  --upm-dm-contrast-color: 255 255 255;
+  --upm-neutral-contrast-color: 255 255 255;
+  --upm-muted-contrast-color: 255 255 255;
 }
 
 :root {
@@ -25,44 +25,44 @@ body{
   --shape2: rgba(255, 255, 255, 0.12);
 
   /* Override neutral/secondary text tones */
-  /* --upm-neutral-color: 255 255 255; */
-  /* --upm-neutral-contrast-color: 255 255 255; */
+  --upm-neutral-color: 255 255 255;
+  --upm-neutral-contrast-color: 255 255 255;
 
    /* Sometimes placeholder/help text uses "muted" colors */
-  /* --upm-muted-color: 255 255 255; */
-  /* --upm-muted-contrast-color: 255 255 255; */
+  --upm-muted-color: 255 255 255;
+  --upm-muted-contrast-color: 255 255 255;
 
   /* Background colors for light & dark modes */
-         /* --upm-lm-color: 255 255 255; */
-  /* --upm-lm-contrast-color: 255 255 255;  */
+         --upm-lm-color: 255 255 255;
+  --upm-lm-contrast-color: 255 255 255; 
   
-  /* --upm-dm-color: 16 35 80;          */
-  /* --upm-dm-contrast-color: 255 255 255;  */
+  --upm-dm-color: 16 35 80;         
+  --upm-dm-contrast-color: 255 255 255; 
 
-  /* --upm-primary-color: 0 200 83; */
-  /* --upm-primary-contrast-color: 255 255 255;  */
-
-
-  /* --upm-secondary-color: 0 123 255;  */
-  /* --upm-secondary-contrast-color: 255 255 255;  */
+  --upm-primary-color: 0 200 83;
+  --upm-primary-contrast-color: 255 255 255; 
 
 
-  /* --upm-info-color: 59 130 246;        */
-  /* --upm-info-contrast-color: 255 255 255;  */
+  --upm-secondary-color: 0 123 255; 
+  --upm-secondary-contrast-color: 255 255 255; 
 
 
-  /* --upm-success-color: 0 200 83;        */
-  /* --upm-success-contrast-color: 255 255 255; */
-
-  /* --upm-caution-color: 253 224 71;        */
-  /* --upm-caution-contrast-color: 0 0 0; */
+  --upm-info-color: 59 130 246;       
+  --upm-info-contrast-color: 255 255 255; 
 
 
-  /* --upm-warning-color: 251 146 60;  */
-  /* --upm-warning-contrast-color: 255 255 255; */
+  --upm-success-color: 0 200 83;       
+  --upm-success-contrast-color: 255 255 255;
 
-  /* --upm-danger-color: 239 68 68; */
-  /* --upm-danger-contrast-color: 255 255 255; */
+  --upm-caution-color: 253 224 71;       
+  --upm-caution-contrast-color: 0 0 0;
+
+
+  --upm-warning-color: 251 146 60; 
+  --upm-warning-contrast-color: 255 255 255;
+
+  --upm-danger-color: 239 68 68;
+  --upm-danger-contrast-color: 255 255 255;
 }
 
 
@@ -121,10 +121,7 @@ a{
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   
 }
-.pagetop{
-  /* padding-top: 200px; */
-  padding-top: 100px;
-}
+
 .space{
   padding: 5px 0px 5px 20px;
 }
@@ -262,9 +259,6 @@ a{
 
 
 @media screen and (max-width:950px) {
-  .pagetop{
-  padding-top: 210px;
-}
   .nav{
   padding: 0px 20px;
 }

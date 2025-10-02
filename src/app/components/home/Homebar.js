@@ -8,8 +8,8 @@ export default function Homebar()  {
     return (
         <div>
             {/* <LeadServices /> */}
-            {/* <Bottomhome /> */}
             <Homechoose />
+            <Bottomhome />
         </div>
 
     );

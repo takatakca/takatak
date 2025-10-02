@@ -174,97 +174,36 @@ const faqs = [
 ];
 
 
-
-
-function PlaceholderRow({ 
-  leftWidths = [320, 240, 200], 
-  rightWidths = [80, 140], 
-  showRight = true,
-}) {
-  return (
-    <div className={styles.row}>
-      {/* LEFT SVG */}
-      <svg
-        className={`${styles.leftSvg} ${styles.mobileSvg}`}
-        viewBox="0 0 420 100"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect x="20" y="20" width="17" height="17" rx="6" className={styles.shape} />
-        <rect x="52" y="8" width='80' height="10" rx="5" className={styles.shape2} />
-        <rect x="52" y="23" width='150' height="15" rx="4" className={styles.shape} />
-        <rect x="52" y="44" width='120' height="8" rx="5" className={styles.shape} />
-
-        {/* ✅ New extra shape for mobile only */}
-        <rect
-          className={`${styles.shape} ${styles.mobileOnly}`}
-          x="52"
-          y="70"
-          width="150"
-          height="30"
-          rx="4"
-        />
-      </svg>
-
-      {/* RIGHT SVG (conditionally shown)*/}
-      {showRight && (
-        <svg
-        className={styles.rightSvg}
-        viewBox="0 0 300 64"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect x="0" y="23" width='50' height="20" rx="5" className={styles.shape} />
-        <rect
-          x={rightWidths[0] }
-          y="16"
-          width={rightWidths[1]}
-          height="32"
-          rx="5"
-          className={styles.shape2}
-        />
-        <line
-          x1="0"
-          x2="300"
-          y1="62"
-          y2="62"
-          stroke="rgba(255,255,255,0.03)"
-          strokeWidth="1"
-        />
-      </svg>
-      )}
-    </div>
-  );
-}
-
 export default function DomainPage() {
-  const [hasTyped, setHasTyped] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const upmRef = useRef(null);
+  // const [hasTyped, setHasTyped] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
+  // const upmRef = useRef(null);
   const [openIndex, setOpenIndex] = useState(null);
-  const { upmindClientId } = useContext(AppContext);
+  // const { upmindClientId } = useContext(AppContext);
 
-    useEffect(() => {
-    const interval = setInterval(() => {
-      if (upmRef.current) {
-        const input = upmRef.current.shadowRoot?.querySelector("input");
-        if (input && !input.hasListenerAttached) {
-          input.hasListenerAttached = true;
+  //   useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (upmRef.current) {
+  //       const input = upmRef.current.shadowRoot?.querySelector("input");
+  //       if (input && !input.hasListenerAttached) {
+  //         input.hasListenerAttached = true;
 
-          input.addEventListener("input", () => {
-            setHasTyped(input.value.trim().length > 0);
-          });
-        }
-      }
-    }, 500);
+  //         input.addEventListener("input", () => {
+  //           setHasTyped(input.value.trim().length > 0);
+  //         });
+  //       }
+  //     }
+  //   }, 500);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
-  useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth <= 768);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+  // useEffect(() => {
+  //   const checkScreen = () => setIsMobile(window.innerWidth <= 768);
+  //   checkScreen();
+  //   window.addEventListener("resize", checkScreen);
+  //   return () => window.removeEventListener("resize", checkScreen);
+  // }, []);
 
   
 
@@ -274,8 +213,8 @@ export default function DomainPage() {
 
 
   return (
-    <ProtectedRoute>
-    <main className="">
+    // <ProtectedRoute>
+    <main className={`${styles.pagetop}`}>
       {/* <script type="module" src="https://embed.upmind.app/upm-widget.js" strategy="afterInteractive"/> */}
        <section className={`${styles.cont} flex flex-col item-center justify-center`}>
         <div className="flex flex-col items-center justify-center text-white gap-[40px]">
@@ -284,9 +223,11 @@ export default function DomainPage() {
             Whether you’re building your first website, expanding your business presence, or launching the next big brand, TAKATAK makes securing your domain name fast, simple, and affordable.
             From entrepreneurs and small businesses to large enterprises, we’ve got the right domain for every vision. With instant registration.
           </p>
+          <a href="/checkout" className={` rounded-[8px] text-[18px] w-max font-semibold ${styles.cbtn}`}>Continue To Purchase</a>
         </div>
-        <div>
-          <div className={`${styles.bar} `}>
+          
+        {/* <div> */}
+          {/* <div className={`${styles.bar} `}> */}
             {/* <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
             <upm-widget
               as="Dac"
@@ -300,13 +241,15 @@ export default function DomainPage() {
 
 
             {/* <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script> */}
-            <upm-dac
+
+            {/* ACTIVELY USING SEARCH */}
+            {/* <upm-dac
               ref={upmRef}
               client-id={upmindClientId}
               order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
               currency-code="CAD"
-            ></upm-dac>
-          </div>
+            ></upm-dac> */}
+          {/* </div> */}
           {/* <div className={`${styles.bar} border`}>
             <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script>
             <upm-dac
@@ -316,18 +259,18 @@ export default function DomainPage() {
             ></upm-dac>
           </div> */}
         
-          {!hasTyped && (
+          {/* {!hasTyped && (
           <div>
             <div className={`${styles.sv}`}>
               <PlaceholderRow showRight={!isMobile}/>
               <PlaceholderRow leftWidths={[300, 220, 180]} rightWidths={[84, 128]} showRight={!isMobile}/>
-              {/* This third row only shows on desktop */}
+              This third row only shows on desktop
                {!isMobile && (
                 <PlaceholderRow leftWidths={[280, 230, 190]} rightWidths={[72, 132]} showRight={true}/>
               )}
             </div> 
 
-            {/* begin search  */}
+            begin search 
             
                <div className="relative bottom-[300px] lg:bottom-[400px] z-10">
               <div className={`flex items-center justify-center`}>
@@ -341,8 +284,8 @@ export default function DomainPage() {
               </div>
             </div>
           </div>
-            )} 
-        </div>
+            )}  */}
+        {/* </div> */}
        </section>
 
        <section className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
@@ -532,6 +475,6 @@ export default function DomainPage() {
           </div>
        </section>
     </main>
-   </ProtectedRoute>
+  //  </ProtectedRoute>
   )
 }
