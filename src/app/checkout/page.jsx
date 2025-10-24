@@ -4,6 +4,8 @@ import { useRouter } from "next/navigation";
 import styles from "./page.module.css"
 import { IoArrowBack } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
+import { AppContext } from "../context/AppContext";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 function PlaceholderRow({ 
   leftWidths = [320, 240, 200], 
@@ -73,7 +75,7 @@ export default function checkout() {
 
 
 
-    // const { upmindClientId } = useContext(AppContext);
+    const { upmindClientId } = useContext(AppContext);
     
         useEffect(() => {
         const interval = setInterval(() => {
@@ -102,6 +104,7 @@ export default function checkout() {
 
     const router = useRouter();
      return (
+      <ProtectedRoute>
         <main >
             <div className={`bg-white flex items-center text-[black] gap-[30px] ${styles.pagetop}`}>
                 <button className={`bg-[#dfdfeb]  flex items-center gap-[10px] rounded ${styles.butn}`}  onClick={() => router.back()}>
@@ -128,7 +131,7 @@ export default function checkout() {
                     {/* <script src="https://widgets.upmind.app/dac/upm-dac.min.js"></script> */}
                     <upm-dac
                     ref={upmRef}
-                    // client-id={upmindClientId}
+                    client-id={upmindClientId}
                     order-config-url="https://fimjpyw0mnzy.upmind.app/order/product"
                     currency-code="CAD"
                     ></upm-dac>
@@ -173,10 +176,8 @@ export default function checkout() {
                 </div>
                     )} 
                 </div>
-            </section>
-
-            <section  className={`flex flex-col items-center justify-center text-black gap-[30px] bg-white ${styles.sip}`}>
-                <div className=" flex flex-col items-center gap-[15px]">
+            <div  className={`flex flex-col items-center justify-center text-black gap-[30px] ${styles.sip}`}>
+                <div className=" flex flex-col items-center gap-[15px] text-white">
                     <h1 className="text-[33px] text-center">Pick a plan and<span className="font-bold lg:font-bol"> supercharge your WordPress.</span></h1>
                     <p className="text-center text-[19px] font-semibold w-[85vw] lg:w-[49vw" >Order your go-to setup, or explore a bold new option. Our TAKATAK WordPress hosting plans are built to match any project — including yours.</p>
                 </div>
@@ -184,7 +185,7 @@ export default function checkout() {
                     {/* 1 Portfolio Hosting */}
                 <upm-widget
                     as="PlanCard"
-                    // client-id={upmindClientId}
+                    client-id={upmindClientId}
                     locale="en"
                     bind={`{
                     "id": "61e50989-73d2-4752-053c-e45e610832d7",
@@ -195,7 +196,7 @@ export default function checkout() {
                 {/* 2 Bronze Hosting */}
                 <upm-widget
                     as="PlanCard"
-                    // client-id={upmindClientId}
+                    client-id={upmindClientId}
                     locale="en"
                     bind={`{
                     "id": "1e96d298-537d-4e75-383b-14e120637085",
@@ -206,7 +207,7 @@ export default function checkout() {
                 {/* 3 Silver Hosting */}
                 <upm-widget
                     as="PlanCard"
-                    // client-id={upmindClientId}
+                    client-id={upmindClientId}
                     locale="en"
                     bind={`{
                     "id": "80d1639e-237d-4395-3e2a-54610589e572",
@@ -216,7 +217,7 @@ export default function checkout() {
                 {/* 4 Gold Hosting */}
                 <upm-widget
                     as="PlanCard"
-                    // client-id={upmindClientId}
+                    client-id={upmindClientId}
                     locale="en"
                     bind={`{
                     "id": "0381d780-e72d-4dd6-701c-8413569926e5",
@@ -224,8 +225,11 @@ export default function checkout() {
                     }`}
                 ></upm-widget>
                 </div> 
+            </div>
             </section>
+
                  
         </main>
+        </ProtectedRoute>
      )
 }

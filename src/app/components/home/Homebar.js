@@ -1,15 +1,15 @@
 "use client"
 
-import Bottomhome from "./Bottomhome"
+// import Bottomhome from "./Bottomhome"
 import Homechoose from "./Homechoose";
-import LeadServices from "./LeadServices";
+// import LeadServices from "./LeadServices";
 
 export default function Homebar()  {
     return (
         <div>
             {/* <LeadServices /> */}
             <Homechoose />
-            <Bottomhome />
+            {/* <Bottomhome /> */}
         </div>
 
     );

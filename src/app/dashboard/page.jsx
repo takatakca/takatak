@@ -8,7 +8,6 @@ import { FaUserFriends } from "react-icons/fa";
 import { FcCustomerSupport } from "react-icons/fc";
 import { IoSettings } from "react-icons/io5";
 import Mydashboard from '../components/myDashboard/Mydashborad';
-import Invoice from '../invoices/page';
 import Affiliate from '../components/affiliateProgram/Affiliate';
 import Support from '../components/support/Support';
 import Setting from '../components/settings/Setting';
@@ -23,11 +22,10 @@ import UserDashboard from '../components/user/UserDashboard';
 
 const sideItem = [
     {   label: "Home", icon: <MdHomeFilled /> },
-    {   label: "My Dashboard", icon: <MdDashboardCustomize /> },
-    // {   label: "Invoices", icon: <FaFileInvoiceDollar /> },
-    {   label: "Affillate Program", icon: <FaUserFriends /> },
-    {   label: "Support", icon: <FcCustomerSupport /> },
-    {   label: "Settings", icon: <IoSettings /> },
+    // {   label: "My Dashboard", icon: <MdDashboardCustomize /> },
+    // {   label: "Affillate Program", icon: <FaUserFriends /> },
+    // {   label: "Support", icon: <FcCustomerSupport /> },
+    // {   label: "Settings", icon: <IoSettings /> },
 ]
 
 export default function Dashboard() {
