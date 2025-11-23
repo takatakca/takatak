@@ -27,6 +27,7 @@ import { PiInvoiceBold } from "react-icons/pi";
 import { GiProgression, GiNewspaper, GiClassicalKnowledge   } from "react-icons/gi";
 import { MdWorkHistory } from "react-icons/md";
 import { NotebookTabs, ChevronDown } from 'lucide-react';
+import Link from "next/link";
 
 
 
@@ -203,7 +204,10 @@ const Footer = () => {
           <div className="flex items-center justify-between">
              {/* Legal Links */}
             <div className={`flex flex-wrap w-[50%] justify-center md:justify-start gap-4`}>
+              <Link href="/privacymanager">
               <span>Privacy Manager</span>
+              </Link>
+              
               <span>Terms & Conditions</span>
               <span>Privacy Policy</span>
               <span>Company Details</span>
